@@ -104,5 +104,9 @@ entries:
       output: web
 
   - title: Support
-    url: /guides_support.html
-    output: web, pdf
+    output: web
+    folderitems:
+
+    - title: Contact us
+      url: /guides_support.html
+      output: web
