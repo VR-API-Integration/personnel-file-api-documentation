@@ -9,4 +9,4 @@ folder: guides/domain-apis
 topnav: topnav
 ---
 
-Learning API filters information
+IAM API filters information
