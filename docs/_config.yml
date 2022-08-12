@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -18,13 +18,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: File API Documentation
-email: cristo.amezcua@visma.com
-description: The File API allows you to download or upload files directly from Youforce, over HTTPS using the tool of your choice. 
+title: Youforce API Documentation
+email: ismael.onoro.espliego@visma.com
+description: The Youforce API allows for integration over HTTPS between the Beaufort HR core system and external systems in the context of the supported domains.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
-github_username:  cristoVisma
+github_username:  ismaelonoroVisma
 
 # Build settings
 theme: minima
@@ -51,10 +51,10 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-topnav_title: File API Documentation
+topnav_title: Youforce API Documentation
 # this appears on the top navigation bar next to the home button
 
-site_title: File API documentation
+site_title: Youforce API documentation
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: Visma
@@ -65,9 +65,9 @@ exclude:
   - .gitignore
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_subject_line: File API documentation theme
+feedback_subject_line: Youforce API documentation theme
 
-feedback_email: cristo.amezcua@visma.com
+feedback_email: ismael.onoro.espliego@visma.com
 # used as a contact email for the Feedback link in the top navigation bar
 
 feedback_disable: true
@@ -141,6 +141,5 @@ sidebars:
 - product2_sidebar
 - other
 
-description: "File API Documentation Web Site"
+description: "Youforce API Documentation Web Site"
 # the description is used in the feed.xml file
-

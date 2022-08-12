@@ -2,7 +2,7 @@
 
 entries:
 - title: sidebar
-  product: File API Documentation
+  product: Youforce API Documentation
   version: 1.0
   folders:
 
@@ -17,195 +17,23 @@ entries:
 
     - title: Getting started
       url: /guides_getting_started.html
-      output: web, pdf  
-    
-    - title: Update App to Production
-      url: /guides_update_status_prod.html
       output: web, pdf
-      
+
     - title: Request headers and responses
       url: /guides_request_headers_and_responses.html
-      output: web, pdf      
-      
+      output: web, pdf
+
     - title: Usage limits
       url: /guides_usage_limits.html
-      output: web, pdf 
-
-  - title: Publishers
-    output: web
-    folderitems:
-
-    - title: File upload
-      url: /guides_file_upload.html
       output: web, pdf
 
-    - title: File multipart upload
-      url: /guides_file_multipart_upload.html
+    - title: API Statuses
+      url: /guides_api_statuses.html
       output: web, pdf
-
-    - title: File resumable upload
-      url: /guides_file_resumable_upload.html
-      output: web, pdf
-
-    - title: File list of uploaded files
-      url: /guides_file_list_uploaded_files.html
-      output: web, pdf
-
-    - title: Search for uploaded files
-      url: /guides_search_for_uploaded_files.html
-      output: web, pdf
-
-    - title: Sort uploaded files
-      url: /guides_sort_uploaded_files.html
-      output: web, pdf
-
-    - title: File download uploaded files
-      url: /guides_file_download_uploaded_files.html
-      output: web, pdf
-
-    - title: Troubleshooting
-      url: /guides_file_upload_troubleshooting.html
-      output: web, pdf
-
-  - title: Subscribers
-    output: web
-    folderitems:
-
-    - title: File list of available files
-      url: /guides_file_list_available_files.html
-      output: web, pdf
-
-    - title: Search for files
-      url: /guides_search_for_files.html
-      output: web, pdf
-
-    - title: Sort files
-      url: /guides_sort_files.html
-      output: web, pdf
-
-    - title: File download
-      url: /guides_file_download.html
-      output: web, pdf
-
-    - title: Download complete file
-      url: /guides_download_complete_file.html
-      output: web, pdf
-
-    - title: Download file by chunks
-      url: /guides_download_file_by_chunks.html
-      output: web, pdf
-
-    - title: Delete file
-      url: /guides_delete_file.html
-      output: web, pdf
-
-  - title: Visma Raet File types
-    output: web
-    folderitems:
-
-    - title: Sandbox
-      url: /guides_file_sandbox_raet_file_types.html
-      output: web, pdf
-      
-    - title: Beaufort Online - Customers
-      url: /guides_file_bo4_customers_raet_file_types.html
-      output: web, pdf
-
-    - title: Beaufort Online - 3rd parties
-      url: /guides_file_bo4_3rdparties_raet_file_types.html
-      output: web, pdf
-
-    - title: Management Info
-      url: /guides_file_managementinfo_raet_file_types.html
-      output: web, pdf
-
-    - title: Betaalmanager
-      url: /guides_file_betaalmanager_raet_file_types.html
-      output: web, pdf
-
-    - title: Self Service
-      url: /guides_file_selfservice_raet_file_types.html
-      output: web, pdf   
-
-    - title: Payroll Gemal
-      url: /guides_file_payroll_gemal_raet_file_types.html
-      output: web, pdf
-
-    - title: Robotics
-      url: /guides_file_robotics_file_types.html
-      output: web, pdf
-
-    - title: Loonaangifte
-      url: /guides_file_Loonaangifte_raet_file_types.html
-      output: web, pdf
-      
-    - title: Verzuim Management
-      url: /guides_file_verzuim_management_file_types.html
-      output: web, pdf
-
-  - title: Visma Youserve File types
-    output: web
-    folderitems:
-
-    - title: Sandbox
-      url: /guides_file_sandbox_business_file_types.html
-      output: web, pdf
-
-    - title: HR Core/Payroll Business
-      url: /guides_file_hrcb_business_file_types.html
-      output: web, pdf
-
-    - title: Betaalmanager
-      url: /guides_file_betaalmanager_business_file_types.html
-      output: web, pdf  
-
-    - title: Self Service
-      url: /guides_file_selfservice_business_file_types.html
-      output: web, pdf         
-
-    - title: External payslips
-      url: /guides_file_external_payslips_business_file_types.html
-      output: web, pdf
-
-    - title: Loonaangifte
-      url: /guides_file_Loonaangifte_business_file_types.html
-      output: web, pdf   
-
-  - title: Visma Idella File types
-    output: web
-    folderitems:
-  
-    - title: Sandbox
-      url: /guides_file_sandbox_idella_file_types.html
-      output: web, pdf  
-
-    - title: Pensions & Benefits Core
-      url: /guides_file_pb_core_file_types.html
-      output: web, pdf
-
-    - title: Betaalmanager
-      url: /guides_file_betaalmanager_idella_file_types.html
-      output: web, pdf  
-
-    - title: Payroll Gemal
-      url: /guides_file_payroll_gemal_idella_file_types.html
-      output: web, pdf        
-
-    - title: Loonaangifte
-      url: /guides_file_Loonaangifte_idella_file_types.html
-      output: web, pdf    
 
   - title: Examples to Integrate
     output: web
     folderitems:
-
-    - title: .Net with File API SDK
-      url: /guides_net.html
-      output: web
-
-    - title: PowerShell
-      url: /guides_powershell.html
-      output: web
 
     - title: Postman collection
       url: /guides_postman.html
@@ -218,24 +46,11 @@ entries:
     - title: Release notes
       url: /guides_release_notes.html
       output: web
-      
-  - title: Policies
-    output: web, pdf
-    folderitems:
-    
-    - title: API Statuses
-      url: /guides_api_statuses.html
-      output: web, pdf      
 
-    - title: Life cycle policy
-      url: /guides_life_cycle_policy.html
-      output: web, pdf
-          
   - title: Support
     output: web, pdf
     folderitems:
-    
+
     - title: Support
       url: /guides_support.html
       output: web, pdf
-      

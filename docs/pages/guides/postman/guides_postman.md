@@ -15,4 +15,4 @@ The ZIP-file you can download here includes the following information:
 - Postman environment
 - Sample set of files
 
-[Download ZIP File...](/file-api-documentation/pages/guides/postman/download/2022-01-19.zip)
+[Download ZIP File...](/youforce-api-documentation/pages/guides/postman/download/DummyCollection.zip)

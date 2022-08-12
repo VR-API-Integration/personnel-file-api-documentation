@@ -1,6 +1,6 @@
-# Welcome to File API documentation GitHub
+# Welcome to Youforce API documentation GitHub
 
-This repository contains the documentation site of File API.
+This repository contains the documentation site of Youforce API.
 
 The documentation of the original Jekyll template is in this [link](https://idratherbewriting.com/documentation-theme-jekyll/index.html).
 

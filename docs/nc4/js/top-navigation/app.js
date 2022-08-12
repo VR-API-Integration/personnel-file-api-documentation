@@ -367,7 +367,7 @@ var options = {
     icons: [
         // {
         //     title: 'ICON_USER',
-        //     css: 'vismaicon-user', 
+        //     css: 'vismaicon-user',
         //     onClickCallback: function () {
         //         setAction('Clicked on Chat');
         //     },
@@ -416,7 +416,7 @@ var data = {
     {
         id: 12,
         href: '#',
-        name: 'File API Documentation',
+        name: 'Youforce API Documentation',
         logoUrl: 'https://ux.visma.com/NC4-Beta/development/documentation/assets/img/apps/InSchool-48.png',
         selected: true
     },
