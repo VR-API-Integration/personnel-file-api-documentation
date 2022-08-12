@@ -1,0 +1,69 @@
+
+//Progress bar general style
+.progress {
+    overflow: visible;
+    position: relative;
+    height: rem(20px);
+    margin-bottom: rem(32px);
+
+    vertical-align: middle;
+
+    border-radius: rem(10px);
+    background: var(--progress-bar-wrapper-bg);
+
+    .progress-bar {
+        width: 0%;
+        height: rem(20px);
+        padding-right: 0;
+
+        color: transparent;
+        text-align: right;
+        font-weight: $normal;
+
+        border-radius: rem(10px);
+        background-color: var(--progress-bar-bg);
+        box-shadow: $shadow-20 var(--progress-bar-shadow-color);
+        transition: width .6s ease;
+    }
+
+    .progress-label {
+        overflow: hidden;
+        display: block;
+        position: relative;
+        padding-right: rem(32px);
+        top: rem(8px);
+
+        color: var(--progress-bar-label);
+        line-height: rem(16px);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .percentage {
+        position: absolute;
+        top: rem(28px);
+        right: 0;
+        color: var(--progress-bar-label);
+        z-index: 1;
+    }
+
+    &.progress-xs {
+        height: rem(5px);
+        border-radius: rem(3px);
+
+        .progress-bar { height: rem(5px); }
+        .percentage { top: rem(13px); }
+    }
+
+    &.progress-sm {
+        height: rem(10px);
+        border-radius: rem(5px);
+
+        .progress-bar { height: rem(10px); }
+        .percentage { top: rem(18px); }
+    }
+
+    .progress-bar[aria-valuenow="0"] { min-width: 0; }
+}
+
+

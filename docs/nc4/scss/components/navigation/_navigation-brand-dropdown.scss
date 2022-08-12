@@ -1,0 +1,136 @@
+
+// Top navigation - Product dropdown area
+
+.navbar-default,
+.navbar-secondary {
+    .navbar-header {
+        .navbar-brand {
+            > .dropdown-toggle { padding: rem(10px) rem(40px) rem(10px) $spacing-16; }
+
+            .dropdown-menu {
+                top: 100%;
+                padding: 0;
+                margin-top: rem(-1px);
+                z-index: $zindex-navbar-dropdown;
+
+                > li {
+                    overflow: visible;
+
+                    > a {
+                        border-top: rem(1px) solid var(--navigation-default-dropdown-divider-color-strong);
+                        font: $font-md;
+                        color: var(--navigation-default-dropdown-text-color);
+                        padding: 0 $spacing-16 0 $spacing-16;
+                        min-height: rem(64px);
+                        display: inline-flex;
+                        align-items: center;
+
+                        img { 
+                            margin-right: $spacing-16; 
+                            height: rem(48px);
+                            width: rem(48px);
+                        }
+
+                        > span {
+                            display: block;
+                            width: auto;
+                            white-space: normal;
+                        }
+
+                        &.active {
+                            background-color: var(--module-container-active-bg-color);
+                            position: relative;
+                            overflow: visible;
+
+                            &::before {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                width: rem(6px);
+                                height: calc(#{'100% + ' rem(2px)});
+                                left: 0;
+                                top: rem(-1px);
+                                background-color: var(--module-container-active-before-color);
+                            }
+                        }
+
+                        &:focus { 
+                            box-shadow: none; 
+                            outline: rem(1px) solid $primary-blue;
+                        }
+                    }
+
+                    .badge {
+                        position: absolute;
+                        right: rem(26px);
+                        top:rem(20px);
+                    }
+                }
+            }
+            
+            &.open {
+                .dropdown-toggle {
+                    background-color: var(--navigation-default-item-dropdown-open-bg);
+                    color: var(--titles-font-color);
+
+                    .caret { 
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navbar-default,
+.navbar-secondary {
+    &.navbar.is-mobile {
+        .navbar-collapse{
+            .first-level {
+                .menudrop {
+                    &.open {
+                        > .dropdown-menu {
+                            .navbar-brand {
+                                .dropped-apps-toggle {
+                                    display: block;
+                                    color: var(--anchor-color);
+                                    padding-left: rem(50px);
+                                    position: relative;
+                                    box-shadow: none;
+
+                                    > .caret {
+                                        background-color: var(--caret-primary-bg);
+                                        left: rem(27px);
+                                        top: rem(25px);
+                                        transform: rotate(90deg);
+                                        width: rem(11px);
+                                        height: rem(11px);
+                                    }
+                                }
+                                
+                                &.is-open {
+                                    .dropped-apps-toggle {
+                                        padding-left: rem(30px);
+
+                                        > .caret {
+                                            transform: rotate(270deg);
+                                            position: relative;
+                                            left: auto;
+                                            top: 0;
+                                            right: rem(-15px);
+                                        }
+                                    }
+                                }
+
+                                .dropdown-menu {
+                                    li.active { display: none; }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

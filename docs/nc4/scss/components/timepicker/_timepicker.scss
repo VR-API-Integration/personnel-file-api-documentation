@@ -1,0 +1,79 @@
+// Timepicker style
+.timepicker-wrapper {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+
+    .timepicker-btn {
+        left: rem(-31px);
+        z-index: 3;
+        border: 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: calc(#{$input-btn-height - rem(2px)});
+        height: calc(#{$input-btn-height - rem(2px)});
+        margin: 0;
+        padding: 0;
+        outline: none;
+        border-radius: 0;
+        border: rem(1px) solid transparent;
+        background: transparent;
+        box-shadow: none;
+
+        &:focus {
+            outline: none;
+            border-color: var(--input-focus-border-color);
+            box-shadow: 0 0 0 rem(1px) var(--input-focus-border-color);
+        }
+    }
+    
+    .dropdown-menu {
+        max-height: rem(216px);
+        overflow: auto;
+        max-width: rem(128px);
+
+        ul {
+            padding: 0; 
+            margin: 0; 
+
+            .dropdown-item {
+                display: flex;
+                flex: none;
+                overflow: hidden;
+                cursor: pointer;
+                width: 100%;
+                padding: rem(6px) rem(16px);
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                color: var(--dropdown-menu-text-color);
+                line-height: 1.2;
+                background-color: var(--dropdown-menu-bg);
+
+                &:hover {
+                    background-color: var(--module-container-hover-bg-color);
+                } 
+
+                &.focus,
+                &:focus {
+                    outline: rem(2px) solid var(--input-focus-border-color);
+                    outline-offset: rem(-2px);
+                    box-shadow: none;
+                }
+
+                &.selected {
+                    box-shadow: inset rem(5px) 0 0 0 var(--table-selected-border-color);
+                }
+            }
+        }
+    }
+}
+
+input.timepicker {
+    max-width: rem(128px);
+
+    &,
+    &.form-control { padding-right: $spacing-24; }
+}

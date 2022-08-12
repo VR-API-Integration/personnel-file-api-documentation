@@ -1,0 +1,53 @@
+// Cards list - .card-list-default
+
+.card-list-default {
+    .card-list-item {
+        background-color: var(--module-container-bg-color);
+        box-shadow: var(--module-container-shadow);
+        border-radius: $border-radius-10;
+        padding: rem(6px) 0;
+
+        &:before {
+            content:'';
+            width: rem(5px);
+            height: 100%;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: var(--module-container-active-before-color);
+        }
+
+        > * {
+            padding: rem(6px) rem(24px);
+        }
+
+        .date {
+            text-align: center;
+            line-height: 1.2;
+            position: relative;
+            color: var(--card-list-text-color);
+            border-width: 0 rem(1px);
+            border-style: solid;
+            border-color: var(--module-container-divider);
+
+            &:first-child { border-width: 0 rem(1px) 0 0; }
+
+            &:last-child { border-width: 0 0 0 rem(1px); }
+
+            > *:not(span) {
+                color: var(--card-list-text-color);
+            }
+
+            span {
+                font-size: $font-size-xl;
+                display: block;
+                color: var(--body-font-color);
+            }
+        }
+
+        .divider {
+            border-color: var(--module-container-divider);
+        }
+    }
+}

@@ -1,0 +1,69 @@
+// Mixins
+@import '../../utilities/carets';
+
+//===
+.breadcrumb {
+    padding: 0 $spacing-16;
+
+    background: transparent;
+
+    li {
+        display: inline-block;
+        font: $font-sm;
+
+        > a {
+            color: var(--anchor-color);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &.active {
+            &, & > a {
+                color: var(--anchor-selected-color);
+            }
+
+            > a {
+                pointer-events: none;
+                cursor: default;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        &.disabled {
+            color: var(--anchor-disabled-color);
+
+            > a {
+                &, &:hover &:focus {
+                    cursor: default;
+                    outline: none;
+                    color: var(--anchor-disabled-color);
+                    text-decoration: none;
+                }
+            }
+
+            + li::before {
+                background-color: var(--anchor-disabled-color);
+            }
+        }
+
+        + li::before {
+            display: inline-block;
+            position: relative;
+            content: '';
+            top: rem(4px);
+            padding: 0;
+            margin: 0 $spacing-8; 
+            @include caret-small-primary();
+
+            background-color: var(--anchor-selected-color);
+            transform: rotate(-90deg);
+            transform-origin: 0% 0%;
+        }
+    }
+}

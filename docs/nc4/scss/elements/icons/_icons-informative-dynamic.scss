@@ -1,0 +1,102 @@
+/**** Informative icons ****/
+.vismaicon.vismaicon-dynamic {
+    &.vismaicon-filled {
+        &:before {
+            mask-image: url('#{$icons-path}/informative-filled-icons-dynamic/24_informative_icons.svg');
+            -webkit-mask-image: url('#{$icons-path}/informative-filled-icons-dynamic/24_informative_icons.svg');
+        }
+
+        &.vismaicon-sm:before {
+            mask-image: url('#{$icons-path}/informative-filled-icons-dynamic/16_informative_icons.svg');
+            -webkit-mask-image: url('#{$icons-path}/informative-filled-icons-dynamic/16_informative_icons.svg');
+        }
+
+        &.vismaicon-lg:before {
+            width: rem(50px);
+            height: rem(50px);
+            mask-image: url('#{$icons-path}/informative-filled-icons-dynamic/50_informative_icons.svg');
+            -webkit-mask-image: url('#{$icons-path}/informative-filled-icons-dynamic/50_informative_icons.svg');
+        }
+    }
+}
+
+.vismaicon-error.vismaicon-filled {
+    &:before {
+        mask-position: rem(-29px) 0;
+        -webkit-mask-position: rem(-29px) 0;
+        background-color: var(--icon-informative-error-bg);
+    }
+
+    &.vismaicon-lg:before {
+        mask-position: rem(-55px) 0;
+        -webkit-mask-position: rem(-55px) 0;
+    }
+    &.vismaicon-sm:before {
+        mask-position: rem(-21px) 0;
+        -webkit-mask-position: rem(-21px) 0;
+    }
+}
+
+.vismaicon-warning.vismaicon-filled {
+    &:before {
+        mask-position: rem(-58px) 0;
+        -webkit-mask-position: rem(-58px) 0;
+        background-color: var(--icon-informative-warning-bg);
+    }
+    &.vismaicon-lg:before {
+        mask-position: rem(-110px) 0;
+        -webkit-mask-position: rem(-110px) 0;
+    }
+    &.vismaicon-sm:before {
+        mask-position: rem(-42px) 0;
+        -webkit-mask-position: rem(-42px) 0;
+    }
+}
+
+.vismaicon-info.vismaicon-filled:not(.vismaicon-menu) {
+    &:before {
+        mask-position: rem(-87px) 0;
+        -webkit-mask-position: rem(-87px) 0;
+        background-color: var(--icon-informative-info-bg);
+    }
+    &.vismaicon-lg:before {
+        mask-position: rem(-165px) 0;
+        -webkit-mask-position: rem(-165px) 0;
+    }
+    &.vismaicon-sm:before {
+        mask-position: rem(-63px) 0;
+        -webkit-mask-position: rem(-63px) 0;
+    }
+}
+
+.vismaicon-success.vismaicon-filled {
+    &:before {
+        mask-position: 0 0;
+        -webkit-mask-position: 0 0;
+        background-color: var(--icon-informative-success-bg);
+    }
+    &.vismaicon-lg:before {
+        mask-position: 0 0;
+        -webkit-mask-position: 0 0;
+    }
+    &.vismaicon-sm:before {
+        mask-position: 0 0;
+        -webkit-mask-position: 0 0;
+    }
+}
+
+.vismaicon-help.vismaicon-filled {
+    &:before {
+        mask-position: rem(-116px) 0;
+        -webkit-mask-position: rem(-116px) 0;
+        background-color: var(--icon-informative-help-bg);
+    }
+    &.vismaicon-lg:before {
+        mask-position: rem(-220px) 0;
+        -webkit-mask-position: rem(-220px) 0;
+    }
+    &.vismaicon-sm:before {
+        mask-position: rem(-83px) 0;
+        -webkit-mask-position: rem(-83px) 0;
+    }
+}

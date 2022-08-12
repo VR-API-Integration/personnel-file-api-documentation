@@ -1,0 +1,398 @@
+
+/*
+ * Login page
+ */
+
+.login-page,
+.login-page-secondary {
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+
+    .login-box {
+        width: rem(560px);
+        margin: auto;
+        background: var(--modal-bg);
+        border-radius: $border-radius-20;
+        padding: $spacing-64 rem(112px) $spacing-32;
+        position: relative;
+
+        @media (max-width: $screen-sm-min) {
+            width: 90%;
+            padding-left: $spacing-40;
+            padding-right: $spacing-40;
+        }
+
+        .login-header {
+            text-align: center;
+
+            img { 
+                margin: 0 auto $spacing-8; 
+
+                @media (max-width: $screen-lg-min) {
+                    max-width: rem(72px);
+                }
+            }
+
+            h1 {
+                font-family: $font-family-secondary;
+                font-weight: $thin;
+                font-size: rem(30px);
+                color: var(--anchor-color);
+                margin-bottom: $spacing-32;
+
+                @media (max-width: $screen-lg-min) {
+                    font-size: rem(26px);
+                    margin-bottom: $spacing-24;
+                }
+            }
+        }
+
+        .login-content {
+            .checkbox {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            input {
+                &, &.form-control {
+                    &[type="text"],
+                    &[type="password"],
+                    &[type="datetime"],
+                    &[type="datetime-local"],
+                    &[type="date"],
+                    &[type="month"],
+                    &[type="time"],
+                    &[type="week"],
+                    &[type="number"],
+                    &[type="email"],
+                    &[type="url"],
+                    &[type="search"],
+                    &[type="tel"],
+                    &[type="color"] {
+                        height: $input-btn-height-lg;
+                        border-radius: $border-radius-5;
+                    }
+
+                    &[type="password"] {
+                        padding-right: $spacing-48;
+                        background: {
+                            image: var(--password-field-icon);
+                            repeat: no-repeat;
+                            position: top rem(15px) right $spacing-16;
+                        }
+                        
+                    }
+                }
+            }
+
+            .form-group.required > a:before, 
+            .form-group.required > label:before { display: none; }
+
+            .form-group.required {
+                a:before,
+                label:before { display: none; }
+
+                > label { padding-left: 0; }
+            }
+
+            .btn:not(.btn-link) {
+                width: 100%;
+                margin-bottom: 0;
+                height: $input-btn-height-lg;
+                font-size: $font-size-md;
+                font-weight: $semibold;
+
+                &.btn-google {
+                    font-size: $font-size-base;
+                    font-weight: $font-weight-base;
+                    height: $input-btn-height;
+                }
+            }
+
+            .alert {
+                padding: $spacing-16 $spacing-16 $spacing-16 $spacing-48;
+   
+                @media (max-width: $screen-lg-min) {
+                    margin-bottom: $spacing-16;
+                }
+
+                &::before { top: rem(19px); }
+            }
+
+            .tooltip.tooltip-password-validation {
+                min-width: rem(252px);
+                text-align: left;
+
+                @media (max-width: $screen-md-min) {
+                    position: relative;
+                    display: block;
+                    top: auto;
+                    left: auto;
+                    bottom: auto;
+                    margin-top: rem(12px);
+                    max-width: 100%;
+                    min-width: 1%;
+                    white-space: normal;
+
+                    &:before {
+                        top: rem(-17px);
+                        left: calc(#{'50% - ' rem(6px)});
+                        -webkit-transform: rotate(90deg);
+                        transform: rotate(90deg);
+                    }
+                }
+
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: rem(5px);
+
+                    li {
+                        padding-bottom: rem(10px);
+                        padding-left: rem(30px);
+
+                        &[class*="password-"] {
+                            position: relative;
+
+                            &::before {
+                                content:'';
+                                width: rem(16px);
+                                height: rem(16px);
+                                display: block;
+                                position: absolute;
+                                left: 0;
+                                top: rem(2px);
+                                mask: url('#{$icons-path}/informative-filled-icons/16_informative_icons.svg');
+                                -webkit-mask: url('#{$icons-path}/informative-filled-icons/16_informative_icons.svg');
+                                mask-repeat: no-repeat;
+                                -webkit-mask-repeat: no-repeat;
+                            }
+                        }
+
+                        &.password-success:before {
+                            mask-position: 0 0; 
+                            -webkit-mask-position: 0 0; 
+                            background-color: var(--icon-informative-success-bg);
+                        }
+
+                        &.password-error:before {
+                            mask-position: rem(-21px) 0; 
+                            -webkit-mask-position: rem(-21px) 0; 
+                            background-color: var(--icon-informative-error-bg);
+                        }
+
+                        &:last-child { padding-bottom: 0; }
+                    }
+                }
+            }
+
+            .login-divider {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                margin: rem(50px) 0 rem(35px);
+
+                @media (max-width: $screen-xl-min) {
+                    margin: rem(24px) 0;
+                }
+    
+                &::before,
+                &::after {
+                    content: '';
+                    flex: 1;
+                    border-bottom: rem(1px) solid var(--divider-default-color);
+                }
+    
+                &::before {
+                    margin-right: rem(16px);
+                }
+    
+                &::after {
+                    margin-left: rem(16px);
+                }
+            }
+        }
+    }
+
+    .login-footer {
+        text-align: center;
+        margin-top: rem(80px);
+
+        @media (max-width: $screen-lg-min) {
+            margin-top: rem(36px);
+        }
+        
+        .logo-footer {
+            background: var(--visma-logo);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: rem(112px);
+            display: inline-block;
+            height: rem(21px);
+            text-indent: -9999px;
+        }
+    }
+
+    .login-footer-alert,
+    .cookies-alert {
+        background: var(--cookies-alert-bg);
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        align-items: center;
+        padding: rem(15px) rem(60px);
+        width: 100%;
+        left: 0;
+        display: flex;
+        margin: 0;
+        min-height: rem(60px);
+
+        @media (max-width: $screen-sm-min) {
+            padding-left: rem(30px);
+            padding-right: rem(30px);
+        }
+
+        &::before { display: none; }
+
+        p { margin: 0; }
+    }
+
+    .cookies-alert {
+        color: var(--cookies-alert-text);
+        top: 0;
+        position: absolute;
+        z-index: 1;
+
+        @media (max-width: $screen-md-min) {
+            padding-bottom: rem(60px);
+        }
+
+        .vismaicon-info { 
+            display: block; 
+            top: auto;
+            margin-right: rem(18px);
+        }
+
+        a:not(.btn) { 
+            margin-right: rem(40px); 
+            padding: 0 rem(5px);
+
+            @media (max-width: $screen-md-min) {
+                padding: 0;
+            }
+        }
+
+        .btn { 
+            min-width: rem(100px); 
+
+            @media (max-width: $screen-md-min) {
+                position: absolute;
+                bottom: rem(15px);
+            }
+        }
+    }
+
+    .login-footer-alert {
+        color: var(--cookies-alert-text);
+        bottom: 0;
+        position: relative;
+        width: 100%;
+
+        @media (max-width: $screen-sm-min) {
+            justify-content: center;
+        }
+
+        > ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+
+            > li {
+                padding: 0 rem(16px);
+                line-height: 1;
+                margin: 0;
+
+                @media (max-width: $screen-sm-min) {
+                    padding: 0 rem(8px);
+                }
+
+                &:last-child { padding-right: 0; }
+                &:first-child { padding-left: 0; }
+
+                > a {
+                    text-decoration: none;
+                    padding-top: 0;
+                    padding-left: 0;
+                    padding-bottom: 0;
+
+                    &.dropdown-toggle {
+                        &:before {
+                            top: rem(8px);
+                            transform: none;
+                        }
+                    }
+                }
+
+                .dropdown-menu {
+                    border-radius: $border-radius-10;
+                    bottom: calc(#{'100% - ' rem(-40px)});
+                    left: calc(#{'100% - ' rem(115px)});
+                    min-width: rem(150px);
+                    background-color: var(--module-container-bg-color);
+
+                    &:before {
+                        display: block;
+                        position: absolute;
+                        content: '';
+                        width: rem(12px);
+                        height: rem(26px);
+                        bottom: rem(-17px);
+                        left: calc(#{'50% - ' rem(13px)});
+                        -webkit-transform: rotate(-90deg);
+                        transform: rotate(-90deg);
+                
+                        mask: url(#{$image-path}/popover-tip.svg);
+                        -webkit-mask: url(#{$image-path}/popover-tip.svg);
+                        mask-position: 0 0;
+                        -webkit-mask-position: 0 0;
+                        mask-repeat: no-repeat;
+                        -webkit-mask-repeat: no-repeat;
+                        
+                        background-color: var(--module-container-bg-color);
+                    }
+
+                    > li {
+                        background-color: var(--module-container-bg-color);
+                        
+                        > a {
+                            color: var(--cookies-alert-text);
+                            padding-right: rem(35px);
+                            display: block;
+                            position: relative;
+
+                            &.active {
+                                &:after {
+                                    display: block;
+                                    position: absolute;
+                                    content: '';
+                                    width: rem(16px);
+                                    height: rem(16px);
+                                    mask: url(#{$image-path}/wizard-checkmark-dark.svg);
+                                    -webkit-mask: url(#{$image-path}/wizard-checkmark-dark.svg);
+                                    mask-repeat: no-repeat;
+                                    -webkit-mask-repeat: no-repeat;
+                                    background-color: var(--wizard-selected-border-color);
+                                    right: rem(17px);
+                                    top: rem(6px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

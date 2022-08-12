@@ -1,0 +1,110 @@
+
+//Popover general style
+.popover {
+    display: none;
+    position: absolute;
+    width: 60vw;
+    max-width: rem(480px);
+    padding: rem(60px);
+    top: 0;
+    left: 0;
+
+    border-radius: $border-radius-10;
+    border: {
+        width: rem(1px);
+        style: solid;
+        color: var(--module-container-bg-color);
+    }
+
+    background-color: var(--module-container-bg-color);
+    box-shadow: var(--popover-shadow);
+
+    z-index: $zindex-popover;
+
+    @media (max-width: $screen-xs-max) {
+        padding: rem(30px);
+    }
+
+    &::before {
+        display: block;
+        position: absolute;
+        content: '';
+        width: rem(12px);
+        height: rem(26px);
+        top: calc(#{'50% - ' rem(13px)});
+        left: rem(-10px);
+
+        mask: url(#{$image-path}/popover-tip.svg);
+        -webkit-mask: url(#{$image-path}/popover-tip.svg);
+        mask-position: 0 0;
+        -webkit-mask-position: 0 0;
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+
+        background-color: var(--module-container-bg-color);
+    }
+
+    &.in, &.show {
+        display: block;
+    }
+
+    &.top,
+    &[data-popper-placement="top"] {
+        inset: auto auto rem(5px) rem(8px) !important;
+
+        &::before {
+            top: unset;
+            bottom: rem(-17px);
+            left: calc(#{'50% - ' rem(13px)});
+
+            transform: rotate(-90deg);
+        }
+    }
+
+    &.right,
+    &[data-popper-placement="right"] {
+        inset: 0 auto auto rem(5px) !important
+    }
+
+    &.bottom,
+    &[data-popper-placement="bottom"] {
+        inset: rem(5px) auto auto rem(5px) !important; 
+
+        &::before {
+            top: rem(-17px);
+            left: calc(#{'50% - ' rem(13px)});
+
+            transform: rotate(90deg);
+        }
+    }
+
+    &.left,
+    &[data-popper-placement="left"] {
+        inset: 0 rem(5px) auto auto i !important;
+        
+        &::before {
+            right: rem(-10px);
+            left: unset;
+
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.popover-header,
+.popover-title {
+    font-weight: $bold;
+}
+
+.popover-content {
+    p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.vismaicon[data-toggle="popover"],
+.vismaicon[data-bs-toggle="popover"] {
+    cursor: pointer;
+}

@@ -1,0 +1,52 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+<meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
+<title>{{ page.title }} | {{ site.site_title }}</title>
+
+<link rel="stylesheet" href="{{ "css/syntax.css" }}">
+
+
+<!--CAM <link rel="stylesheet" href="css/modern-business.css"> -->
+
+<!--CAM <link rel="stylesheet" href="css/boxshadowproperties.css"> -->
+<!-- most color styles are extracted out to here -->
+<!--CAM <link rel="stylesheet" href="css/theme-blue.css"> -->
+
+
+<link rel="stylesheet" href="assets/css/style.css" >
+<link rel="stylesheet" href="css/customstyles.css">
+
+<!-- Fonts - Open Sans -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>	
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+	
+<script src="{{ "js/customscripts.js" }}"> </script>	
+<script src="{{ "js/toc.js" }}"></script>
+	
+<script src="nc4/js/collapsible-list.js"></script>
+<script src="nc4/js/dropdowns.js"></script>
+<script src="nc4/js/tabdrop.js"></script>
+<script src="nc4/js/timepicker.js"></script>	
+
+<link rel="shortcut icon" href="{{ "./dist/img/favicons/visma-head.png"  }}">
+
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url }}">
+
+{% comment %} Copyright 2021 Google LLC {% endcomment %}

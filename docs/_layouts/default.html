@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="light-theme">
+  <head>
+    {% include head.html %}
+
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("table").addClass("table");
+        $("#tg-sb-link").click(function () {
+          $("#tg-sb-sidebar").toggle();
+          $("#tg-sb-content").toggleClass("col-md-9");
+          $("#tg-sb-content").toggleClass("col-md-12");
+          $("#tg-sb-icon").toggleClass("fa-toggle-on");
+          $("#tg-sb-icon").toggleClass("fa-toggle-off");
+        });
+      });
+    </script>
+    {% if page.datatable == true %}
+    <!-- Include the standard DataTables bits -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css"
+    />
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"
+    ></script>
+    <!-- First, this walks through the tables that occur between ...-begin
+         and ...-end and add the "datatable" class to them.
+         Then it invokes DataTable's standard initializer
+         Credit here: http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/
+      -->
+    <script>
+      $(document).ready(function () {
+        $("div.datatable-begin")
+          .nextUntil("div.datatable-end", "table")
+          .addClass("display");
+        $("table.display").DataTable({
+          paging: true,
+          stateSave: true,
+          searching: true,
+        });
+      });
+    </script>
+    {% endif %}
+
+    <script>
+      //== Show up the way the vertical navigation should work
+      // Collapse vertical nav sublevels on click and add active class on active items
+      $(document).ready(function () {
+        $(".vertical-nav > .nav > li:not(.show-nav) > a").on(
+          "click",
+          function (e) {
+            if ($(this).parent().hasClass("active")) {
+              $(this).parent().removeClass("active");
+            } else {
+              $(".vertical-nav li.active").removeClass("active");
+              $(this).parent().addClass("active");
+            }
+
+            if ($(".nav .nav > li").hasClass("active")) {
+              $(".vertical-nav > .nav > li.active").addClass("active-child");
+            } else {
+              $(".vertical-nav > .nav > li").removeClass("active-child");
+            }
+          }
+        );
+
+        $(".vertical-nav > .nav .nav > li > a").on("click", function (e) {
+          if ($(this).parent().hasClass("active")) {
+            $(this).parent().removeClass("active");
+          } else {
+            $(".vertical-nav > .nav .nav > li.active").removeClass("active");
+            $(this).parent().addClass("active");
+          }
+        });
+
+        // Hide/Show vertical menu
+        if ($(window).width() > 1280) {
+          $(".show-nav > a").click(function () {
+            var hidden = $(".vertical-nav").data("hidden");
+
+            if (hidden) {
+              $(".page-holder").removeClass("hidden-vert-menu");
+              $(".vertical-nav").removeClass("hidden-menu");
+            } else {
+              $(".page-holder").addClass("hidden-vert-menu");
+              $(".vertical-nav").addClass("hidden-menu");
+            }
+
+            $(".vertical-nav").data("hidden", !hidden);
+          });
+        } else {
+          $(".page-holder").addClass("hidden-vert-menu");
+          $(".vertical-nav").addClass("hidden-menu");
+
+          $(".show-nav > a").click(function () {
+            var hidden = $(".vertical-nav").data("hidden");
+
+            if (hidden) {
+              $(".page-holder").removeClass("hidden-vert-menu");
+              $(".vertical-nav").removeClass("hidden-menu");
+            } else {
+              $(".page-holder").addClass("hidden-vert-menu");
+              $(".vertical-nav").addClass("hidden-menu");
+            }
+
+            $(".vertical-nav").data("hidden", !hidden);
+          });
+        }
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        let copy = function (target) {
+          let textArea = document.createElement("textarea");
+          textArea.setAttribute("style", "width:1px;border:0;opacity:0;");
+          document.body.appendChild(textArea);
+          textArea.value = target.textContent;
+          textArea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textArea);
+        };
+
+        let pres = document.querySelectorAll("pre.highlight");
+        pres.forEach(function (pre) {
+          let button = document.createElement("button");
+          button.classList =
+            "copy-button vismaicon vismaicon-sm vismaicon-copy float-right";
+          pre.parentNode.insertBefore(button, pre);
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+            copy(pre.childNodes[0]);
+          });
+          let span = document.createElement("span");
+          span.textContent = "Copy";
+          button.appendChild(span);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    {% include topnav.html %}
+    <!-- Page Content -->
+    <div class="page-holder">
+      {% assign content_col_size = "col-md-12" %} {% unless page.hide_sidebar %}
+      <!-- Sidebar Column NC4 -->
+      <div class="vertical-nav">{% include sidebar.html %}</div>
+      {% assign content_col_size = "col-md-12" %} {% endunless %}
+
+      <!-- Content Column -->
+      <div class="container-fluid">
+        <div class="align-items-stretch panel">
+          <div class="panel-body">
+            <div class="row">
+              <div class="{{content_col_size}}" id="tg-sb-content">
+                {{content}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    <!-- <script src="nc4/js/top-navigation/nc4navigation.js"></script> -->
+    <!--<script src="nc4/js/top-navigation/app.js"></script>-->
+  </body>
+  {% if site.google_analytics %} {% include google_analytics.html %} {% endif %}
+</html>
+
+{% comment %} Copyright 2021 Google LLC {% endcomment %}

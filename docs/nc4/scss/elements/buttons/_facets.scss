@@ -1,0 +1,216 @@
+
+// local vars
+$facet-gap: $spacing-16;
+$facet-lg-gap: $spacing-16;
+
+$facet-inner-space: ($spacing-8 - rem(1px)) $spacing-16;
+$facet-lg-inner-space: ($spacing-12 - rem(1px)) $spacing-24;
+
+$facet-line-height: $spacing-16;
+$facet-lg-line-height: $spacing-24;
+
+
+// Button pills/facets
+.nav {
+    //
+    &.nav-pills {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: $facet-gap;
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        li {
+            display: flex;
+        }
+
+        //## Base style for a button pills
+        a, button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            // height: $input-btn-height;
+            padding: $facet-inner-space;
+            margin: 0;
+            min-width: rem(100px);
+            text-align: center;
+
+            color: var(--button-text-color);
+            font: {
+                size: $font-size-sm;
+                weight: $normal;
+            }
+            line-height: $facet-line-height; // 1.14286; // 1.6rem;
+            text-decoration: none;
+
+            outline: 0;
+            border: {
+                radius: $border-radius-16;
+                width: rem(1px);
+                style: solid;
+                color: var(--button-border-color);
+            }
+            background-color: var(--button-bg);
+            box-shadow: $shadow-20 var(--button-shadow-color);
+
+            //### pills hover state
+            &:hover {
+                border-color: var(--button-hover-border-color);
+                background-color: var(--button-hover-bg);
+                box-shadow: $shadow-20 var(--button-hover-shadow-color);
+            }
+
+            //### pills focus state
+            &:focus {
+                border-color: var(--button-focus-border-color);
+                box-shadow: inset 0 0 0 rem(1px) var(--button-focus-border-color), $shadow-20 var(--button-focus-shadow-color);
+            }
+
+            //### pills active/pressed state
+            &:active {
+                &, &.active {
+                    border-color: var(--button-active-border-color);
+                    background-color: var(--button-active-bg);
+                    box-shadow: none;
+                }
+            }
+        }
+
+        //### pills active/selected state
+        .active a, a.active,
+        .active button,
+        button.active {
+            // pointer-events: none;
+            // cursor: default;
+            border-color: var(--button-active-border-color);
+            background-color: var(--button-selected-bg);
+            box-shadow: none;
+
+            //### pills active/selected and hover state
+            &:hover {
+                border-color: var(--button-hover-border-color);
+                background-color: var(--button-hover-bg);
+            }
+
+            //### pills active/selected and pressed state
+            &:active {
+                border-color: var(--button-active-border-color);
+                background-color: var(--button-active-bg);
+                box-shadow: none;
+            }
+
+            //### pills active/selected focus and not pressed state
+            &:focus:not(:active) {
+                border-color: var(--button-focus-border-color);
+                box-shadow: inset 0 0 0 rem(1px) var(--button-focus-border-color);
+            }
+        }
+
+        //### pills disabled state
+        .disabled a,
+        a.disabled,
+        .disabled button,
+        button.disabled,
+        button:disabled {
+            cursor: default;
+            pointer-events: none;
+
+            color: var(--button-disabled-text-color);
+
+            border-color: var(--button-disabled-border-color);
+            background-color: var(--button-disabled-bg);
+            box-shadow: none;
+        }
+
+
+        //# Alternative styling for pill/facet buttons
+        &.nav-pills-primary {
+            .active a,
+            a.active,
+            .active button,
+            button.active {
+                color: var(--button-primary-text-color);
+
+                border-color: var(--button-primary-border-color);
+                background-color: var(--button-primary-bg);
+
+                //### pills active/selected and hover state
+                &:hover {
+                    border-color: var(--button-primary-hover-border-color);
+                    background-color: var(--button-primary-hover-bg);
+                }
+
+                //### pills active/selected focus and not pressed state
+                &:focus:not(:active) {
+                    border-color: var(--button-primary-focus-border-color);
+                    box-shadow: inset 0 0 0 rem(1px) var(--button-primary-focus-border-color), inset 0 0 0 rem(2px) var(--button-primary-focus-inner-shadow-color), $shadow-20 var(--button-focus-shadow-color);
+
+                    //### pills active/selected and hover state
+                    &:hover {
+                        box-shadow: inset 0 0 0 rem(1px) var(--button-primary-focus-border-color)
+                    }
+                }
+
+                //### pills active/selected and pressed state
+                &:active {
+                    color: var(--button-text-color);
+                    border-color: var(--button-active-border-color);
+                    background-color: var(--button-active-bg);
+                    box-shadow: none;
+                }
+
+                &:disabled, &.disabled {
+                    color: var(--button-disabled-text-color);
+
+                    border-color: var(--button-disabled-border-color);
+                    background-color: var(--button-disabled-bg);
+                }
+            }
+        }
+
+
+        //# Larger styling for pill/facet buttons
+        &.nav-pills-lg {
+            gap: $facet-lg-gap;
+
+            a, button {
+                padding: $facet-lg-inner-space;
+                border-radius: $border-radius-24;
+                line-height: $facet-lg-line-height;
+            }
+        }
+
+
+        //# Disabled state for all pills in wrapper ('.nav.nav-pills')
+        :disabled &, .disabled &,
+        &:disabled, &.disabled {
+            a, button {
+                cursor: default;
+                pointer-events: none;
+
+                color: var(--button-disabled-text-color);
+
+                border-color: var(--button-disabled-border-color);
+                background-color: var(--button-disabled-bg);
+                box-shadow: none;
+            }
+
+            //# Alternative styling for pill/facet buttons
+            &.nav-pills-primary {
+                .active a,
+                a.active,
+                .active button,
+                button.active {
+                    color: var(--button-disabled-text-color);
+
+                    border-color: var(--button-disabled-border-color);
+                    background-color: var(--button-disabled-bg);
+                }
+            }
+        }
+    }
+}

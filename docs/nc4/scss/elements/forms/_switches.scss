@@ -1,0 +1,377 @@
+
+// Toggle/Switch button
+.switch {
+    display: inline-block;
+    position: relative;
+    content: "";
+    min-height: rem(16px);
+    margin: 0 $spacing-8 $spacing-8 0;
+    padding: 0;
+
+    color: var(--switches-text-color);
+    font-size: $font-size-sm;
+    line-height: 1;
+
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    // hide the input, keep for functionality
+    input {
+        &[type="checkbox"],
+        &[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: default;
+            width: 0;
+            height: 0;
+        }
+
+        &:focus {
+            ~ .togglemark {
+                &::before {
+                    box-shadow: 0 0 0 rem(1px) var(--switches-focus-border-color), inset 0 0 0 rem(1px) var(--switches-focus-border-color);
+                }
+            }
+        }
+
+        &:checked, &.checked {
+            ~ .togglemark {
+                &::before {
+                    color: var(--switches-checked-text-color);
+                    text-align: left;
+
+                    background-color: var(--switches-checked-bg);
+                    box-shadow: none;
+                }
+
+                &::after {
+                    left: rem(20px);
+                }
+
+                &:hover {
+                    &::before {
+                        background-color: var(--switches-checked-hover-bg);
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            &:focus {
+                ~ .togglemark {
+                    &::before {
+                        box-shadow: 0 0 0 rem(1px) var(--switches-focus-border-color), inset 0 0 0 rem(1px) var(--switches-focus-border-color), inset 0 0 0 rem(2px) var(--switches-focus-inner-border-color);
+                    }
+                }
+            }
+        }
+    }
+
+    // define styles for the visual que of the switch/toggle button
+    .togglemark {
+        position: relative;
+        cursor: pointer;
+        padding-left: $spacing-40;
+
+        &::before, &::after {
+            position: absolute;
+            display: block;
+            content: '';
+        }
+
+        &::before {
+            width: rem(32px);
+            height: rem(16px);
+            top: $spacing-2;
+            left: $spacing-2;
+
+            color: var(--switches-text-color);
+            font: {
+                size: $font-xs;
+                weight: $bold;
+            }
+            text-align: right;
+
+            border-radius: $border-radius-10;
+            background-color: var(--switches-bg);
+            box-shadow: inset 0 0 0 rem(1px) var(--switches-border-color);
+
+            transition: background-color 0.12s ease-in-out;
+        }
+
+        &::after {
+            width: rem(12px);
+            height: rem(12px);
+            top: $spacing-4;
+            left: $spacing-4;
+
+            border-radius: $border-radius-circle;
+            background-color: var(--switches-togglemark-bg);
+            box-shadow: $shadow-20 var(--switches-togglemark-shadow-color);
+
+            transition: left 0.09s ease-in-out;
+        }
+
+        &:hover {
+            box-shadow: none;
+
+            &::before {
+                background-color: var(--switches-hover-bg);
+            }
+        }
+    }
+
+    // define the styles for the large/biger version of the switch/toggle button
+    &.switch-lg {
+        line-height: 1.714;
+        //min-height: rem(24px);
+
+        .togglemark {
+            padding-left: rem(56px);
+
+            &::before {
+                width: rem(48px);
+                height: rem(24px);
+                top: rem(-3px);
+
+                border-radius: rem(24px);
+            }
+
+            &::after {
+                width: rem(16px);
+                height: rem(16px);
+                top: rem(1px);
+                left: rem(7px);
+                border-radius: rem(16px);
+            }
+        }
+
+        input {
+            &:checked, &.checked {
+                ~ .togglemark {
+                    &::after {
+                        left: rem(29px);
+                    }
+                }
+            }
+        }
+    }
+
+    // define the styles for the version with "ON"/"OFF" text
+    &.switch-label {
+        line-height: 1.714;
+
+        .togglemark {
+            padding-left: rem(72px);
+
+            &::before {
+                box-sizing: border-box;
+                content: 'OFF';
+                width: rem(60px);
+                height: rem(24px);
+                top: rem(-3px);
+                padding: 0 rem(10px);
+
+                font-weight: $font-weight-base;
+                line-height: 1.6;
+                text-indent: 0;
+
+                border-radius: rem(24px);
+            }
+
+            &::after {
+                width: rem(16px);
+                height: rem(16px);
+                top: rem(1px);
+                left: rem(7px);
+                border-radius: rem(16px);
+            }
+        }
+
+        input {
+            &:checked, &.checked {
+                ~ .togglemark {
+                    &::before {
+                        content: 'ON';
+                    }
+
+                    &::after {
+                        left: rem(41px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Disabled style of the switch/toggle button
+.disabled .switch input, :disabled .switch input,
+.switch.disabled input, .switch:disabled input,
+.switch input.disabled,
+.switch input:disabled {
+    &[type="checkbox"],
+    &[type="radio"] {
+        ~ .togglemark {
+            cursor: default;
+            pointer-events: none;
+            color: var(--input-disabled-text-color);
+
+            &::before {
+                color: var(--switches-disabled-text-color);
+
+                background-color: var(--switches-disabled-bg);
+                box-shadow: none;
+            }
+
+            &::after {
+                background-color: var(--switches-disabled-togglemark-bg);
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+
+// Switcher from light to dark mode
+.light-dark-toggle {
+    &.switch { 
+        &.switch-label {
+            margin: 0;
+            padding: rem(15px) rem(5px) rem(15px) rem(25px);
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+
+            b { 
+                font-size: $font-size-base; 
+            }
+
+            .togglemark {
+                margin: 0 $spacing-16;
+                overflow: hidden;
+                width: rem(48px);
+                min-width: rem(48px);
+                height: rem(24px);
+                padding: 0;
+                display: inline-flex;
+                border-radius: rem(12px);
+                
+                &, &:hover {
+                    background-image: linear-gradient(360deg, #52B9FF 0%, #1C98EB 100%);
+                    transition: background-image 0.3s ease-in-out;
+
+                    &::before,
+                    &::after {
+                        content: '';  
+                        width: rem(16px) !important;
+                        height: rem(16px) !important;
+                        top: rem(4px);
+                    }
+
+                    &::before {
+                        width: rem(50px);
+                        padding: 0 rem(6px) 0 rem(6px);
+                        background: radial-gradient(62.5% 62.5% at 37.5% 37.5%, #FED177 0%, #FEC044 100%);
+                        box-shadow: 0 rem(2px) rem(4px) rgba(0, 0, 0, 0.15);
+                        left: rem(4px);
+                        transition: left 0.3s ease-in-out;
+                    }
+
+                    &::after {
+                        background: linear-gradient(to bottom, #1B3D54 0%, #224157 100%);
+                        box-shadow: none;
+                        top: rem(2px);
+                        left: rem(2px);
+                        transition: left 0.3s ease-in-out, opacity 0.02s ease-in-out;
+                        opacity: 0;
+                    }
+
+                    .details {
+                        &:before, 
+                        &:after { 
+                            content:''; 
+                            display: block;
+                            position: absolute;
+                            z-index: 1;
+                            top: rem(3px);
+                        }
+
+                        &:before { // Clouds
+                            background-image: url(#{$image-path}/switcher-clouds.svg); 
+                            width: rem(48px);
+                            height: rem(24px); 
+                            left: rem(4px);
+                            top: 0;
+                            opacity: 1;
+                            transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                        }
+
+                        &:after { // Stars
+                            background-image: url(#{$image-path}/switcher-stars.svg); 
+                            width: rem(22px);
+                            height: rem(8px);
+                            left: rem(8px);
+                            opacity: 0;
+                            transition: opacity 0.3s ease-in-out;
+                        }
+                    }
+                }
+            }
+    
+            input {
+                &:checked, &.checked {
+                    ~ .togglemark {
+                        background-image: linear-gradient(to bottom, #193C54 0%, #244358 100%);
+                        transition: background-image 0.3s ease-in-out;
+
+                        &::before,
+                        &::after { content:''; }
+
+                        &::before {
+                            left: rem(26px);
+                            box-shadow: 0 rem(2px) rem(4px) rgba(0, 0, 0, 0.15);
+                            transition: left 0.3s ease-in-out;
+                        }
+
+                        &::after {
+                            left: rem(22px);
+                            opacity: 1;
+                            transition: left 0.3s ease-in-out, opacity 0.02s ease-in-out;
+                        }
+
+                        .details {
+                            &:before { 
+                                left: rem(-23px);
+                                opacity: 0.4;
+                                transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                            }
+
+                            &:after { 
+                                opacity: 1;
+                                transition: opacity 0.3s ease-in-out;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    b.light {
+        @media (prefers-color-scheme: dark) { font-weight: $normal; }
+        @media (prefers-color-scheme: light) { font-weight: $bold; }
+        .dark-theme & { font-weight: $normal; }
+        .light-theme & { font-weight: $bold; }
+    }
+
+    b.dark {
+        @media (prefers-color-scheme: light) { font-weight: $normal; }
+        @media (prefers-color-scheme: dark) { font-weight: $bold; }
+        .light-theme & { font-weight: $normal; }
+        .dark-theme & { font-weight: $bold; }
+    }
+} // Switch from dark-light
+
+

@@ -1,0 +1,343 @@
+
+// Stepper - vertical
+.stepper.stepper-vertical {
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+
+    > ul {
+        flex-direction: column;
+        padding-left: 0;
+
+        > li,
+        > li:first-child {
+            max-width: 100%;
+            width: auto;
+            position: relative;
+        }
+
+        > li {
+            top: rem(5px);
+
+            > * {
+                width: rem(300px);
+                min-height: rem(120px);
+                padding-left: rem(65px);
+                padding-top: rem(3px);
+
+                @media (max-width: $screen-md-min) {
+                    padding-left: rem(48px);
+                    padding-top: 0;
+                    min-height: rem(45px);
+                }
+
+                > span {
+                    width: 100%;
+                    max-width: 100%;
+                }
+
+                &:after {
+                    width: rem(3px);
+                    height: 100%;
+                    top: calc(#{'-100% + ' rem( 5px)});
+                    left: rem(18px);
+                    bottom: auto;
+
+                    @media (max-width: $screen-md-min) {
+                        width: rem(2px);
+                        left: rem(9px);
+                    }
+                }
+
+                &:before {
+                    bottom: auto;
+                    right: auto;
+                    top: 0;
+                    left: rem(5px);
+
+                    @media (max-width: $screen-md-min) {
+                        width: rem(16px);
+                        height: rem(16px);
+                        left: rem(2px);
+                    }
+                }
+
+                > span:not(.step) {
+                    text-align: left;
+
+                    @media (max-width: $screen-md-min) {
+                        top: rem(-5px);
+                        position: relative;
+                    }
+                }
+            }
+
+            &:last-child {
+                max-height: rem(40px);
+            }
+
+            &.active {
+                top: 0;
+
+                @media (max-width: $screen-md-min) { margin-top: rem(-3px); }
+
+                > * {
+                    padding-top: rem(8px);
+
+                    &:before {
+                        left: 0;
+
+                        @media (max-width: $screen-md-min) {
+                            width: rem(20px);
+                            height: rem(20px);
+                            border-width: rem(8px);
+                        }
+                    }
+
+                    > span:not(.step) {
+                        top: rem(8px);
+
+                        @media (max-width: $screen-md-min) {
+                            top: rem(-9px);
+                        }
+                    }
+                }
+
+                &:not(:last-child):after {
+                    content: '';
+                    width: rem(3px);
+                    height: 100%;
+                    top: rem(25px);
+                    background-color: var(--stepper-bg);
+                    display: block;
+                    position: absolute;
+                    left: rem(18px);
+
+                    @media (max-width: $screen-md-min) {
+                        width: rem(2px);
+                        left: rem(9px);
+                        height: 90%;
+                        top: rem(20px);
+                    }
+                }
+
+                &:not(:last-child):not(:first-child):after {
+                    height: calc(#{'100% - ' rem(20px)});
+
+                    @media (max-width: $screen-md-min) {
+                        height: calc(#{'90% - ' rem(10px)});
+                    }
+                }
+            }
+
+            &.passed {
+                > * {
+                    > span:not(.step) {
+                        @media (max-width: $screen-md-min) { top: rem(-4px); }
+                    }
+
+                    &:before {
+                        @media (max-width: $screen-md-min) { background-image: none; }
+                    }
+                }
+                
+                + .active {
+                    > * {
+                        &:after {
+                            background: linear-gradient(180deg, var(--stepper-visited-bg) 0%, var(--stepper-active-border-color) 50%, var(--stepper-bg) 50%, var(--stepper-bg) 100%);
+                            background-size: auto 200%;
+                            background-position-y: 0%;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    &.no-ellipsis {
+        > ul > li > * > span:not(.step) {
+            @media (min-width: $screen-md-max) {
+                position: relative;
+                top: rem(-11px);
+                align-items: unset;
+            }
+        }
+
+        > ul > li > :before {
+            @media (max-width: $screen-md-min) {
+                top: rem(-2px);
+            }
+        }
+
+        > ul > li > :after {
+            @media (max-width: $screen-md-min) {
+                top: calc(#{'-100% + ' rem(6px)});
+            }
+        }
+    }
+}
+
+
+// Stepper vertical inside a container
+.stepper.stepper-vertical.stepper-content {
+    > ul {
+        > li {
+            box-shadow: $shadow-10 var(--module-container-shadow);
+            background: var(--stepper-wrapper-bg);
+            padding: rem(28px) rem(25px) rem(14px);
+            border-radius: $border-radius-10;
+            margin-bottom: rem(20px);
+            top: 0;
+
+            @media (max-width: $screen-md-min) {
+                padding-top: rem(30px);
+            }
+
+            > * {
+                min-height: rem(30px);
+
+                &:after {
+                    height: calc(#{'100% + ' rem(55px)});
+                    top: calc(#{'-100% + ' rem(-55px)});
+                }
+            }
+
+            > *:not(.panel) {
+                > span { display: none; }
+            }
+
+            > .panel {
+                box-shadow: none;
+                padding: 0 0 0 rem(40px);
+                margin: 0;
+                width: 100%;
+                text-align: left;
+                white-space: normal;
+                font-weight: normal;
+                cursor: default;
+                font: $font-sm;
+                margin-top: rem(-59px);
+                background: none;
+
+                @media (max-width: $screen-md-min) {
+                    padding: 0 0 0 rem(15px);
+                    margin-top: rem(-64px);
+                }
+
+                &:before,
+                &:after { display: none; }
+
+                .panel-heading { cursor: pointer; }
+
+                .panel-body {
+                    opacity: 0;
+                    visibility: hidden;
+                    max-height: 0;
+                }
+            }
+
+            &:not(.active) {
+                > .panel {
+                    .panel-body {
+                        padding: 0;
+                    }
+
+                    .panel-title {
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+            }
+
+            &.active {
+                @media (max-width: $screen-md-min) {
+                    margin-top: 0;
+                }
+
+                > * {
+                    &:before {
+                        top: rem(-6px);
+                    }
+                }
+
+                &:not(:last-child):after {
+                    left: rem(43px);
+                    top: rem(35px);
+
+                    @media (max-width: $screen-md-min) {
+                        left: rem(34px);
+                    }
+                }
+
+                > .panel {
+                    .panel-body {
+                        opacity: 1;
+                        visibility: visible;
+                        max-height: rem(1000px);
+                        color: var(--body-font-color);
+                    }
+                }
+            }
+
+            &:last-child {
+                max-height: 100%;
+            }
+        }
+    }
+
+    &.stepper-content-outside {
+        > ul {
+            padding-left: rem(72px);
+
+            @media (max-width: $screen-md-min) {
+                padding-left: rem(48px);
+            }
+
+            > li {
+                padding-left: 0;
+                padding-right: 0;
+
+                > *:before {
+                    left: rem(-63px);
+
+                    @media (max-width: $screen-md-min) {
+                        left: rem(-45px);
+                    }
+                }
+
+                > *:after {
+                    left: rem(-49px);
+
+                    @media (max-width: $screen-md-min) {
+                        left: rem(-38px);
+                    }
+                }
+
+                &.active {
+                    > *:before {
+                        left: rem(-68px);
+
+                        @media (max-width: $screen-md-min) {
+                            left: rem(-47px);
+                        }
+                    }
+
+                    &:not(:last-child):after {
+                        left: rem(-49px);
+
+                        @media (max-width: $screen-md-min) {
+                            left: rem(-38px);
+                        }
+                    }
+                }
+
+                > .panel {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

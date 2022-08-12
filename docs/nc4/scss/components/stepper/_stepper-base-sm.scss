@@ -1,0 +1,49 @@
+// Stepper compressed - base styling
+
+.stepper.stepper-sm {
+    @media (min-width: ($screen-md-min + 1px)) {
+        max-width: rem(800px);
+        > ul {
+            padding-left: 0;
+
+            > li {
+                > * {
+                    font-size: $font-size-base; 
+
+                    &:after {
+                        height: rem(2px);
+                        bottom: rem(11px);
+                    }
+
+                    &:before {
+                        width: rem(16px);
+                        height: rem(16px);
+                        border-radius: rem(16px);
+                    }
+                }
+
+                // &:first-child {}
+
+                &.active {
+                    > * {
+                        font-size: $font-size-base;
+
+                        &:before {
+                            width: rem(20px);
+                            height: rem(20px);
+                            border-radius: rem(20px);
+                            border: rem(8px) solid var(--stepper-active-border-color);
+                            bottom: rem(2px);
+                        }
+                    }
+                }
+
+                &.passed {
+                    > * {
+                        &:before { background-image: none; }
+                    }
+                }
+            }
+        }
+    }
+} // END '.stepper'

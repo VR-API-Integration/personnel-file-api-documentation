@@ -1,0 +1,116 @@
+//=== Pagination
+
+// Mixins
+@import '../../utilities/carets';
+
+.pagination {
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    > * {
+        list-style: none;
+        text-align: center;
+        margin-right: $spacing-8;
+        margin-bottom: 0;
+
+        > a,
+        > button,
+        > span {
+            line-height: rem(30px);
+            display: inline-flex;
+            text-decoration: none;
+        }
+
+        > a,
+        > button {
+            &.btn {
+                width: $input-btn-height;
+                height: $input-btn-height;
+                min-width: 1%;
+                text-indent: -9999px;
+                overflow: hidden;
+                padding: 0;
+                display: block;
+                position: relative;
+
+                &:before {
+                    content:'';
+                    display: block;
+                    background-color: var(--caret-default-bg);
+                    position: absolute;
+                }
+
+                > span { display: none; }
+
+                &.go2first,
+                &.go2last {
+                    &:before {
+                        width: rem(10px);
+                        height: rem(10px);
+                        top: calc(#{'50% - ' rem(5px)});
+                        left: calc(#{'50% - ' rem(5px)});
+                    }
+                }
+
+                &.prev,
+                &.next {
+                    &:before {
+                        top: rem(12px);
+                        left: rem(11px);
+                    }
+                }
+
+                &.prev {
+                    &:before {
+                        left: rem(10px);
+                    }
+                }
+
+                &.go2first:before {
+                    mask-image: url(#{$image-path}/pagination-arrow.svg);
+                    -webkit-mask-image: url(#{$image-path}/pagination-arrow.svg);
+                }
+
+                &.prev:before {
+                    @include caret-large-default();
+                    transform: rotate(90deg);
+                }
+
+                &.go2last:before {
+                    mask-image: url(#{$image-path}/pagination-arrow.svg);
+                    -webkit-mask-image: url(#{$image-path}/pagination-arrow.svg);
+                    transform: rotate(180deg);
+                }
+
+                &.next:before {
+                    @include caret-large-default();
+                    transform: rotate(-90deg)
+                }
+            }
+        }
+    }
+
+    &.disabled > * {
+        > span,
+        > button,
+        > a {
+            color: var(--text-disabled);
+
+            &:before {
+                background-color: var(--caret-disabled-bg);
+            }
+        }
+    }
+
+    > * > a.disabled,
+    > * > button.disabled,
+    > * > button[disabled] {
+        color: var(--text-disabled);
+
+        &:before {
+            background-color: var(--caret-disabled-bg);
+        }
+    }
+
+}

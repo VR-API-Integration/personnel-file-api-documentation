@@ -1,0 +1,121 @@
+//== Carets
+
+//=== Variables
+$caret-large: $arrow-icon-large no-repeat;
+$caret-medium: $arrow-icon-large no-repeat; // this is deprecated - will be removed in time, until then is replaced with arrow-icon-large
+$caret-small: $arrow-icon-small no-repeat;
+
+
+//=== Mixins
+@mixin caret-large() {
+  mask-position: 0 0;
+  height: rem(6px);
+  width: rem(10px);
+}
+
+@mixin caret-medium() { // this is deprecated - will be removed in time, until then is replaced with caret-large
+  @include caret-large();
+}
+
+@mixin caret-small() {
+  mask-position: 0 0;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  height: rem(5px);
+  width: rem(8px);
+}
+
+
+// Large
+//blue
+@mixin caret-large-primary() {
+  @include caret-large();
+  mask: $caret-large;
+  -webkit-mask: $caret-large;
+  background-color: var(--caret-primary-bg);
+}
+
+//white
+@mixin caret-large-secondary() {
+  @include caret-large();
+  mask: $caret-large;
+  -webkit-mask: $caret-large;
+  background-color: var(--caret-secondary-bg);
+}
+
+//black
+@mixin caret-large-default() {
+  @include caret-large();
+  mask: $caret-large;
+  -webkit-mask: $caret-large;
+  background-color: var(--caret-default-bg);
+} 
+
+//grey
+@mixin caret-large-disabled() {
+  @include caret-large();
+  mask: $caret-large;
+  -webkit-mask: $caret-large;
+  background-color: var(--caret-disabled-bg);
+}
+
+
+// Medium --- this is deprecated - will be removed in time
+@mixin caret-medium-primary() {
+  @include caret-large();
+  mask: $caret-large;
+  -webkit-mask: $caret-large;
+  background-color: var(--caret-primary-bg);
+}
+
+@mixin caret-medium-secondary() {
+  @include caret-large();
+  mask: $caret-large;
+  -webkit-mask: $caret-large;
+  background-color: var(--caret-secondary-bg);
+}
+
+@mixin caret-medium-default() {
+  @include caret-large();
+  -webkit-mask: $caret-large;
+  mask: $caret-large;
+  background-color: var(--caret-default-bg);
+}
+
+@mixin caret-medium-disabled() {
+  @include caret-large();
+  -webkit-mask: $caret-large;
+  mask: $caret-large;
+  background-color: var(--caret-disabled-bg);
+}
+
+
+// Small
+@mixin caret-small-primary() {
+  -webkit-mask: $caret-small;
+  mask: $caret-small;
+  @include caret-small();
+  background-color: var(--caret-primary-bg);
+}
+
+@mixin caret-small-secondary() {
+  @include caret-small();
+  -webkit-mask: $caret-small;
+  mask: $caret-small;
+  background-color: var(--caret-secondary-bg);
+}
+
+@mixin caret-small-default() {
+  @include caret-small();
+  -webkit-mask: $caret-small;
+  mask: $caret-small;
+  background-color: var(--caret-default-bg);
+}
+
+@mixin caret-small-disabled() {
+  @include caret-small();
+  -webkit-mask: $caret-small;
+  mask: $caret-small;
+  background-color: var(--caret-disabled-bg);
+  }
+

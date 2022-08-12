@@ -1,0 +1,24 @@
+// Datepicker inline
+
+.datepicker {
+    .is-inline {
+        .dropdown-menu {
+            position: static;
+            display: inline-block;
+            background: var(--datepicker-inline-bg);
+            box-shadow: var(--datepicker-inline-shadow);
+            z-index: 1;
+        }
+
+        .datepicker-body > .datepicker-row {
+
+            &:last-child {
+                .datepicker-cell { 
+                    margin-bottom: 0;
+
+                    &.is-week-number { padding-bottom: 0; }
+                }
+            }
+        }
+    }
+}

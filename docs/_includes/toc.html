@@ -1,0 +1,30 @@
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+  $(document).ready(function () {
+    // Handler for .ready() called.
+
+    $("#toc").toc({
+      title: 'Contents',
+      minimumHeaders: 0,
+      listType: "ul",
+      showSpeed: 0,
+      headers: "h2,h3,h4",
+      noBackToTopLinks: true,
+      classes: { title:"toc-title", list:"", item:"", link:"" },
+    });
+
+    // This offset helps account for the space taken up by the floating toolbar clicking
+    // on anchor tags.
+    $("#toc").on("click", "a", function () {
+      let target = $(this.getAttribute("href")),
+        scroll_target = target.offset().top;
+
+      $(window).scrollTop(scroll_target - 80);
+      return false;
+    });
+  });
+</script>
+
+<div id="toc"></div>
+
+{% comment %} Copyright 2021 Google LLC {% endcomment %}

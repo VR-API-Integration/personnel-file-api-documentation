@@ -1,0 +1,165 @@
+// Stepper - base styling
+
+.stepper {
+    padding: 0 rem(30px);
+
+    > ul {
+        display: flex;
+        flex-wrap: nowrap;
+        position: relative;
+        padding: 0;
+
+        > li {
+            position: relative;
+            cursor: pointer;
+            flex: 1;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            height: 100%;
+            flex: 1 100%;
+            text-align: center;
+            cursor: default;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            > * {
+                font: $font-md;
+                text-decoration: none;
+                outline: 0;
+                color: var(--stepper-text-color);
+                position: relative;
+                display: block;
+                width: 100%;
+                cursor: pointer;
+
+                &:before,
+                &:after {
+                    content: '';
+                    display: block;
+                    margin: 0 auto;
+                    position: absolute;
+                    top: auto;
+                    background: var(--stepper-bg);
+                }
+
+                &:after {
+                    width: 100%;
+                    height: rem(3px);
+                    right: auto;
+                    left: auto;
+                    bottom: rem(17px);
+                    width: 100%;
+                    background-color: var(--stepper-bg);
+                }
+
+                &:before {
+                    width: rem(30px);
+                    height: rem(30px);
+                    border-radius: rem(30px);
+                    z-index: 20;
+                }
+
+                > span {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    width: 100%;
+                }
+
+                > span:not(.step) {
+                    display: block;
+                    margin: 0;
+                    line-height: 1.5;
+                }
+
+                > span.step {
+                    display: none;
+                    font-size: $font-size-xs;
+                    color: var(--stepper-text-color);
+                }
+
+            }
+
+            &:first-child {
+                > * {
+                    &:after { opacity: 0 }
+                }
+            }
+
+            &.active {
+                > * {
+                    color: var(--stepper-active-text-color);
+                    font-weight: $bold;
+
+                    &:before {
+                        width: rem(40px);
+                        height: rem(40px);
+                        border-radius: rem(40px);
+                        border: rem(15px) solid var(--stepper-active-border-color);
+                        background: var(--stepper-active-bg);
+                        bottom: rem(-2px);
+                        box-shadow: $shadow-30 var(--stepper-active-shadow-color);
+                    }
+                }
+            }
+
+            &.passed {
+                > * {
+                    color: var(--stepper-visited-text-color);
+                    font-weight: $semibold;
+
+                    &:after { background: var(--stepper-visited-bg); }
+
+                    &:before {
+                        background-color: var(--stepper-visited-bg);
+                        background-image: var(--stepper-visited-icon);
+                        background-size: rem(12px) rem(10px);
+                        background-repeat: no-repeat;
+                        background-position: center; 
+                    }
+                }
+
+
+                + .active {
+                    > * {
+                        &:after {
+                            background: linear-gradient(90deg, var(--stepper-visited-bg) 0%, var(--stepper-active-border-color) 50%, var(--stepper-bg) 50%, var(--stepper-bg) 100%);
+                            background-size: 200% auto;
+                            background-position-x: 0%;
+                        }
+                    }
+                }
+            }
+
+            &.disabled {
+                > * {
+                    cursor: default;
+                    pointer-events: none;
+                }
+            }
+
+        }
+    }
+
+
+    &.no-ellipsis {
+        > ul > li > * > span:not(.step) {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.3;
+            align-items: center;
+            justify-content: center;
+
+            @media (min-width: $screen-md-max) {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                height: rem(46px);
+                top: rem(-12px);
+                white-space: normal;
+            }
+        }
+    } // END .no-ellipsis
+
+} // END '.stepper'

@@ -1,0 +1,281 @@
+
+//Search field style
+.search-group {
+    position: relative;
+
+    // input basic styling
+    input.form-control[type=text],
+    input.form-control[type=search] {
+        padding-right: $spacing-64;
+        padding-left: $spacing-40;
+
+        color: var(--input-placeholder-color);
+
+        border-radius: rem(24px);
+        background-color: var(--input-bg);
+        box-shadow: $shadow-20 var(--input-shadow-color);
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        &.hover, &:hover { box-shadow: $shadow-20 var(--input-hover-shadow-color); }
+
+        &.focus, &:focus {
+            color: var(--input-text-color);
+            box-shadow: inset 0 0 0 rem(1px) var(--input-focus-border-color), $shadow-20 var(--input-focus-shadow-color);
+        }
+
+        // search input on disabled state
+        .disabled &, :disabled &,
+        &.disabled, &:disabled {
+            pointer-events: none;
+            color: var(--input-disabled-text-color);
+            box-shadow: none;
+
+            // search icon/button on disabled state
+            ~ .search-icon {
+                &::before { background-color: var(--input-disabled-text-color); }
+
+                &.btn { pointer-events: none; }
+            }
+
+            // clear 'x' button, on disabled state
+            ~ .clear-search.show {display: none;}
+        }
+    }
+
+    // search icon/button and clear 'x' button basic style
+    .search-icon,
+    .clear-search {
+        content: '';
+        position: absolute;
+        min-width: auto;
+        min-width: unset;
+        height: rem(16px);
+        width: rem(16px);
+        margin: 0;
+        padding: 0;
+        text-indent: rem(-9999px);
+        overflow: hidden;
+
+        border: 0;
+        box-shadow: none;
+    }
+
+    // search icon/button
+    .search-icon {
+        top: $spacing-8;
+        left: $spacing-16;
+
+        // search icon style definition
+        &::before {
+            display: block;
+            position: absolute;
+            opacity: 1;
+            content: "";
+            width: rem(13px);
+            height: rem(13px);
+            top: rem(1px);
+            left: rem(1px);
+
+            background-color: var(--input-placeholder-color);
+            -webkit-mask: #{$search-icon};
+            mask: #{$search-icon};
+            -webkit-mask-size: cover;
+            mask-size: cover;
+        }
+
+        // search button style definition
+        &.btn {
+            display: flex;
+            cursor: pointer; 
+            width: rem(48px);
+            height: rem(24px);
+            top: $spacing-4;
+            right: $spacing-4;
+            left: initial;
+            left: unset;
+            text-indent: rem(-9999px);
+
+            border-radius: rem(30px);
+            background-color: transparent;
+            box-shadow: none;
+
+            &::before {
+                top: rem(5px);
+                left: auto;
+                right: rem(12px);
+            }
+        }
+    }
+
+    // clear 'x' button
+    .clear-search {
+        display: none;
+        cursor: pointer;
+        top: $spacing-8;
+        right: rem(12px);
+
+        // the 'x' icon style definition
+        &::before {
+            display: block;
+            position: absolute;
+            opacity: 1;
+            content: "";
+            width: rem(8px);
+            height: rem(8px);
+            top: $spacing-4;
+            right: $spacing-4;
+
+            background-color: var(--input-placeholder-color);
+            -webkit-mask: #{$close-icon};
+            mask: #{$close-icon};
+            -webkit-mask-size: cover; 
+            mask-size: cover;
+        }
+
+        &.show { display: block; }
+    }
+
+    // variant/primary style for search fields
+    &.search-group-primary {
+        input.form-control[type=text],
+        input.form-control[type=search] {
+            border-color: var(--input-primary-border-color);
+            box-shadow: $shadow-20 var(--input-primary-shadow-color);
+
+            &.hover, &:hover {
+                border-color: var(--input-primary-hover-border-color);
+                box-shadow: $shadow-20 var(--input-primary-shadow-color);
+            }
+
+            &.focus, &:focus {
+                border-color: var(--input-focus-border-color);
+                box-shadow: inset 0 0 0 rem(1px) var(--input-focus-border-color), $shadow-20 var(--input-focus-shadow-color);
+            }
+
+            // primary search fields on disabled state
+            .disabled &, :disabled &,
+            &.disabled, &:disabled {
+                border-color: var(--input-disabled-border-color);
+                box-shadow: none;
+
+                ~ .search-icon.btn {
+                    background-color: var(--search-field-primary-disabled-button);
+                    box-shadow: inset 0 0 0 rem(1px) var(--search-field-primary-disabled-button-border);
+                }
+            }
+        }
+
+        // search button for primary search fields
+        .search-icon {
+            &.btn {
+                background-color: var(--button-primary-bg);
+                box-shadow: $shadow-20 var(--input-primary-shadow-color);
+
+                &::before {
+                    top: rem(6px);
+                    right: rem(18px);
+                    width: rem(11px);
+                    height: rem(11px);
+
+                    background-color: var(--button-primary-text-color);
+                }
+            }
+        }
+
+        &.search-group-button .clear-search.show { right: $spacing-64; }
+    }
+
+    // search fields with button variant styling
+    &.search-group-button {
+        input.form-control[type=text],
+        input.form-control[type=search] {
+            padding-left: $spacing-16;
+            padding-right: rem(80px);
+        }
+
+        // NOTE: Update/remove after design decision for search with button
+        .clear-search.show { 
+            right: rem(44px);
+        }
+
+        &.search-group-lg {
+            .clear-search.show { 
+                right: rem(56px);
+            }
+        }
+    }
+
+    // larger search field style
+    &.search-group-lg {
+        input.form-control[type=text],
+        input.form-control[type=search] {
+            height: $input-btn-height-lg;
+            padding-right: rem(72px);
+            padding-left: $spacing-64;
+        }
+
+        // search icon/button for larger search field
+        .search-icon {
+            top: $spacing-16;
+            left: $spacing-32;
+
+            &.btn {
+                height: rem(40px);
+                width: rem(64px);
+                top: rem(4px);
+                left: auto;
+
+                &::before {
+                    top: rem(12px);
+                    right: rem(20px);
+                }
+            }
+
+            &, &.btn {
+                &::before {
+                    width: rem(15px);
+                    height: rem(15px);
+                }
+            }
+        }
+
+        .clear-search {
+            top: $spacing-16;
+            right: $spacing-32;
+        }
+
+        // larger search field for primary variant
+        &.search-group-primary {
+            .search-icon {
+                &.btn {
+                    width: rem(64px);
+
+                    &::before { right: $spacing-24; }
+                }
+            }
+        }
+
+        // larger search field with search button
+        &.search-group-button {
+            input.form-control[type=text],
+            input.form-control[type=search] {
+                padding-left: $spacing-32;
+            }
+
+            &.search-group-primary {
+                input.form-control[type=text],
+                input.form-control[type=search] {
+                    padding-right: 10rem;
+                }
+
+                .clear-search.show { 
+                    right: rem(84px);
+                }
+            }
+        }
+    }
+}
+

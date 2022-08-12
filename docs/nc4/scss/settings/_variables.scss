@@ -1,0 +1,79 @@
+
+// NC v4.0 variables
+//
+//=== Table of Contents:
+//
+//  1. Shadow variables
+//  2. Path variables
+//  3. Borders
+//  4. Image thumbnails
+//  5. Spacings variables
+//  6. Buttons + Forms - shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+
+
+//=== Aditional SCSS Variables
+
+//=== 1. Shadow variables
+$shadow-50: shadow(50);
+$shadow-40: shadow(40);
+$shadow-30: shadow(30);
+$shadow-20: shadow(20);
+$shadow-10: shadow(10);
+
+
+//=== 3. Borders
+$border-color: var(--border-color) !default;
+$border-width: rem(1px) !default;
+
+$border-radius-5: rem(5px) !default;
+$border-radius-10: rem(10px) !default;
+$border-radius-16: rem(16px) !default;
+$border-radius-20: rem(20px) !default;
+$border-radius-24: rem(24px) !default;
+$border-radius-32: rem(32px) !default;
+$border-radius-circle: 100% !default;
+$border-radius: $border-radius-5 !default;
+
+
+//=== 4. Image thumbnails
+$thumbnail-padding: rem(4px) !default; // old 4/16 -> 0.25rem !default;
+$thumbnail-bg: $white !default;
+$thumbnail-border-width: $border-width !default;
+$thumbnail-border-color: $border-color !default;
+$thumbnail-border-radius: $border-radius !default;
+
+
+//=== 5. Spacings variables
+$spacing-0: map-get($spacings-map, 0);
+$spacing-2: map-get($spacings-map, 2);
+$spacing-4: map-get($spacings-map, 4);
+$spacing-8: map-get($spacings-map, 8);
+$spacing-12: map-get($spacings-map, 12);
+$spacing-16: map-get($spacings-map, 16);
+$spacing-24: map-get($spacings-map, 24);
+$spacing-32: map-get($spacings-map, 32);
+$spacing-40: map-get($spacings-map, 40);
+$spacing-48: map-get($spacings-map, 48);
+$spacing-64: map-get($spacings-map, 64);
+$spacing-96: map-get($spacings-map, 96);
+$spacing-128: map-get($spacings-map, 128);
+$spacing-auto: map-get($spacings-map, auto);
+
+
+//=== 6. Buttons + Forms - shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+// Buttons + forms
+$input-btn-line-height:       1.2 !default;
+$input-btn-height:       rem(32px) !default;
+
+$input-btn-line-height-lg:       1.6 !default;
+$input-btn-height-lg:       rem(48px) !default;
+
+$input-btn-padding-y-t: rem(3px) !default;
+$input-btn-padding-y-b: $spacing-4 !default;
+$input-btn-padding-x: $spacing-16 !default;
+$input-btn-dropdown-padding-x: $spacing-32 !default;
+
+// Forms
+$label-padding-y: $spacing-4 !default;
+$label-padding-x: $spacing-8 !default;

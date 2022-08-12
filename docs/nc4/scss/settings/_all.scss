@@ -1,0 +1,18 @@
+// NC v4.0 - All files under this folder
+
+// Core variables and mixins
+//# Default Variables
+@import 'config';
+
+//# Project/Your Settings, overwrite the default css variables
+@import 'custom-settings';
+
+//# Custom properties
+@import 'custom-properties/core-css-variables';
+@import 'custom-properties/variables-light-dark-mode';
+
+//# Aditional SCSS Variables
+@import 'variables';
+
+//# Your custom scss overwrite variables
+@import 'custom-variables';

@@ -1,0 +1,119 @@
+
+//Tooltip general style
+.tooltip {
+    display: none;
+    position: absolute;
+    min-width: rem(180px);
+    max-width: rem(420px);
+    padding: rem(15px) rem(16px);
+    top: 0;
+    left: 0;
+
+    color: var(--body-font-color);
+    text-align: left;
+
+    border-radius: $border-radius-10;
+    border: {
+        width: rem(1px);
+        style: solid;
+        color: var(--tooltip-border-color);
+    }
+
+    background-color: var(--tooltip-bg);
+    box-shadow: var(--tooltip-shadow);
+
+    z-index: $zindex-tooltip;
+
+    &::before {
+        display: block;
+        position: absolute;
+        content: '';
+        width: rem(10px);
+        height: rem(26px);
+        top: calc(#{'50% - ' rem(13px)});
+        left: rem(-10px);
+
+        background: {
+            color: transparent;
+            image: var(--tooltip-arrow-tip);
+            position: 0 0;
+            repeat: no-repeat;
+        };
+    }
+
+    &.tooltip-error {
+        color: var(--tooltip-error-text);
+
+        border-color: var(--tooltip-error-border-color);
+        background-color: var(--tooltip-error-bg);
+        box-shadow: var(--tooltip-error-shadow);
+
+        &::before {
+            background-image: var(--tooltip-error-arrow-tip);
+        }
+    }
+
+    &.tooltip-secondary {
+        color: var(--tooltip-secondary-text);
+
+        border-color: var(--tooltip-secondary-border-color);
+        background-color: var(--tooltip-secondary-bg);
+        box-shadow: var(--tooltip-secondary-shadow);
+
+        &::before {
+            background-image: var(--tooltip-secondary-arrow-tip);
+        }
+    }
+
+    &.top,
+    &[data-popper-placement="top"] {
+        text-align: center;
+        inset: auto auto rem(10px) 0 !important;
+
+        &::before {
+            top: unset;
+            bottom: rem(-18px);
+            left: calc(#{'50% - ' rem(6px)});
+            transform: rotate(-90deg);
+        }
+    }
+
+    &.right,
+    &[data-popper-placement="right"] {
+        text-align: left;
+        inset: 0 auto auto rem(10px) !important;
+    }
+
+    &.bottom,
+    &[data-popper-placement="bottom"] {
+        text-align: center;
+        inset: rem(10px) auto auto 0 !important;
+
+        &::before {
+            top: rem(-18px);
+            left: calc(#{'50% - ' rem(6px)});
+            transform: rotate(90deg);
+        }
+    }
+
+    &.left,
+    &[data-popper-placement="left"] {
+        text-align: right;
+        inset: 0 rem(10px) auto auto !important;
+
+        &::before {
+            right: rem(-10px);
+            left: unset;
+
+            transform: rotate(180deg);
+        }
+    }
+
+    &.in, &.show {
+        display: block;
+    }
+
+    .tooltip-inner {
+        line-height: rem(18px);
+    }
+}

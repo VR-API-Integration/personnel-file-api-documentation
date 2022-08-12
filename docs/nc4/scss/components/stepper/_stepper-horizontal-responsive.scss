@@ -1,0 +1,242 @@
+// Stepper - base styling
+@media (max-width: $screen-md-min) {
+    .stepper:not(.stepper-vertical) {
+            background: var(--stepper-wrapper-bg);
+            box-shadow: $shadow-20 var(--module-container-shadow);
+            position: absolute;
+            width: 100%;
+            max-width: 100%;
+            top: rem(65px);
+            left: 0;
+            height: rem(66px);
+
+            + .container { margin-top: rem(65px); }
+    
+        > ul {
+                background: var(--stepper-wrapper-bg);
+                box-shadow: $shadow-20 var(--module-container-shadow);
+                padding: rem(11px) rem(21px) rem(10px) rem(25px);
+                left: 50%;
+                transform: translateX(-50%);
+                width: auto;
+                display: inline-block;
+                height: rem(33px);
+                border-radius: rem(25px);
+                margin: 0 auto;
+                top: rem(48px);
+
+                &:before {
+                    content: "";
+                    width: 110%;
+                    height: rem(17px);
+                    background-color: var(--stepper-wrapper-bg);
+                    position: absolute;
+                    top: rem(1px);
+                    display: block;
+                    left: -5%;
+                    z-index: 1;
+                }
+
+            > li {
+                right: auto;
+                left: auto;
+                width: auto;
+                margin-right: rem(7px);
+
+                > * {
+                    margin: 0 0 rem(10px) 0;
+                    width: auto;
+                    min-height: auto;
+
+                    &:after { display: none; }
+
+                    &:before {
+                        width: rem(5px);
+                        height: rem(5px);
+                        right: auto;
+                        bottom: rem(-7px);
+                    }
+
+                    > span {
+                        width: rem(400px);
+                        max-width: rem(400px);
+                        right: auto !important;
+                        font-weight: $normal;
+                        display: none;
+                        transform: translateX(-50%);
+                    }
+
+                    > span:not(.step) {
+                        font-size: $font-size-md;
+                        color: var(--stepper-wrapper-text-color);
+                        display: none;
+                    }
+
+                    > span.step { top: rem(-52px); }
+                }
+
+                &:first-child {
+                    position: relative;
+                    right: auto;
+                    left: auto;
+                    width: auto;
+
+                    > * { width: auto; }
+                }
+
+                &.active {
+                    width: auto;
+                    margin-right: rem(9px);
+
+                    > * {
+                        &:before {
+                            width: rem(7px);
+                            height: rem(7px);
+                            border: 0;
+                            background: var(--stepper-active-border-color);
+                            bottom: rem(-8px);
+                        }
+
+                        > span:not(.step) {
+                            top: rem(-36px);
+                            display: block;
+                        }
+
+                        > span.step { display: block; }
+                    }
+                }
+
+                &.passed {
+                    > * {
+                        &:before { background-image: none; }
+                    }
+                }
+
+                /* 2 items in the stepper  */
+                &:first-child:nth-last-child(2),
+                &:first-child:nth-last-child(2) ~ li:nth-child(1) {
+                    * > span { left: rem(9px) }
+                }
+
+                &:first-child:nth-last-child(2) ~ li:nth-child(2) {
+                    * > span { left: rem(-2px) }
+                }
+
+
+                /* 3 items in the stepper  */
+                &:first-child:nth-last-child(3),
+                &:first-child:nth-last-child(3) ~ li:nth-child(1) {
+                    * > span { left: rem(14px) }
+                }
+
+                &:first-child:nth-last-child(3) ~ li:nth-child(2) {
+                    * > span { left: rem(3px) }
+                }
+
+                &:first-child:nth-last-child(3) ~ li:nth-child(3) {
+                    * > span { left: rem(-7px) }
+                }
+
+
+                /* 4 items in the stepper  */
+                &:first-child:nth-last-child(4),
+                &:first-child:nth-last-child(4) ~ li:nth-child(1) {
+                    * > span { left: rem(20px) }
+                }
+
+                &:first-child:nth-last-child(4) ~ li:nth-child(2) {
+                    * > span { left: rem(9px) }
+                }
+
+                &:first-child:nth-last-child(4) ~ li:nth-child(3) {
+                    * > span { left: rem(-1px) }
+                }
+
+                &:first-child:nth-last-child(4) ~ li:nth-child(4) {
+                    * > span { left: rem(-12px) }
+                }
+
+                /* 5 items in the stepper  */
+                &:first-child:nth-last-child(5),
+                &:first-child:nth-last-child(5) ~ li:nth-child(1) {
+                    * > span { left: rem(25px) }
+                }
+
+                &:first-child:nth-last-child(5) ~ li:nth-child(2) {
+                    * > span { left: rem(14px) }
+                }
+
+                &:first-child:nth-last-child(5) ~ li:nth-child(3) {
+                    * > span { left: rem(4px) }
+                }
+
+                &:first-child:nth-last-child(5) ~ li:nth-child(4) {
+                    * > span { left: rem(-7px) }
+                }
+
+                &:first-child:nth-last-child(5) ~ li:nth-child(5) {
+                    * > span { left: rem(-18px) }
+                }
+
+
+                /* 6 items in the stepper  */
+                &:first-child:nth-last-child(6),
+                &:first-child:nth-last-child(6) ~ li:nth-child(1) {
+                    * > span { left: rem(28px) }
+                }
+
+                &:first-child:nth-last-child(6) ~ li:nth-child(2) {
+                    * > span { left: rem(17px) }
+                }
+
+                &:first-child:nth-last-child(6) ~ li:nth-child(3) {
+                    * > span { left: rem(7px) }
+                }
+
+                &:first-child:nth-last-child(6) ~ li:nth-child(4) {
+                    * > span { left: rem(-4px) }
+                }
+
+                &:first-child:nth-last-child(6) ~ li:nth-child(5) {
+                    * > span { left: rem(-15px) }
+                }
+
+                &:first-child:nth-last-child(6) ~ li:nth-child(6) {
+                    * > span { left: rem(-25px) }
+                }
+
+
+                /* 7 items in the stepper  */
+                &:first-child:nth-last-child(7),
+                &:first-child:nth-last-child(7) ~ li:nth-child(1) {
+                    * > span { left: rem(31px) }
+                }
+
+                &:first-child:nth-last-child(7) ~ li:nth-child(2) {
+                    * > span { left: rem(20px) }
+                }
+
+                &:first-child:nth-last-child(7) ~ li:nth-child(3) {
+                    * > span { left: rem(10px) }
+                }
+
+                &:first-child:nth-last-child(7) ~ li:nth-child(4) {
+                    * > span { left: rem(-1px) }
+                }
+
+                &:first-child:nth-last-child(7) ~ li:nth-child(5) {
+                    * > span { left: rem(-12px) }
+                }
+
+                &:first-child:nth-last-child(7) ~ li:nth-child(6) {
+                    * > span { left: rem(-22px) }
+                }
+
+                &:first-child:nth-last-child(7) ~ li:nth-child(7) {
+                    * > span { left: rem(-33px) }
+                }
+
+            }
+        }
+    }
+}

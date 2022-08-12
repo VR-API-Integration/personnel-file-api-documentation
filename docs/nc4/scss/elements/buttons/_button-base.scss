@@ -1,0 +1,82 @@
+
+// Button base styles
+.btn {
+    // display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    cursor: pointer;
+
+    height: $input-btn-height;
+    padding: $input-btn-padding-y-t $input-btn-padding-x $input-btn-padding-y-b;
+    margin: 0 $spacing-8 $spacing-8 0;
+    max-width: 100%;
+    min-width: rem(162px);
+    @media (max-width: $screen-md-min) { min-width: rem(120px); }
+    @media (max-width: $screen-sm-min) { min-width: rem(100px); }
+
+    color: var(--button-text-color);
+
+    font: {
+        size: $font-size-sm;
+        weight: $normal;
+    }
+
+    line-height: 1.2;
+    text: {
+        align: center;
+        overflow: ellipsis;
+        decoration: none;
+        shadow: none;
+    }
+    vertical-align: middle;
+    white-space: nowrap;
+    
+    border: {
+        width: rem(1px);
+        style: solid;
+        color: transparent;
+        radius: $border-radius-5;
+    }
+
+    user-select: none;
+    touch-action: manipulation;
+    box-sizing: border-box;
+
+    //### Button base, focus state
+    &:focus { outline: none; }
+
+    //### Button base, disabled state
+    &:disabled, &.disabled,
+    :disabled &, .disabled & {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    
+    //### Buttons and buttons group size
+    // //=== Small buttons
+    // &.btn-sm,
+    // .btn-group-sm & { }
+
+    //=== Large buttons
+    &.btn-lg,
+    .btn-group-lg & {
+        height: rem(48px);
+        padding: $spacing-8 $spacing-16;
+
+        // line-height: rem(36);
+    }
+
+    // block level buttons - those that span the full width of a parent
+    &.btn-block {
+        display: block;
+        width: 100%; 
+        margin-right: 0;
+    }
+
+    &:only-child,
+    &:last-child { margin-right: 0; }
+
+}

@@ -1,0 +1,18 @@
+---
+title: Postman
+tags: [postman, api]
+keywords: postman, api
+last_updated: 01/19/2022
+sidebar: guides_sidebar
+permalink: guides_postman.html
+folder: guides/postman
+topnav: topnav
+---
+
+The ZIP-file you can download here includes the following information:
+
+- Postman collection
+- Postman environment
+- Sample set of files
+
+[Download ZIP File...](/file-api-documentation/pages/guides/postman/download/2022-01-19.zip)

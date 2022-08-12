@@ -1,0 +1,61 @@
+
+// Buton as link
+.btn {
+    &.btn-link,
+    &.btn-icon {
+        min-width: auto;
+        max-width: unset;
+        height: auto;
+        padding-left: $spacing-4;
+        padding-right: $spacing-4;
+        
+        color: var(--anchor-color);
+        text-decoration: underline;
+
+        border-color: transparent;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+
+        //### '.btn-link' hover state
+        &:hover {
+            color: var(--anchor-hover-color);
+            text-decoration: none;
+        }
+
+        //### '.btn-link' focus state
+        &:focus {
+            text-decoration: none;
+
+            box-shadow: 0 0 0 rem(1px) var(--anchor-focus-outline);
+        }
+
+        //### '.btn-link' active/pressed state
+        &:active { color: var(--anchor-color); }
+
+        //### '.btn-link' active/selected state
+        &.active {
+            color: var(--anchor-selected-color);
+            text-decoration: none;
+        }
+
+        //### '.btn-link' disabled state 
+        &:disabled, &.disabled,
+        :disabled &, .disabled & {
+            color: var(--anchor-disabled-color);
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+
+    &.btn-icon {
+        padding: rem(3px) $spacing-4;
+
+        > .vismaicon { 
+            margin: 0; 
+            top: 0;
+        }
+    }
+}

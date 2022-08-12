@@ -1,0 +1,48 @@
+// Datepicker Popup
+
+.datepicker {
+    .dropdown {
+        .dropdown-menu {
+            display: block;
+            top: 100%;
+            z-index: 2;
+            box-shadow: var(--datepicker-popup-shadow);
+            background: var(--datepicker-popup-bg);
+        }
+
+        input[type="text"] {
+            padding-right: $input-btn-dropdown-padding-x;
+
+            + .icon {
+                display: block;
+                width: rem(16px);
+                height: rem(16px);
+                position: absolute;
+                right: $spacing-8;
+                top: $spacing-8;
+                mask: url(#{$image-path}/vismaicons/interface-controls/datepicker.svg);
+                -webkit-mask: url(#{$image-path}/vismaicons/interface-controls/datepicker.svg);
+                mask-repeat: no-repeat;
+                -webkit-mask-repeat: no-repeat;
+                mask-position: right 0 top 0;
+                -webkit-mask-position: right 0 top 0;
+                background-color: var(--icon-bg);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// Label
+.field {
+    label.label {
+        background-color: transparent;
+        font-weight: normal;
+        font: $font-sm;
+        min-width: 1%;
+        text-align: left;
+        margin: 0;
+        top: auto;
+        border-radius: 0;
+    }
+}

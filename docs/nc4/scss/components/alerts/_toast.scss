@@ -1,0 +1,87 @@
+
+//# Toasts
+.toast {
+    border-width: rem(1px);
+    border-style: solid;
+    border-radius: $border-radius-10;
+    border-color: var(--alert-info-border);
+    box-shadow: var(--alert-info-shadow);
+    color: var(--alert-info-text);
+    background: var(--alert-info-bg);
+    padding: $spacing-16 $spacing-40;
+    margin-bottom: $spacing-16;
+    line-height: $line-height-sm;
+    max-width: rem(450px);
+    display: block;
+    position: absolute; 
+    top: $spacing-40;
+    z-index: 1001; 
+    left: calc(#{'50% - ' rem(225px)});
+    //position: relative;
+
+    &:before {
+        content:'';
+        width: rem(16px);
+        height: rem(16px);
+        display: block;
+        position: absolute;
+        top: rem(17px);
+        left: $spacing-16;
+        mask: url('#{$icons-path}/informative-filled-icons-dynamic/16_informative_icons.svg');
+        -webkit-mask: url('#{$icons-path}/informative-filled-icons-dynamic/16_informative_icons.svg');
+        mask-position: rem(-63px) 0;
+        -webkit-mask-position: rem(-63px) 0;
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        background-color: $blue-50;
+        }
+
+    .vismaicon-filled { display: none; }
+
+    &.toast-success {
+        border-color: var(--alert-success-border);
+        box-shadow: var(--alert-success-shadow);
+        background-color: var(--alert-success-bg);
+        color: var(--alert-success-text);
+
+        &:before {
+            mask-position: 0 0;
+            -webkit-mask-position: 0 0;
+            background-color: $green-60;
+        }
+    }
+
+    &.toast-error,
+    &.toast-danger {
+        border-color: var(--alert-danger-border);
+        box-shadow: var(--alert-danger-shadow);
+        background-color: var(--alert-danger-bg);
+        color: var(--alert-danger-text);
+
+        &:before {
+            mask-position: rem(-21px) 0;
+            -webkit-mask-position: rem(-21px) 0;
+            background-color: $red-60;
+        }
+    }
+
+    &.toast-warning {
+        border-color: var(--alert-warning-border);
+        box-shadow: var(--alert-warning-shadow);
+        background-color: var(--alert-warning-bg);
+        color: var(--alert-warning-text);
+
+        &:before {
+            mask-position: rem(-42px) 0;
+            -webkit-mask-position: rem(-42px) 0;
+            background-color: $orange-70;
+        }
+    }
+
+    //Close button 
+    .close {
+        position: absolute;
+        top: calc(#{'50% - ' rem(6px)});
+        right: rem(17px);
+        }
+    }

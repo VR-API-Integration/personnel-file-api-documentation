@@ -1,0 +1,52 @@
+
+// custom scrollbar
+//* Works for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+}
+
+//* Works for Chrome, Edge, and Safari */
+*::-webkit-scrollbar { width: 8px; }
+
+*::-webkit-scrollbar-track { background: var(--scrollbar-track-bg); }
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 16px;
+  border: 2px solid var(--scrollbar-track-bg);
+  background-color: var(--scrollbar-thumb-bg);
+
+  &:hover {
+      border-width: 0;
+  }
+
+  &:active {
+    background-color: var(--scrollbar-thumb-drag-bg);
+  }
+}
+
+html {
+    /* 1rem = 10px */
+    font-size: var(--html-font-size);
+    background-color: var(--root-background-color);
+  }
+
+body {
+    font-size: var(--body-font-size);
+
+    /* added for the fixed footer - footer should always be  */
+    padding-bottom: rem(86px); 
+    position: relative;
+    min-height: 100vh;
+  }
+
+footer {
+  width: 100%;
+  height: rem(86px);
+  position: absolute; 
+  bottom: 0;
+  padding: $spacing-32 0;
+  text-align: center;
+
+  img { margin: 0 auto; }
+}

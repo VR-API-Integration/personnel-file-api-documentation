@@ -1,0 +1,116 @@
+
+.stepper.stepper-sm {
+    @media (min-width: ($screen-md-min + 1px)) {
+        > ul {
+            > li {
+                > * {
+                    min-height: rem(70px);
+
+                    > span {
+                        right: calc(#{'-50% + ' rem(10px)});
+                    }
+
+                    > span:not(.step) {
+                        top: auto;
+                        bottom: rem(28px);
+                    }
+                }
+
+                &.active {
+                    > * {
+                        > span:not(.step) {
+                            top: auto;
+                            bottom: rem(28px);
+                        }
+                    }
+                }
+
+                /* 2 items in the stepper  */
+                &:first-child:nth-last-child(2),
+                &:first-child:nth-last-child(2) ~ li {
+                    &:first-child,
+                    &.passed:first-child { 
+                        @media (min-width: ($screen-md-min + 1px)) { margin-left: -95.7%; }
+                    }
+
+                    &.active:first-child { 
+                        @media (min-width: ($screen-md-min + 1px)) { margin-left: -94.6%; }
+                    }
+                }
+
+                /* 3 items in the stepper  */
+                &:first-child:nth-last-child(3),
+                &:first-child:nth-last-child(3) ~ li {
+                    &:first-child,
+                    &.passed:first-child {
+                        @media (min-width: ($screen-md-min + 1px)) { margin-left: -46.8%; }
+                    }
+
+                    &.active:first-child {
+                        @media (min-width: ($screen-md-min + 1px)) { margin-left: -46%; }
+                    }
+                }
+
+                /* 4 items in the stepper  */
+                &:first-child:nth-last-child(4),
+                &:first-child:nth-last-child(4) ~ li {
+                    &:first-child,
+                    &.passed:first-child {
+                        @media (min-width: ($screen-md-min + 1px)) { margin-left: -30.5%; }
+                    }
+
+                    &.active:first-child {
+                        @media (min-width: ($screen-md-min + 1px)) { margin-left: -29.7%; }
+                    }
+                }
+
+                /* 5 items in the stepper  */
+                &:first-child:nth-last-child(5),
+                &:first-child:nth-last-child(5) ~ li {
+                    &:first-child,
+                    &.passed:first-child {
+                        @media (min-width: ($screen-md-min + 1px)) { margin-left: -22.4%; }
+                    }
+
+                    &.active:first-child {
+                        @media (min-width: ($screen-md-min + 1px)) { margin-left: -21.7%; }
+                    }
+                }
+
+                /* 6 items in the stepper  */
+                &:first-child:nth-last-child(6),
+                &:first-child:nth-last-child(6) ~ li {
+                    &:first-child,
+                    &.passed:first-child {
+                        @media (min-width: ($screen-md-min + 1px)) { margin-left: -17.6%; }
+                    }
+
+                    &.active:first-child {
+                        @media (min-width: ($screen-md-min + 1px)) { margin-left: -16.8%; }
+                    }
+                }
+
+                /* 7 items in the stepper  */
+                &:first-child:nth-last-child(7),
+                &:first-child:nth-last-child(7) ~ li {
+                    &:first-child,
+                    &.passed:first-child {
+                        @media (min-width: ($screen-md-min + 1px)) { margin-left: -14.3%; }
+                    }
+
+                    &.active:first-child {
+                        @media (min-width: ($screen-md-min + 1px)) { margin-left: -13.6%; }
+                    }
+                }
+
+            }
+        }
+    }
+
+    &.no-ellipsis {
+        > ul > li > * > span {
+            bottom: 28px;
+            top: auto !important;
+        }
+    } // END .no-ellipsis
+} 

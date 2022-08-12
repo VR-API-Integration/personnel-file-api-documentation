@@ -1,0 +1,42 @@
+# Note:
+# If you are using the createtag script, don't leave a blank line at the end of this file.
+# In other words, the last line must be the last tag in the allowed-tags list.
+allowed-tags:
+  - getting_started
+  - retention_period
+  - troubleshooting
+  - file
+  - api
+  - library
+  - curl
+  - publisher
+  - upload
+  - resumable
+  - multipart
+  - list
+  - subscriber
+  - download
+  - search
+  - complete
+  - chunk
+  - delete
+  - supported
+  - file_types
+  - sandbox
+  - bo4
+  - external
+  - payslips
+  - hrcb
+  - mi
+  - pb&core
+  - rbm
+  - hrss
+  - payroll
+  - gemal
+  - personnel
+  - robotics
+  - tax_declaration
+  - postman
+  - sdk
+
+# Copyright 2021 Google LLC

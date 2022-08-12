@@ -1,0 +1,143 @@
+
+//=== Basic icon implementation
+.vismaicon {
+    display: inline-block;
+    position: relative;
+    //top: rem(6px);
+    user-select: none;
+
+    &::before { 
+        display: block;
+        content: "" !important;
+        position: relative;
+        width: rem(24px);
+        height: rem(24px);
+        margin: 0 auto;
+
+        background-color: transparent;
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: auto;
+        mask-size: auto;
+    }
+
+    &:not(.vismaicon-filled) {
+        &::before { background-color: var(--icon-bg); }
+    }
+
+    // hover state, only for icon's in button or links wrappers
+    .hover:not(:active) > &, &.hover:not(:active),
+    .btn-link:hover:not(:active) > & {
+        &:not(.vismaicon-filled) {
+            &::before { background-color: var(--icon-hover-bg); }
+        }
+    }
+
+    // active state, only for icon's in button or links wrappers
+    .active &, &.active,
+    .btn-link:active &,
+    .btn-icon:active & {
+        &:not(.vismaicon-filled) {
+            &::before { background-color: var(--icon-bg); }
+        }
+    }
+
+    // selected state
+    .selected > & {
+        cursor: pointer;
+        
+        &::before { 
+            mask-position: rem(-29px) 0; 
+            -webkit-mask-position: rem(-29px) 0; 
+        }
+    }
+
+    // disabled state
+    .disabled &, &.disabled,
+    :disabled &, &:disabled,
+    .btn:disabled &,
+    .btn-link:disabled &,
+    .btn-icon:disabled & {
+        pointer-events: none;
+
+        &:not(.vismaicon-filled) {
+            &::before { background-color: var(--icon-disabled-bg); }
+        }
+    } 
+
+    // '16px' icon version
+    &.vismaicon-sm {
+        //top: rem(2px);
+
+        &::before {
+            width: rem(16px);
+            height: rem(16px);
+        }
+
+        // selected state
+        .selected & {
+            &::before { 
+                mask-position: rem(-21px) 0; 
+                -webkit-mask-position: rem(-21px) 0;
+            }
+        }
+    }
+
+    .btn > &,
+    a > & {
+        top: 0;
+    }
+
+    .btn > &,
+    a > & {
+        margin-right: $spacing-8;
+    }
+
+    .btn > &,
+    .btn:hover:not(:active) > &,
+    .btn:active > & {
+        &:not(.vismaicon-facebook):not(.vismaicon-flickr):not(.vismaicon-google):not(.vismaicon-linkedin):not(.vismaicon-pinterest):not(.vismaicon-skype):not(.vismaicon-tumblr):not(.vismaicon-twitter):not(.vismaicon-vimeo):not(.vismaicon-youtube) {
+            &::before {
+                background-color: var(--button-icon);
+            }
+        }
+    }
+
+    .btn-primary > &,
+    .btn-primary:hover:not(:active) > &,
+    .btn-primary:active > & {
+        &:not(.vismaicon-facebook):not(.vismaicon-flickr):not(.vismaicon-google):not(.vismaicon-linkedin):not(.vismaicon-pinterest):not(.vismaicon-skype):not(.vismaicon-tumblr):not(.vismaicon-twitter):not(.vismaicon-vimeo):not(.vismaicon-youtube) {
+            &::before {
+                background-color: var(--button-primary-icon);
+            }
+        }
+    }
+
+    .btn.disabled > &,
+    .btn.disabled:hover:not(:active) > &,
+    .btn.disabled:active > &,
+    .btn:disabled > &,
+    .btn:disabled:hover:not(:active) > &,
+    .btn:disabled:active > & {
+        &:not(.vismaicon-facebook):not(.vismaicon-flickr):not(.vismaicon-google):not(.vismaicon-linkedin):not(.vismaicon-pinterest):not(.vismaicon-skype):not(.vismaicon-tumblr):not(.vismaicon-twitter):not(.vismaicon-vimeo):not(.vismaicon-youtube) {
+            &::before {
+                background-color: var(--icon-disabled-bg);
+            }
+        }
+    }
+
+    // disabled state for icons in primary color buttons
+    .disabled.btn-primary > &, .btn-primary > &.disabled,
+    .btn-primary:disabled > &, .btn-primary > &:disabled,
+    .btn.btn-primary > :disabled & {
+        opacity: .6;
+    }
+}
+
+
+/**** Icons in the main navigation ****/
+.navbar .navbar-right li.icon {
+    span.vismaicon:not(.vismaicon-menu):before { background-position: 0 0; }
+}
