@@ -36,15 +36,15 @@ entries:
     folderitems:
 
     - title: API reference
-      url: /guides_postman.html
+      url: /iam_api_reference.html
       output: web
 
     - title: Supported filters
-      url: /guides_postman.html
+      url: /iam_api_filters.html
       output: web
 
     - title: Postman collection
-      url: /guides_postman.html
+      url: /iam_api_postman.html
       output: web
 
   - title: Learning Domain
