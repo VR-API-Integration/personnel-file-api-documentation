@@ -20,3 +20,5 @@ The following processes can be supported with the domain API:
 
 
 The domain model contains the following entities:
+
+![](docs\images\IAM Domainmodel.png)
