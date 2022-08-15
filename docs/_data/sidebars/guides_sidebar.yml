@@ -35,6 +35,10 @@ entries:
     output: web
     folderitems:
 
+    - title: Introduction
+      url: /iam_api_intro.html
+      output: web
+
     - title: API reference
       url: /iam_api_reference.html
       output: web
