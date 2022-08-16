@@ -10,7 +10,7 @@ The GitHub of the original Jekyll template is in this [link](https://github.com/
 
 Execute the command ```bundle exec jekyll serve --incremental``` in the docs folder to run the site on your local machine.
 
-# How to add or pages to the site
+# How to add  pages to the site
 
 ** menu / sidebar**
 update the file *docs\_data\sidebars\guides_sidebar.yml* 

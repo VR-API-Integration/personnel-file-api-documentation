@@ -55,6 +55,10 @@ entries:
     output: web
     folderitems:
 
+    - title: Introduction
+      url: /Learning_api_intro.html
+      output: web
+
     - title: API reference
       url: /learning_api_reference.html
       output: web
