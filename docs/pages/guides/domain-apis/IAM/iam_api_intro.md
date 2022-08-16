@@ -24,4 +24,4 @@ TEST
 ## Domain model
 With different endpoint, the IAM API will support the following domain model
 
-{% include image.html file="images/IAM Domainmodel.png" url="IAM Domainmodel.png" alt="IAM Domain model " %}
+{% include image.html file="IAM Domainmodel.png" url="IAM Domainmodel.png" alt="IAM Domain model " %}
