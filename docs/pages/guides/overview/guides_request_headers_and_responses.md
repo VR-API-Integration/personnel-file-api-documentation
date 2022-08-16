@@ -13,9 +13,9 @@ folder: guides/overview
 | Header Name      | Description                                                                                                                                                                                                                                            |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Cache-Control    | The Cache-Control general-header field is used to specify directives that MUST be obeyed by all caching mechanisms along the request/response chain. In our authentication request the header is mandatory with the value. **Cache-Control: no-cache** |
-| Content-Type     | The content type of the resource in case the request has content in the body. Example: **Content-Type:multipart/related;boundary=foo_bar_baz**                                                                                                         |
+| Content-Type     | The content type of the resource in case the request has content in the body. Example: **Content-Type:multipart/form-data;boudary=\<calculated when request is sent>**                                                                                                         |
 | Authorization    | A valid access token required for authorization                                                                                                                                                                                                            |
-| Accept           | The Accept request-header can be used to specify the media types which are acceptable for the response. Example: **Accept:application/octet-stream**                                                                                                   |
+| Accept           | The Accept request-header can be used to specify the media types which are acceptable for the response. Example: **Accept:application/json**                                                                                                   |
 
 ## Response codes
 
