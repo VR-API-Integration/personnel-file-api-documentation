@@ -9,8 +9,8 @@ folder: guides/domain-apis
 topnav: topnav
 ---
 
-The purpose of this API is to allow the integration between HR Core Beaufort and external Identity & Access management systems, enabling important capabilities like the exchange of HR data, or performing searches on relevant information for the domain, like personal & contract details. Organisation will use this information to automate  critical processes like creating accounts for new employees or to block/change the access for employees to application or even buildings when they are changing jobs.
-The Identity & Access Management domain is important and helps organisation to protect their companies secrets and processes against unauthorised persons.
+The purpose of this API is to allow the integration between HR Core Beaufort and external Identity & Access Management systems, enabling important capabilities like the exchange of HR data, or performing searches on relevant information for the domain, like personal & contract details. Organisations will use this information to automate critical processes like creating accounts for new employees or to block/change the access for employees to application or even buildings when they are changing jobs.
+The Identity & Access Management domain provides vital information because it helps organisations to protect their companies secrets and processes against unauthorised persons.
 
 ## Processes
 The following processes can be supported with the domain API:
