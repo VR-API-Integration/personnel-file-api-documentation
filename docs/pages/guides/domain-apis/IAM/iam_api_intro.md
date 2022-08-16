@@ -19,9 +19,9 @@ The following processes can be supported with the domain API:
 - Get the organisation structure for managing the required approval for specific permissions
 - Link the user credentials of an employee to the user in the Youforce portal
 
-
+TEST
 
 ## Domain model
 With different endpoint, the IAM API will support the following domain model
 
-{% include image.html file="IAM Domainmodel.png" url="IAM Domainmodel.png" alt="IAM Domain model " %}
+{% include image.html file="images/IAM Domainmodel.png" url="IAM Domainmodel.png" alt="IAM Domain model " %}
