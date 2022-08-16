@@ -14,7 +14,7 @@ topnav: topnav
 
 APIs with this status are still under development and the development team is still making changes. Only a sandbox is available to start testing and the API cannot be used with customer environments.
 
-## Controlled Available (CA)
+## Controlled Available
 
 APIs (or API versions) with this status are not ready yet to be rolled out to the complete customer base:
 
@@ -24,7 +24,7 @@ APIs (or API versions) with this status are not ready yet to be rolled out to th
 
 Controlled Available APIs have the usual security and support level.
 
-## General Available (GA)
+## General Available
 
 APIs (or API versions) with this status are available to all access partners. The API can be used by all customers who use any of the HR Core systems that are supported by this API.
 
