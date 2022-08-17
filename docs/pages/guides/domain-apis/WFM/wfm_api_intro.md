@@ -25,4 +25,4 @@ The following processes can be supported with the domain API:
 With different endpoint, the WFM API will support the following domain model
 
 *note: not all endpoints are supported yet. See the reference page for the availleble endpoints*
-{% include image.html file="wfm domainmodel.png" url="wfm Domainmodel.png" alt="WFM Domain model " %}
+{% include image.html file="wfm domainmodel.png" alt="WFM Domain model " %}
