@@ -40,7 +40,7 @@ entries:
       output: web
 
     - title: API reference
-      url: /iam_api_reference.html
+      url: /SwaggerUI/IAM.html
       output: web
 
     - title: Supported filters
@@ -82,11 +82,6 @@ entries:
     - title: API reference
       url: /wfm_api_reference.html
       output: web
-
-    - title: TEST
-      external_url: /SwaggerUI/IAM.html
-      output: web
-
 
     - title: Supported filters
       url: /wfm_api_filters.html
