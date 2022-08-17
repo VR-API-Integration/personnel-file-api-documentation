@@ -4,7 +4,7 @@ tags: [wfm, api]
 keywords: wfm, api
 last_updated: 08/12/2022
 sidebar: guides_sidebar
-permalink: learning_api_intro.html
+permalink: wfm_api_intro.html
 folder: guides/domain-apis
 topnav: topnav
 ---
