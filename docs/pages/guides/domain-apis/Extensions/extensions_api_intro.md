@@ -12,7 +12,7 @@ topnav: topnav
 
 The purpose of this API is to add addtional fields to an existing domain API. With this API customers can customize the integration with their external system, like their IAM or learning system Customization means adding custom fields to the domain api on Person and Employment entity.
 
-Extensions are always liked to a specific Application. Adding extension needs to be done by Visma Raet as part of the onboard of an application for specific customer.
+Extensions are always configured  for a specific Application and customer. The Application needs to exist before the additional field can be added. Adding  extension needs to be done by Visma Raet as part of the onboard of an application for specific customer.
 
 ## Processes
 The following processes can be supported with the domain API:
@@ -20,6 +20,6 @@ The following processes can be supported with the domain API:
 - Get all the exenstions for the Employment  by an application
 
 ## Model
-With different endpoint, the extension API will support the following additional  model
+With different endpoint, the extension API will support the following additional entities
 
 {% include image.html file="extensions.png" alt="Extensions model " %}
