@@ -23,4 +23,4 @@ The following processes can be supported with the domain API:
 ## Domain model
 With different endpoint, the IAM API will support the following domain model
 
-{% include image.html file="IAM Domainmodel.png" url="IAM Domainmodel.png" alt="IAM Domain model " %}
+{% include image.html file="iam domainmodel.png" url="IAM Domainmodel.png" alt="IAM Domain model " %}
