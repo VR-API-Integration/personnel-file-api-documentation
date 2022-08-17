@@ -84,7 +84,7 @@ entries:
       output: web
 
     - title: TEST
-      external_url: /wfm_api_reference.html
+      external_url: /wfm_api_swagger.html
       output: web
 
 
