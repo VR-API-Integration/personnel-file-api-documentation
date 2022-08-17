@@ -1,5 +1,5 @@
 ---
-itle: WFM Domain API
+title: WFM API
 tags: [wfm, api]
 keywords: wfm, api
 last_updated: 08/12/2022
