@@ -95,6 +95,10 @@ entries:
     output: web
     folderitems:
 
+    - title: Introduction
+      url: /extensions_api_intro.html
+      output: web
+
     - title: API reference
       url: /extensions_api_reference.html
       output: web
