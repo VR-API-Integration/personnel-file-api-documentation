@@ -24,4 +24,4 @@ The following processes can be supported with the domain API:
 ## Domain model
 With different endpoint, the Learning  API will support the following domain model
 
-{% include image.html file="learning domainmodel.png" url="Learning Domainmodel.png" alt="Learning Domain model " %}
+{% include image.html file="learning domainmodel.png"  alt="Learning Domain model " %}
