@@ -1,5 +1,5 @@
 ---
-title: Support
+title: Relese notes
 tags: [release_notes]
 keywords: release_notes
 last_updated: 09/28/2021
