@@ -115,7 +115,7 @@ entries:
     output: web
     folderitems:
 
-    - title: Release notes
+    - title: Changelog
       url: /guides_release_notes.html
       output: web
 
