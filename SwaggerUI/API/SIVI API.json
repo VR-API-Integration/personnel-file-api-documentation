@@ -1,0 +1,795 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "HCA Sivi API",
+      "description": "Provides access to employees, organizations and their medical leave data.",
+      "servers": [
+        {
+          "url": "https://api.youforce.com/SIVI/v1.0"
+        }
+      ],
+    
+      "version": "CA"
+    },
+    "paths": {
+      "/api/verzuimmeldingen": {
+        "get": {
+          "tags": [
+            "Verzuimmeldingen"
+          ],
+          "parameters": [
+            {
+              "name": "pageToken",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "nullable": true
+              }
+            },
+            {
+              "name": "take",
+              "in": "query",
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "changedAfter",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              }
+            },
+            {
+              "name": "changedUntil",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              }
+            },
+            {
+              "name": "Accept-Version",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "X-Raet-Tenant-Id",
+              "in": "header",
+              "description": "Tenant Id",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/VerzuimmeldingenPagedResponse"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/VerzuimmeldingenPagedResponse"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/VerzuimmeldingenPagedResponse"
+                  }
+                },
+                "application/xml": {
+                  "schema": {
+                    "$ref": "#/components/schemas/VerzuimmeldingenPagedResponse"
+                  }
+                },
+                "text/xml": {
+                  "schema": {
+                    "$ref": "#/components/schemas/VerzuimmeldingenPagedResponse"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                },
+                "application/xml": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                },
+                "text/xml": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                },
+                "application/xml": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                },
+                "text/xml": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Server Error",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                },
+                "application/xml": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                },
+                "text/xml": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServerError"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "BrAlg": {
+          "type": "object",
+          "properties": {
+            "brCd": {
+              "type": "string",
+              "description": "Gets or sets MessageCode.",
+              "nullable": true
+            },
+            "vnrBrCd": {
+              "type": "string",
+              "description": "Gets or sets MessageVersion.",
+              "nullable": true
+            },
+            "aandatBr": {
+              "type": "string",
+              "description": "Gets or sets CreatedDate.",
+              "nullable": true
+            },
+            "aantijdBr": {
+              "type": "string",
+              "description": "Gets or sets CreatedTime.",
+              "nullable": true
+            },
+            "idInzndr": {
+              "type": "string",
+              "description": "Gets or sets SenderCode.",
+              "nullable": true
+            },
+            "gebrSwPakket": {
+              "type": "string",
+              "description": "Gets or sets SoftwarePackageName.",
+              "nullable": true
+            },
+            "idOntvngr": {
+              "type": "string",
+              "description": "Gets or sets RecipientCode.",
+              "nullable": true
+            },
+            "berrefnr": {
+              "type": "string",
+              "description": "Gets or sets ReferenceNumber.",
+              "nullable": true
+            },
+            "testJN": {
+              "type": "string",
+              "description": "Gets or sets TestMessage J / N / O.",
+              "nullable": true
+            },
+            "ontvngstbevJN": {
+              "type": "string",
+              "description": "Gets or sets RequireAcknowledgement J / N / O.",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Prtnr": {
+          "type": "object",
+          "properties": {
+            "signNm": {
+              "type": "string",
+              "description": "Gets or sets LastName.",
+              "nullable": true
+            },
+            "voorv": {
+              "type": "string",
+              "description": "Gets or sets Prefix.",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "StrAdrNl": {
+          "type": "object",
+          "properties": {
+            "srtAdrsCd": {
+              "type": "string",
+              "description": "Gets or sets AddressType.",
+              "nullable": true
+            },
+            "srtVrplgadrsCd": {
+              "type": "string",
+              "description": "Gets or sets NursingAddressType.",
+              "nullable": true
+            },
+            "nmVrpladrs": {
+              "type": "string",
+              "description": "Gets or sets NursingAddressName.",
+              "nullable": true
+            },
+            "ingdat": {
+              "type": "string",
+              "description": "Gets or sets StartDate.",
+              "nullable": true
+            },
+            "enddat": {
+              "type": "string",
+              "description": "Gets or sets EndDate.",
+              "nullable": true
+            },
+            "pc": {
+              "type": "string",
+              "description": "Gets or sets PostalCode.",
+              "nullable": true
+            },
+            "wnpl": {
+              "type": "string",
+              "description": "Gets or sets CityName.",
+              "nullable": true
+            },
+            "straatLang": {
+              "type": "string",
+              "description": "Gets or sets StreetName.",
+              "nullable": true
+            },
+            "huisnr": {
+              "type": "string",
+              "description": "Gets or sets HouseNumber.",
+              "nullable": true
+            },
+            "huisToev": {
+              "type": "string",
+              "description": "Gets or sets HouseNumberAddition.",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Com": {
+          "type": "object",
+          "properties": {
+            "srtComCd": {
+              "type": "string",
+              "description": "Gets or sets Type.",
+              "nullable": true
+            },
+            "nrCom": {
+              "type": "string",
+              "description": "Gets or sets NumberOrAddress.",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Cntprsn": {
+          "type": "object",
+          "properties": {
+            "idWrknmr": {
+              "type": "string",
+              "description": "Gets or sets EmployeeId.",
+              "nullable": true
+            },
+            "persnr": {
+              "type": "string",
+              "description": "Gets or sets PersonNumber.",
+              "nullable": true
+            },
+            "achternaam": {
+              "type": "string",
+              "description": "Gets or sets LastName.",
+              "nullable": true
+            },
+            "voorl": {
+              "type": "string",
+              "description": "Gets or sets Initials.",
+              "nullable": true
+            },
+            "roepnaam": {
+              "type": "string",
+              "description": "Gets or sets NickName.",
+              "nullable": true
+            },
+            "gslchtCd": {
+              "type": "string",
+              "description": "Gets or sets Gender.",
+              "nullable": true
+            },
+            "rolCntprsnCd": {
+              "type": "string",
+              "description": "Gets or sets Role.",
+              "nullable": true
+            },
+            "com": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Com"
+              },
+              "description": "Gets or sets Communication.",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Actie": {
+          "type": "object",
+          "properties": {
+            "actieCd": {
+              "type": "string",
+              "description": "Gets or sets ActionCode.",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Vrzm": {
+          "type": "object",
+          "properties": {
+            "vrwrkCd": {
+              "type": "string",
+              "description": "Gets or sets ProcessingCode.",
+              "nullable": true
+            },
+            "ingdatMutVrzm": {
+              "type": "string",
+              "description": "Gets or sets EffectiveDate of change in absenteeism.",
+              "nullable": true
+            },
+            "ingdatMutVrzmOud": {
+              "type": "string",
+              "description": "Gets or sets EffectiveDateOld of change in absenteeism old.",
+              "nullable": true
+            },
+            "vrzmgvlId": {
+              "type": "string",
+              "description": "Gets or sets AbsenceId.",
+              "nullable": true
+            },
+            "vrzmgvlIdOud": {
+              "type": "string",
+              "description": "Gets or sets AbsenceIdOld.",
+              "nullable": true
+            },
+            "vrzmgvlVnrMld": {
+              "type": "integer",
+              "description": "Gets or sets case of absence SequenceNumber report.",
+              "format": "int32"
+            },
+            "endVrzmJN": {
+              "type": "string",
+              "description": "Gets or sets EndOfAbsence J / N / O.",
+              "nullable": true
+            },
+            "datVrzmWrkgvr": {
+              "type": "string",
+              "description": "Gets or sets ReportingDate: date on which the person's absence was reported to their employer.",
+              "nullable": true
+            },
+            "datEerstVrzmdg": {
+              "type": "string",
+              "description": "Gets or sets date of FirstDayOfAbsence.",
+              "nullable": true
+            },
+            "datEerstVrzmdgOud": {
+              "type": "string",
+              "description": "Gets or sets date of FirstDayOfAbsenceOld.",
+              "nullable": true
+            },
+            "datHrstld": {
+              "type": "string",
+              "description": "Gets or sets RestoreDate: The first day on which the employee returns to work, or the first day on which entitlement to maternity and childbirth benefit takes effect, or the day of the employee's death, or the day the employee retires, or the day the employee starts entering the WAO. Recovery is also registered during leave.",
+              "nullable": true
+            },
+            "datHrstldWrkgvr": {
+              "type": "string",
+              "description": "Gets or sets EmployerRestoreDate.",
+              "nullable": true
+            },
+            "prcVrzm": {
+              "type": "number",
+              "description": "Gets or sets SicknessPercentage.",
+              "format": "double"
+            },
+            "oorzkVrzmCd": {
+              "type": "string",
+              "description": "Gets or sets CauseOfAbsence.",
+              "nullable": true
+            },
+            "vngntJN": {
+              "type": "string",
+              "description": "Gets or sets SafetyNet J / N / O.",
+              "nullable": true
+            },
+            "rdnEndVrzmCd": {
+              "type": "string",
+              "description": "Gets or sets AbsenceEndReason.",
+              "nullable": true
+            },
+            "wazoCd": {
+              "type": "string",
+              "description": "Gets or sets WAZOCd.",
+              "nullable": true
+            },
+            "cntprsn": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Cntprsn"
+              },
+              "description": "ContactPerson.",
+              "nullable": true
+            },
+            "actie": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Actie"
+              },
+              "description": "Gets or sets Action.",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Dnstvbnd": {
+          "type": "object",
+          "properties": {
+            "ingdatMut": {
+              "type": "string",
+              "description": "EffectiveDate.",
+              "nullable": true
+            },
+            "idDnstvbnd": {
+              "type": "string",
+              "description": "ContractCode.",
+              "nullable": true
+            },
+            "idDnstvbndOud": {
+              "type": "string",
+              "description": "ContractCodeOld.",
+              "nullable": true
+            },
+            "ingdat": {
+              "type": "string",
+              "description": "StartDate.",
+              "nullable": true
+            },
+            "enddat": {
+              "type": "string",
+              "description": "EndDate.",
+              "nullable": true
+            },
+            "rdEndDnstvbndCd": {
+              "type": "string",
+              "description": "TerminationReason.",
+              "nullable": true
+            },
+            "persNr": {
+              "type": "string",
+              "description": "PersonNumber.",
+              "nullable": true
+            },
+            "persNrOud": {
+              "type": "string",
+              "description": "PersonNumberOld.",
+              "nullable": true
+            },
+            "fnctcd": {
+              "type": "string",
+              "description": "JobProfile.",
+              "nullable": true
+            },
+            "nmFnct": {
+              "type": "string",
+              "description": "JobProfileName.",
+              "nullable": true
+            },
+            "nmOrgeenh": {
+              "type": "string",
+              "description": "OrgUnitName.",
+              "nullable": true
+            },
+            "orgeenhCd": {
+              "type": "string",
+              "description": "OrgUnitCode.",
+              "nullable": true
+            },
+            "ondOrgeenhCd": {
+              "type": "string",
+              "description": "ParentOrgUnitCode.",
+              "nullable": true
+            },
+            "ondOrgeenhCdNm": {
+              "type": "string",
+              "description": "ParentOrgunitName.",
+              "nullable": true
+            },
+            "cdBepTd": {
+              "type": "string",
+              "description": "ContractType.",
+              "nullable": true
+            },
+            "aantCtrcturenPWk": {
+              "type": "number",
+              "description": "AmountOfWork.",
+              "format": "double",
+              "nullable": true
+            },
+            "vrzm": {
+              "$ref": "#/components/schemas/Vrzm"
+            },
+            "cntprsn": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Cntprsn"
+              },
+              "description": "ContactPerson.",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Wrknmr": {
+          "type": "object",
+          "properties": {
+            "ingdatMut": {
+              "type": "string",
+              "description": "Gets or sets EffectiveDate.",
+              "nullable": true
+            },
+            "gebdat": {
+              "type": "string",
+              "description": "Gets or sets BirthDate.",
+              "nullable": true
+            },
+            "overldat": {
+              "type": "string",
+              "description": "Gets or sets DeathDate.",
+              "nullable": true
+            },
+            "signNm": {
+              "type": "string",
+              "description": "Gets or sets BirthName.",
+              "nullable": true
+            },
+            "voorl": {
+              "type": "string",
+              "description": "Gets or sets Initials.",
+              "nullable": true
+            },
+            "voorv": {
+              "type": "string",
+              "description": "Gets or sets Prefix.",
+              "nullable": true
+            },
+            "roepnaam": {
+              "type": "string",
+              "description": "Gets or sets KnownAs.",
+              "nullable": true
+            },
+            "titVNm": {
+              "type": "string",
+              "description": "Gets or sets TitleSuffix.",
+              "nullable": true
+            },
+            "nmvrkrCd": {
+              "type": "string",
+              "description": "Gets or sets NamePreference.",
+              "nullable": true
+            },
+            "gslchtCd": {
+              "type": "string",
+              "description": "Gets or sets Gender.",
+              "nullable": true
+            },
+            "idWrknmr": {
+              "type": "string",
+              "description": "Gets or sets EmployeeId.",
+              "nullable": true
+            },
+            "idWrknmrOud": {
+              "type": "string",
+              "description": "Gets or sets EmployeeIdOld.",
+              "nullable": true
+            },
+            "prtnr": {
+              "$ref": "#/components/schemas/Prtnr"
+            },
+            "strAdrNl": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/StrAdrNl"
+              },
+              "description": "Gets or sets AddressDetailsNL.",
+              "nullable": true
+            },
+            "com": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Com"
+              },
+              "description": "Gets or sets Communications.",
+              "nullable": true
+            },
+            "dnstvbnd": {
+              "$ref": "#/components/schemas/Dnstvbnd"
+            }
+          },
+          "additionalProperties": false
+        },
+        "Wrkgvr": {
+          "type": "object",
+          "properties": {
+            "hndlsnmOrg": {
+              "type": "string",
+              "description": "Gets or sets Name.",
+              "nullable": true
+            },
+            "idWrkgvrArbdnst": {
+              "type": "string",
+              "description": "Gets or sets EmployerIdAtArbo.",
+              "nullable": true
+            },
+            "aansltnrGeguitwlngArbdnst": {
+              "type": "string",
+              "description": "Gets or sets ArboAccountNumber.",
+              "nullable": true
+            },
+            "wrknmr": {
+              "$ref": "#/components/schemas/Wrknmr"
+            }
+          },
+          "additionalProperties": false
+        },
+        "Verzuimmeldingen": {
+          "type": "object",
+          "properties": {
+            "brAlg": {
+              "$ref": "#/components/schemas/BrAlg"
+            },
+            "wrkgvr": {
+              "$ref": "#/components/schemas/Wrkgvr"
+            }
+          },
+          "additionalProperties": false
+        },
+        "VerzuimmeldingenPagedResponse": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Verzuimmeldingen"
+              },
+              "nullable": true
+            },
+            "nextLink": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "ErrorDetails": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "nullable": true
+            },
+            "correlationId": {
+              "type": "string",
+              "nullable": true
+            },
+            "issuedAt": {
+              "type": "string",
+              "nullable": true
+            },
+            "errorCode": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "ServerError": {
+          "type": "object",
+          "properties": {
+            "error": {
+              "$ref": "#/components/schemas/ErrorDetails"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "securitySchemes": {
+        "Bearer": {
+          "type": "apiKey",
+          "description": "JWT Authorization header using the Bearer scheme. </br> \r\n                      Enter 'Bearer' [space] and then your token in the text input below.\r\n                      </br>Example: 'Bearer 12345abcdef'",
+          "name": "Authorization",
+          "in": "header"
+        }
+      }
+    },
+    "security": [
+      {
+        "Bearer": [ ]
+      }
+    ]
+  }

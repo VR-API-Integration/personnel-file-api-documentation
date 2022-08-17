@@ -1,0 +1,1301 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "version": "CA",
+    "title": "Youforce IAM API",
+    "description": "Provides access to employees, their employments and their assignments as well as organizations and their jobprofiles."
+  },
+  "servers": [
+    {
+      "url": "https://api.youforce.com/iam/v1.0"
+    }
+  ],
+  "paths": {
+    "/v1.0/assignments": {
+      "get": {
+        "tags": [ "Assignments" ],
+        "summary": "Get all assignments",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "The amount of records to skip, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "The amount of records to return, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "nextToken",
+            "in": "query",
+            "description": "The RowKey of the last item returned",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "validFrom",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "validUntil",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "uniqueItems": false,
+              "type": "array",
+              "items": { "$ref": "#/definitions/Assignment" }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    },
+    "/v1.0/assignments/{id}": {
+      "get": {
+        "tags": [ "Assignments" ],
+        "summary": "Get an assignment by id",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the assignment",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/Assignment" }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    },
+    "/v1.0/employees": {
+      "get": {
+        "tags": [ "Employees" ],
+        "summary": "Get all employees",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "The amount of records to skip, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "The amount of records to return, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "nextToken",
+            "in": "query",
+            "description": "The RowKey of the last item returned",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "organizationUnit",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "personCode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "validFrom",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "validUntil",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "uniqueItems": false,
+              "type": "array",
+              "items": { "$ref": "#/definitions/Employee" }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    },
+    "/v1.0/employees/{id}": {
+      "get": {
+        "tags": [ "Employees" ],
+        "summary": "Get an employee by id",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the employee",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/Employee" }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    },
+    "/v1.0/employments": {
+      "get": {
+        "tags": [ "Employments" ],
+        "summary": "Get all Employments",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "The amount of records to skip, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "The amount of records to return, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "nextToken",
+            "in": "query",
+            "description": "The RowKey of the last item returned",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "organizationUnit",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "personCode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "uniqueItems": false,
+              "type": "array",
+              "items": { "$ref": "#/definitions/Employee.Assignment" }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    },
+    "/v1.0/employments/{id}": {
+      "get": {
+        "tags": [ "Employments" ],
+        "summary": "Get an employments by id",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the employments",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/Employment" }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    },
+    "/v1.0/jobProfiles": {
+      "get": {
+        "tags": [ "JobProfiles" ],
+        "summary": "Get all jobProfiles",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "The amount of records to skip, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "The amount of records to return, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "nextToken",
+            "in": "query",
+            "description": "The RowKey of the last item returned",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "shortName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "validFrom",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "validUntil",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "uniqueItems": false,
+              "type": "array",
+              "items": { "$ref": "#/definitions/JobProfile" }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    },
+    "/v1.0/jobProfiles/{jobProfileCode}": {
+      "get": {
+        "tags": [ "JobProfiles" ],
+        "summary": "Get an jobProfile by code",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "jobProfileCode",
+            "in": "path",
+            "description": "The code of the jobProfile",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/JobProfile" }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    },
+    "/v1.0/organizationUnits": {
+      "get": {
+        "tags": [ "OrganizationUnits" ],
+        "summary": "Get all organizationUnits",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "The amount of records to skip, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "The amount of records to return, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "nextToken",
+            "in": "query",
+            "description": "The RowKey of the last item returned",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "shortName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "validFrom",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "validUntil",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "uniqueItems": false,
+              "type": "array",
+              "items": { "$ref": "#/definitions/OrganizationUnit" }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    },
+    "/v1.0/organizationUnits/{id}": {
+      "get": {
+        "tags": [ "OrganizationUnits" ],
+        "summary": "Get an organizationUnit by id",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the organizationUnit",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/OrganizationUnit" }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    },
+    "/v1.0/persons": {
+      "get": {
+        "tags": [ "Persons" ],
+        "summary": "Get all persons",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "The amount of records to skip, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "The amount of records to return, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "nextToken",
+            "in": "query",
+            "description": "The RowKey of the last item returned",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "validFrom",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "validUntil",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "uniqueItems": false,
+              "type": "array",
+              "items": { "$ref": "#/definitions/Person" }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    },
+    "/v1.0/persons/{id}": {
+      "get": {
+        "tags": [ "Persons" ],
+        "summary": "Get an person by id",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the person",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/Person" }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    },
+    "/v1.0/roleAssignments": {
+      "get": {
+        "tags": [ "RoleAssignments" ],
+        "summary": "Get all employees",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "The amount of records to skip, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "The amount of records to return, used for paging",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "nextToken",
+            "in": "query",
+            "description": "The RowKey of the last item returned",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "validFrom",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "validUntil",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "uniqueItems": false,
+              "type": "array",
+              "items": { "$ref": "#/definitions/RoleAssignment" }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    },
+    "/v1.0/roleAssignments/{id}": {
+      "get": {
+        "tags": [ "RoleAssignments" ],
+        "summary": "Get an employee by id",
+        "operationId": "Get",
+        "consumes": [],
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the employee",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/RoleAssignment" }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": { "$ref": "#/definitions/ServerError" }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Assignment": {
+      "type": "object",
+      "properties": {
+        "validFrom": { "type": "string" },
+        "validUntil": { "type": "string" },
+        "id": { "type": "string" },
+        "personCode": { "type": "string" },
+        "employmentCode": { "type": "string" },
+        "startDate": { "type": "string" },
+        "endDate": { "type": "string" },
+        "jobProfile": { "type": "string" },
+        "organizationUnit": { "type": "string" },
+        "workingAmount": { "$ref": "#/definitions/WorkingAmount" },
+        "extensions": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Extension" },
+          "readOnly": true
+        },
+        "isActive": { "type": "boolean" }
+      }
+    },
+    "WorkingAmount": {
+      "type": "object",
+      "properties": {
+        "amountOfWork": {
+          "format": "double",
+          "type": "number"
+        },
+        "unitOfWork": {
+          "enum": [ "Hours", "Days" ],
+          "type": "string"
+        },
+        "periodOfWork": {
+          "enum": [ "Day", "Week", "Month", "Quarter", "Year" ],
+          "type": "string"
+        }
+      }
+    },
+    "Extension": {
+      "type": "object",
+      "properties": {
+        "key": { "type": "string" },
+        "value": { "type": "string" }
+      }
+    },
+    "ServerError": {
+      "type": "object",
+      "properties": { "error": { "$ref": "#/definitions/ErrorDetails" } }
+    },
+    "ErrorDetails": {
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" },
+        "correlationId": { "type": "string" },
+        "issuedAt": { "type": "string" },
+        "errorCode": { "type": "string" }
+      }
+    },
+    "Employee": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "personCode": { "type": "string" },
+        "initials": { "type": "string" },
+        "firstNames": { "type": "string" },
+        "knownAs": { "type": "string" },
+        "lastNameAtBirth": { "type": "string" },
+        "lastNameAtBirthPrefix": { "type": "string" },
+        "lastName": { "type": "string" },
+        "lastNamePrefix": { "type": "string" },
+        "nameAssembleOrder": { "type": "string" },
+        "partnerName": { "type": "string" },
+        "partnerNamePrefix": { "type": "string" },
+        "titlePrefix": { "type": "string" },
+        "titleSuffix": { "type": "string" },
+        "gender": {
+          "enum": [ "NotKnown", "Male", "Female", "NotApplicable" ],
+          "type": "string"
+        },
+        "deceased": { "type": "boolean" },
+        "isActive": { "type": "boolean" },
+        "validFrom": { "type": "string" },
+        "validUntil": { "type": "string" },
+        "phoneNumbers": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/PhoneNumber" },
+          "readOnly": true
+        },
+        "emailAddresses": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/EmailAddress" },
+          "readOnly": true
+        },
+        "addresses": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Employee.Address" },
+          "readOnly": true
+        },
+        "assignments": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Employee.Assignment" },
+          "readOnly": true
+        },
+        "employments": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Employee.Employment" },
+          "readOnly": true
+        },
+        "extensions": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Extension" },
+          "readOnly": true
+        }
+      }
+    },
+    "PhoneNumber": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [ "Business", "Home", "Mobile" ],
+          "type": "string"
+        },
+        "number": { "type": "string" }
+      }
+    },
+    "EmailAddress": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [ "Business", "Private" ],
+          "type": "string"
+        },
+        "address": { "type": "string" }
+      }
+    },
+    "Employee.Address": {
+      "type": "object",
+      "properties": {
+        "landCode": { "type": "string" },
+        "landFullName": { "type": "string" },
+        "type": {
+          "enum": [ "Postal", "Home" ],
+          "type": "string"
+        },
+        "street": { "type": "string" },
+        "houseNumber": { "type": "string" },
+        "houseNumberAddition": { "type": "string" },
+        "postalCode": { "type": "string" },
+        "city": { "type": "string" },
+        "country": { "type": "string" }
+      }
+    },
+    "Employee.Assignment": {
+      "type": "object",
+      "properties": {
+        "employmentCode": { "type": "string" },
+        "startDate": { "type": "string" },
+        "endDate": { "type": "string" },
+        "workingAmount": { "$ref": "#/definitions/WorkingAmount" },
+        "jobProfile": { "type": "string" },
+        "organizationUnit": { "type": "string" }
+      }
+    },
+    "Employee.Employment": {
+      "type": "object",
+      "properties": {
+        "contractId": { "type": "string" },
+        "employmentCode": { "type": "string" },
+        "employeeCode": { "type": "string" },
+        "originalHireDate": { "type": "string" },
+        "dischargeDate": { "type": "string" },
+        "hireDate": { "type": "string" },
+        "company": { "type": "string" },
+        "location": { "type": "string" },
+        "costCenter": { "type": "string" },
+        "classification": { "type": "string" },
+        "employmentType": { "type": "string" },
+        "workingAmount": { "$ref": "#/definitions/WorkingAmount" },
+        "jobProfile": { "type": "string" },
+        "organizationUnit": { "type": "string" }
+      }
+    },
+    "Employment": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "personCode": { "type": "string" },
+        "employeeCode": { "type": "string" },
+        "contractCode": { "type": "string" },
+        "validFrom": { "type": "string" },
+        "validUntil": { "type": "string" },
+        "employmentCode": { "type": "string" },
+        "costAllocation": { "type": "string" },
+        "dischargeDate": { "type": "string" },
+        "originalHireDate": { "type": "string" },
+        "hireDate": { "type": "string" },
+        "endDate": { "type": "string" },
+        "company": { "type": "string" },
+        "location": { "type": "string" },
+        "site": { "type": "string" },
+        "employmentType": { "type": "string" },
+        "jobProfile": { "type": "string" },
+        "organizationUnit": { "type": "string" },
+        "classification": { "type": "string" },
+        "costCenter": { "type": "string" },
+        "emailAddresses": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/EmailAddress" },
+          "readOnly": true
+        },
+        "phoneNumbers": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/PhoneNumber" },
+          "readOnly": true
+        },
+        "workingAmount": { "$ref": "#/definitions/WorkingAmount" },
+        "extensions": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Extension" },
+          "readOnly": true
+        },
+        "isActive": { "type": "boolean" }
+      }
+    },
+    "JobProfile": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "shortName": { "type": "string" },
+        "fullName": { "type": "string" },
+        "isActive": { "type": "boolean" },
+        "jobFamily": { "type": "string" },
+        "jobTitle": { "type": "string" },
+        "validFrom": { "type": "string" },
+        "validUntil": { "type": "string" },
+        "extensions": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Extension" },
+          "readOnly": true
+        }
+      }
+    },
+    "OrganizationUnit": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "shortName": { "type": "string" },
+        "fullName": { "type": "string" },
+        "parentOrgUnit": { "type": "string" },
+        "manager": { "type": "string" },
+        "managerPersonCode": { "type": "string" },
+        "isActive": { "type": "boolean" },
+        "organizationUnitType": { "type": "string" },
+        "validFrom": { "type": "string" },
+        "validUntil": { "type": "string" },
+        "roleAssignments": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/OrganizationUnit.RoleAssignment" },
+          "readOnly": true
+        },
+        "extensions": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Extension" },
+          "readOnly": true
+        }
+      }
+    },
+    "OrganizationUnit.RoleAssignment": {
+      "type": "object",
+      "properties": {
+        "personCode": { "type": "string" },
+        "startDate": { "type": "string" },
+        "endDate": { "type": "string" },
+        "roleShortName": { "type": "string" },
+        "roleFullName": { "type": "string" }
+      }
+    },
+    "Person": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "initials": { "type": "string" },
+        "firstNames": { "type": "string" },
+        "lastNameAtBirth": { "type": "string" },
+        "lastNameAtBirthPrefix": { "type": "string" },
+        "lastName": { "type": "string" },
+        "gender": { "type": "string" },
+        "validFrom": { "type": "string" },
+        "validUntil": { "type": "string" },
+        "addresses": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Address" },
+          "readOnly": true
+        },
+        "extensions": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Extension" },
+          "readOnly": true
+        },
+        "isActive": { "type": "boolean" }
+      }
+    },
+    "Address": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [ "Postal", "Home" ],
+          "type": "string"
+        },
+        "street": { "type": "string" },
+        "houseNumber": { "type": "string" },
+        "houseNumberAddition": { "type": "string" },
+        "postalCode": { "type": "string" },
+        "city": { "type": "string" },
+        "country": { "type": "string" }
+      }
+    },
+    "RoleAssignment": {
+      "type": "object",
+      "properties": {
+        "validFrom": { "type": "string" },
+        "validUntil": { "type": "string" },
+        "id": { "type": "string" },
+        "organizationUnit": { "type": "string" },
+        "shortName": { "type": "string" },
+        "personCode": { "type": "string" },
+        "startDate": { "type": "string" },
+        "endDate": { "type": "string" },
+        "extensions": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Extension" },
+          "readOnly": true
+        },
+        "isActive": { "type": "boolean" }
+      }
+    }
+  }
+}

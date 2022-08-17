@@ -83,6 +83,11 @@ entries:
       url: /wfm_api_reference.html
       output: web
 
+    - title: TEST
+      external_url: /wfm_api_reference.html
+      output: web
+
+
     - title: Supported filters
       url: /wfm_api_filters.html
       output: web

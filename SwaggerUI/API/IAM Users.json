@@ -1,0 +1,179 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "version": "CA",
+      "title": "Youforce IAM Users",
+      "description": "Identity and Access Management API."
+    },
+    "servers": [
+      {
+        "url": "https://api.youforce.com/iam/v1.0"
+      }
+    ],
+    "paths": {
+      "/users(employeeId={employeeId})": {
+        "get": {
+          "tags": [
+            "SourceUser"
+          ],
+          "operationId": "GetUser",
+          "parameters": [
+            {
+              "name": "x-raet-tenant-id",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "employeeId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/UserDto"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/UserDto"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/UserDto"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {}
+            },
+            "401": {
+              "description": "Unauthorized",
+              "content": {}
+            },
+            "500": {
+              "description": "Server Error",
+              "content": {}
+            },
+            "503": {
+              "description": "Server Error",
+              "content": {}
+            }
+          }
+        }
+      },
+      "/users(employeeId={employeeId})/identity": {
+        "patch": {
+          "tags": [
+            "SourceUser"
+          ],
+          "operationId": "UpdateUserCorporateIdentity",
+          "parameters": [
+            {
+              "name": "x-raet-tenant-id",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "employeeId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json-patch+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdentityDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdentityDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdentityDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdentityDto"
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "204": {
+              "description": "Success",
+              "content": {}
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {}
+            },
+            "401": {
+              "description": "Unauthorized",
+              "content": {}
+            },
+            "500": {
+              "description": "Server Error",
+              "content": {}
+            },
+            "503": {
+              "description": "Server Error",
+              "content": {}
+            }
+          },
+          "x-codegen-request-body-name": "identity"
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "UserDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "sourceId": {
+              "type": "string"
+            },
+            "identityId": {
+              "type": "string"
+            }
+          }
+        },
+        "IdentityDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "pattern": "^[A-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[A-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-z0-9](?:[A-z0-9-]*[A-z0-9])?\\.)+[A-z0-9](?:[A-z0-9-]*[A-z0-9])?$",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
