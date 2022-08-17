@@ -9,6 +9,8 @@ folder: guides/domain-apis
 topnav: topnav
 ---
 
+**API status :** <span class="label label-SUCCES">GENERAL</span>
+
 The purpose of this API is to allow the integration between HR Core Beaufort and external Learning Management Systems, enabling important capabilities like the exchange of HR data, or performing searches on relevant information for the domain, like personal & contract details. Organisations will use this information for all kinds of aspects in the learning and development process.  
 
 The Learning & development domain provides vital information that helps organisations to align the human asset of the organisation with the needs for their business
