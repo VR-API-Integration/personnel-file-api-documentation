@@ -18,7 +18,8 @@ Extensions are always liked to a specific Application. Adding extension needs to
 The following processes can be supported with the domain API:
 - Get all the exenstions for the persons by an application
 - Get all the exenstions for the Employment  by an application
-## Domain model
+
+## Model
 With different endpoint, the extension API will support the following additional  model
 
 {% include image.html file="extensions.png" alt="Extensions model " %}
