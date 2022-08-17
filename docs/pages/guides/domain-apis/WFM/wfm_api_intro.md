@@ -8,7 +8,7 @@ permalink: wfm_api_intro.html
 folder: guides/domain-apis
 topnav: topnav
 ---
-**API status :** <span class="label label-danger">CONCEPT</span>
+<span class="label label-danger">CONCEPT</span>
 
 The purpose of this API is to allow the integration between HR Core Beaufort and external Workforce Management Systems, enabling important capabilities like the exchange of HR data, or performing searches on relevant information for the domain, like personal & contract details and the availlebility of their employees. Organisations will use this information for resource planning and timewriting.
 
