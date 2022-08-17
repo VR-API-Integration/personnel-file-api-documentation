@@ -10,6 +10,8 @@ topnav: topnav
 ---
 <span style="color:red"> *CONCEPT*</span>
 
+<span class="badge badge-warning">+99</span>
+
 The purpose of this API is to allow the integration between HR Core Beaufort and external Workforce Management Systems, enabling important capabilities like the exchange of HR data, or performing searches on relevant information for the domain, like personal & contract details and the availlebility of their employees. Organisations will use this information for resource planning and timewriting.
 
 The Workforce Management domain provides vital information that helps organisations to align the workschedules and capacity with the needs for their business. 
