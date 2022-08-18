@@ -396,11 +396,15 @@
 					]
 				},
 				"url": {
-					"raw": "{{LearningSGWUrl}}/v1.1/employees/{{PersonalFilePersonCode}}/documents/{{PersonalFileDocumentType}}",
+					"raw": "https://api.youforce.com/learning/v1.1/employees/{{PersonalFilePersonCode}}/documents/{{PersonalFileDocumentType}}",
+					"protocol": "https",
 					"host": [
-						"{{LearningSGWUrl}}"
+						"api",
+						"youforce",
+						"com"
 					],
 					"path": [
+						"learning",
 						"v1.1",
 						"employees",
 						"{{PersonalFilePersonCode}}",
@@ -428,11 +432,15 @@
 					}
 				],
 				"url": {
-					"raw": "{{LearningSGWUrl}}/v1.0/employees/documents/{{PersonalFileTicketId}}/status",
+					"raw": "https://api.youforce.com/learning/v1.0/employees/documents/{{PersonalFileTicketId}}/status",
+					"protocol": "https",
 					"host": [
-						"{{LearningSGWUrl}}"
+						"api",
+						"youforce",
+						"com"
 					],
 					"path": [
+						"learning",
 						"v1.0",
 						"employees",
 						"documents",
