@@ -60,7 +60,7 @@ entries:
       output: web
 
     - title: API reference
-      url: /learning_api_reference.html
+      external_url: https://vr-api-integration.github.io/SwaggerUI/Learning.html
       output: web
 
     - title: Supported filters
