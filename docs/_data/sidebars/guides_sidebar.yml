@@ -40,7 +40,7 @@ entries:
       output: web
 
     - title: API reference
-      url: /IAM.html
+      external_url: https://vr-api-integration.github.io/SwaggerUI/IAM.html
       output: web
 
     - title: Supported filters
