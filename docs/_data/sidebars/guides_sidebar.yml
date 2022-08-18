@@ -40,7 +40,7 @@ entries:
       output: web
 
     - title: API reference
-      external_url: https://vr-api-integration.github.io/SwaggerUI/IAM.html
+      external_url: https://vr-api-integration.github.io/youforce-api-Swagger-ui/IAM.html
       output: web
 
     - title: Supported filters
@@ -60,7 +60,7 @@ entries:
       output: web
 
     - title: API reference
-      external_url: https://vr-api-integration.github.io/SwaggerUI/Learning.html
+      external_url: https://vr-api-integration.github.io/youforce-api-Swagger-ui/Learning.html
       output: web
 
     - title: Supported filters
