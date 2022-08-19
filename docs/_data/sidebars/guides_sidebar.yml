@@ -47,7 +47,6 @@ entries:
       url: /iam_api_swagger.html
       output: web
 
-
     - title: Supported filters
       url: /iam_api_filters.html
       output: web
@@ -55,6 +54,16 @@ entries:
     - title: Postman collection
       url: /iam_api_postman.html
       output: web
+
+subfolders:
+      - title: Endpoints
+        output: web
+        subfolderitems:
+
+        - title: GET Assignment
+          url: /iam_api_swagger.html
+          output: web
+
 
   - title: Learning Domain
     output: web
