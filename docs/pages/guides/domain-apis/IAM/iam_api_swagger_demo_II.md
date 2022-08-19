@@ -1,12 +1,12 @@
 ---
-title: GET / pet/{petId}
+title: GET /assignments
 keywords: iam, api
 tags: [iam, api]
 last_updated: 08/12/2022
 sidebar: guides_sidebar
 permalink: iam_api_swagger.html
 swaggerfile: iam api
-swaggerkey: /v1.0/assignments
+swaggerkey: assignments
 method: get
 ---
 
