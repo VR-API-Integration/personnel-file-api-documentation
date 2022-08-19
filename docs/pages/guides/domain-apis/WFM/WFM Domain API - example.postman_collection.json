@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "7e39a542-e5c4-4031-b79b-6c2db8c9f7cb",
+		"name": "WFM Domain API - example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14296871"
+	},
+	"item": [
+		{
+			"name": "Get access token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody)\r",
+							"\r",
+							"postman.setGlobalVariable(\"AccessToken\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "{{VCClientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{VCClientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "tenant_id",
+							"value": "{{VCTenantId}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://connect.visma.com/connect/token",
+					"protocol": "https",
+					"host": [
+						"connect",
+						"visma",
+						"com"
+					],
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Persons",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/wfm/v1.0/Persons",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"wfm",
+						"v1.0",
+						"Persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Employments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/wfm/v1.0/Employments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"wfm",
+						"v1.0",
+						"Employments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Organization Units",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/wfm/v1.0/OrganizationUnits",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"wfm",
+						"v1.0",
+						"OrganizationUnits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Role Assignment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/wfm/v1.0/RoleAssignments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"wfm",
+						"v1.0",
+						"RoleAssignments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Job Profiles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/wfm/v1.0/JobProfiles",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"wfm",
+						"v1.0",
+						"JobProfiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Assignments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/wfm/v1.0/Assignments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"wfm",
+						"v1.0",
+						"Assignments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
