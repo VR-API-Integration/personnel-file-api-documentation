@@ -10,5 +10,5 @@ topnav: topnav
 ---
 
 Swagger pages
-- [IAM endpoint](https://vr-api-integration.github.io/youforce-api-Swagger-ui/IAM.html)
-- [User endpoint](https://vr-api-integration.github.io/youforce-api-Swagger-ui/IAM_Users.html)
+- [IAM endpoint](https://vr-api-integration.github.io/youforce-api-Swagger-ui/IAM.html){:target="\_blank"}
+- [User endpoint](https://vr-api-integration.github.io/youforce-api-Swagger-ui/IAM_Users.html){:target="\_blank"}
