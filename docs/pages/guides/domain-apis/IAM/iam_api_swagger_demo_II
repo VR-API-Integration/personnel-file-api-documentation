@@ -1,0 +1,15 @@
+---
+title: IAM API
+keywords: iam, api
+tags: [iam, api]
+last_updated: 08/12/2022
+sidebar: guides_sidebar
+permalink: iam_api_swagger.html
+swaggerfile: petstore
+swaggerkey: Pet
+---
+## Pet attributes
+
+{% include swagger_parsers/getmodels.md %}
+
+{% include links.html %}
