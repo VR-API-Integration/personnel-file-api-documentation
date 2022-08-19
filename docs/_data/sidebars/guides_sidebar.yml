@@ -40,7 +40,7 @@ entries:
       output: web
 
     - title: API Reference
-      external_url: https://vr-api-integration.github.io/youforce-api-Swagger-ui/IAM.html
+      url: iam_api_reference.html
       output: web
     
     - title: Postman collection
