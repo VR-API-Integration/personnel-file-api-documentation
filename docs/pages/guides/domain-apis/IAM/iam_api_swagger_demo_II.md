@@ -5,8 +5,8 @@ tags: [iam, api]
 last_updated: 08/12/2022
 sidebar: guides_sidebar
 permalink: iam_api_swagger.html
-swaggerfile: iam api
-swaggerkey: assignments
+swaggerfile: IAM_API
+swaggerkey: /v1.0/assignments
 method: get
 ---
 
