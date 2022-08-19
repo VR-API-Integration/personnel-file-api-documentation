@@ -39,9 +39,14 @@ entries:
       url: /iam_api_intro.html
       output: web
 
-    - title: API reference
+    - title: API Swagger (option I)
       external_url: https://vr-api-integration.github.io/youforce-api-Swagger-ui/IAM.html
       output: web
+
+    - title: API Swagger (option II)
+      url: /iam_api_swagger.html
+      output: web
+
 
     - title: Supported filters
       url: /iam_api_filters.html
