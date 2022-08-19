@@ -14,18 +14,18 @@ topnav: topnav
 
 The following policies are determined per registered application:
 
-| Quota                                                    | Weekly                                                                   | Daily                                                                      | Continuous                                                            |
-| -------------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| API calls                                                | 2 hours per day. 1000 API calls within the time window. 7 days per month | 2 hours per day. 1000 API calls within the time window. 40 times per month | 6000 API calls per day, allowing to retrieve changes every 15 seconds |
-| Authentication calls                                     | 7 successful authentication calls per month                              | 40 successful authentication calls per month                               | 400 authentication calls per month                                    |
-| Concurrent rate-limiting (API calls in parallel)         | 1                                                                        | 1                                                                          | 3                                                                     |
-| Spike arrest policy (max number of API calls per minute) | 100 calls per minute                                                     | 100 calls per minute                                                       | 100 calls per minute                                                  |
+| Quota                                                    |                                                              |
+| -------------------------------------------------------- |  --------------------------------------------------------------------- |
+| API calls                                                | 6000 API calls per day, allowing to retrieve changes every 15 seconds |
+| Authentication calls                                     | 400 authentication calls per month                                    |
+| Concurrent rate-limiting (API calls in parallel)         | 3                                                                     |
+| Spike arrest policy (max number of API calls per minute) | 100 calls per minute                                                  |
 
 ## Spike arrest details
 
 Spike arrest is the way we protect against traffic spikes. Our APIs and backend can handle a certain amount of traffic, and the Spike Arrest policy smooths the traffic to the general amounts.
 
-Spike Arrest’s behavior differs from what you might expect to see from the literal per minute values.
+Spike Arrest’s behaviour differs from what you might expect to see from the literal per minute values.
 
 Our default spike arrest is set to 100pm (100 requests per minute). That does not mean you can do 100 requests inside a 1-second. Spike Arrest smooths the number of full requests in a minute by dividing it into smaller intervals:
 
