@@ -39,31 +39,13 @@ entries:
       url: /iam_api_intro.html
       output: web
 
-    - title: API Swagger (option I)
+    - title: API Reference
       external_url: https://vr-api-integration.github.io/youforce-api-Swagger-ui/IAM.html
       output: web
-
-    - title: API Swagger (option II)
-      url: /iam_api_swagger.html
-      output: web
-
-    - title: Supported filters
-      url: /iam_api_filters.html
-      output: web
-
+    
     - title: Postman collection
       url: /iam_api_postman.html
       output: web
-
-subfolders:
-      - title: Endpoints
-        output: web
-        subfolderitems:
-
-        - title: GET Assignment
-          url: /iam_api_swagger.html
-          output: web
-
 
   - title: Learning Domain
     output: web
@@ -75,10 +57,6 @@ subfolders:
 
     - title: API reference
       external_url: https://vr-api-integration.github.io/youforce-api-Swagger-ui/Learning.html
-      output: web
-
-    - title: Supported filters
-      url: /learning_api_filters.html
       output: web
 
     - title: Postman collection
@@ -97,10 +75,6 @@ subfolders:
       url: /wfm_api_reference.html
       output: web
 
-    - title: Supported filters
-      url: /wfm_api_filters.html
-      output: web
-
     - title: Postman collection
       url: /wfm_api_postman.html
       output: web
@@ -115,10 +89,6 @@ subfolders:
 
     - title: API reference
       url: /extensions_api_reference.html
-      output: web
-
-    - title: Supported filters
-      url: /extensions_api_filters.html
       output: web
 
     - title: Postman collection
