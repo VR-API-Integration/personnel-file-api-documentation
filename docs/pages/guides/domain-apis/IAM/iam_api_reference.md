@@ -1,5 +1,5 @@
 ---
-title: IAM API
+title: API reference
 tags: [iam, api]
 keywords: iam, api
 last_updated: 08/12/2022
