@@ -10,4 +10,7 @@ folder: guides/support
 topnav: topnav
 ---
 
-{% include important.html content="TBD" %}
+There is a Slack channel available where developers, who might need support to integrate using our APIs, can get in touch with other consumers and even with the actual development team.
+
+
+You can join [here](https://join.slack.com/t/vismadevelopers/shared_invite/zt-1evhs25as-COSOiI3MQYDymkwYnzo7FQ){:target="_blank"}. Anyone can join!

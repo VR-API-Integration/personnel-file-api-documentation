@@ -102,3 +102,7 @@ entries:
   - title: Support
     output: web
     folderitems:
+
+    - title: Contact us
+      url: /guides_support.html
+      output: web
