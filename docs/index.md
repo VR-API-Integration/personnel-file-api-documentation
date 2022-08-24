@@ -7,4 +7,4 @@ permalink: index.html
 summary: The Youforce API allows for integration over HTTPS between the Beaufort HR core system and external systems in the context of the supported domains.
 ---
 
-{% include important.html content="TBD" %}
+{% include important.html content="Work in progress" %}
