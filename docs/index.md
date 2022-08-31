@@ -4,7 +4,9 @@ keywords: index introduction
 tags: [getting_started, file, api, library]
 sidebar: guides_sidebar
 permalink: index.html
+summary: "High level overview of the Youforce API suite"
 ---
+
 
 **Youforce API** is a suite of APIs whose purpose is to serve as an integration layer, which enables for communication over HTTPS between the Beaufort HR core system and external systems.
 
