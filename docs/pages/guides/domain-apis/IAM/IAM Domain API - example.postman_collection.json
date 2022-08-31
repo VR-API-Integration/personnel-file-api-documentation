@@ -1,0 +1,495 @@
+{
+	"info": {
+		"_postman_id": "bff73583-2be3-4ab9-9aa6-0f424cb362e8",
+		"name": "IAM Domain API - example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14296871"
+	},
+	"item": [
+		{
+			"name": "Get access token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody)\r",
+							"\r",
+							"postman.setGlobalVariable(\"AccessToken\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "{{VCClientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{VCClientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "tenant_id",
+							"value": "{{VCTenantId}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://connect.visma.com/connect/token",
+					"protocol": "https",
+					"host": [
+						"connect",
+						"visma",
+						"com"
+					],
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Persons",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/iam/v1.0/Persons",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"iam",
+						"v1.0",
+						"Persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Employments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/iam/v1.0/Employments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"iam",
+						"v1.0",
+						"Employments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Employees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/iam/v1.0/Employees",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"iam",
+						"v1.0",
+						"Employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Assignments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/iam/v1.0/Assignments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"iam",
+						"v1.0",
+						"Assignments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Cost Allocations",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/iam/v1.0/CostAllocation",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"iam",
+						"v1.0",
+						"CostAllocation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Organization Units",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/iam/v1.0/OrganizationUnits",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"iam",
+						"v1.0",
+						"OrganizationUnits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Role Assignments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/iam/v1.0/RoleAssignments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"iam",
+						"v1.0",
+						"RoleAssignments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Job Profiles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.youforce.com/iam/v1.0/JobProfiles",
+					"protocol": "https",
+					"host": [
+						"api",
+						"youforce",
+						"com"
+					],
+					"path": [
+						"iam",
+						"v1.0",
+						"JobProfiles"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "VCClientId",
+			"value": "fill_in_your_client_id"
+		},
+		{
+			"key": "VCClientSecret",
+			"value": "fill_in_your_client_secret"
+		},
+		{
+			"key": "VCTenantId",
+			"value": "fill_in_your_tenant_id"
+		}
+	]
+}
