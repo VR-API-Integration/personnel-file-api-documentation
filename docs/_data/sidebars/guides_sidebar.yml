@@ -15,6 +15,10 @@ entries:
       output: web, pdf
       type: homepage
 
+    - title: Getting started
+      url: /guides_getting_started.html
+      output: web, pdf
+
     - title: Request headers and responses
       url: /guides_request_headers_and_responses.html
       output: web, pdf
