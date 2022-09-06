@@ -91,14 +91,6 @@ entries:
       url: /extensions_api_postman.html
       output: web
 
-  - title: Release notes
-    output: web
-    folderitems:
-
-    - title: Changelog
-      url: /guides_release_notes.html
-      output: web
-
   - title: Support
     output: web
     folderitems:
