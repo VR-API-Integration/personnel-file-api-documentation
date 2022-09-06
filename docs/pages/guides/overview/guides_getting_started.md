@@ -32,19 +32,26 @@ This token will provide access to a particular tenant in a specific application.
 In the case of using he example Postman collection, it will be enough to update the existing variables with the actual values, as displayed in the image below.
 
 {% include image.html file="Postman_variables.png" alt="Getting started" max-width="800" %}
+<br />
+<br />
 
 Otherwise, the required information will have to be added in the corresponding parameters.
 
 {% include image.html file="Postman_GetToken_empty.png" alt="Getting started" max-width="800" %}
+<br />
+<br />
 
 Once this call is executed, a valid token should be received.
 
 {% include image.html file="Postman_token_response.png" alt="Getting started" max-width="800" %}
+<br />
+<br />
 
 Another advantage of using the example Postman collection, is that the token will get automatically stored in a variable, so it can be easily used for the next calls to the actual API.
 
 {% include image.html file="Postman_token_in_variable.png" alt="Getting started" max-width="800" %}
-
+<br />
+<br />
 
 **Step 3: Make the test call to the desired endpoint**
 
@@ -55,6 +62,7 @@ Notice that, as mentioned in previous step, if the example Postman collection is
 This should be enough to successfully run the method in the API.
 
 {% include image.html file="Postman_persons_response.png" alt="Getting started" max-width="800" %}
-
+<br />
+<br />
 
 We hope this section was useful. Thanks for building an integration using Youforce API.
