@@ -3,12 +3,12 @@ title: Getting Started
 sidebar: guides_sidebar
 permalink: guides_getting_started.html
 folder: guides/overview
-summary: Follow these instructions to learn how to start integrating with the Youforce API using the sandbox tenant.
+summary: Quick guide to start consuming Youforce API.
 ---
 
 This section has been prepared to give the developer a quick guide to start consuming the Youforce API. The specific example is about IAM domain, but same principles can be applied to any of the other domains including Extensions.
 
-As a precondition, this guides assumes the developer has a proper application created, which is linked to the specific API to be consumed, and the following information is available:
+This guide is written under the assumption that the developer has a proper application created and available, which should be linked to the specific API to be consumed, and that the following information is known:
 
 - Client-id
 - Client-secret
@@ -18,7 +18,7 @@ As a precondition, this guides assumes the developer has a proper application cr
 
 **Step 1: Download the example Postman collection [OPTIONAL]**
 
-Each of the available domains has an available example Postman collection containing the very basic methods a developer needs to start using our APIs. This step is optional, but it should facilitate the next steps.
+Each of the available domains has an available example Postman collection, containing the very basic methods a developer needs to start using our APIs. This step is optional, but it would facilitate the next steps.
 
 You can find the proper Postman collection under the corresponding option in the left menu of this documentation.
 
@@ -27,9 +27,9 @@ You can find the proper Postman collection under the corresponding option in the
 
 In order to make the necessary calls to retrieve the expected information from the HR Core system, a token needs to be requested.
 
-This token will give you access to a particular tenant in a specific application. Hence, this step will require knowing the client-id, client-secret and tenant-id.
+This token will provide access to a particular tenant in a specific application. Hence, this step will require knowing the client-id, client-secret and tenant-id.
 
-In case of using he example Postman collection, it will be enough to edit the default variables to contain the actual values. See screenshot:
+In the case of using he example Postman collection, it will be enough to update the existing variables with the actual values, as displayed in the image below.
 
 
 
