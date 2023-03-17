@@ -1,6 +1,14 @@
 ---
+title: WFM API
+tags: [wfm, api]
+keywords: wfm, api
+last_updated: 03/17/2023
+sidebar: guides_sidebar
+permalink: wfm_swagger.html
+folder: guides/domain-apis
+topnav: topnav
+
 layout: page
-title: Swagger UI
 ---
 
 <div id="swagger-ui"></div>
