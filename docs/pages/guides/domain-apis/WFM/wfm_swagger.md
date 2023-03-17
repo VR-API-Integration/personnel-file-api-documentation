@@ -13,8 +13,8 @@ layout: page
 
 <div id="swagger-ui"></div>
 
-<script src="{{ '/dist/swagger-ui/swagger-ui-bundle.js' | relative_url }}"></script>
-<script src="{{ '/dist/swagger-ui/swagger-ui-standalone-preset.js' | relative_url }}"></script>
+<script src="{{ '/assets/swagger-ui/swagger-ui-bundle.js' | relative_url }}"></script>
+<script src="{{ '/assets/swagger-ui/swagger-ui-standalone-preset.js' | relative_url }}"></script>
 <script>
 window.onload = function() {
   const ui = SwaggerUIBundle({
