@@ -39,7 +39,7 @@ entries:
       url: /iam_api_intro.html
       output: web
 
-    - title: Swagger
+    - title: Swagger UI
       url: iam_api_reference.html
       output: web
 
@@ -55,7 +55,7 @@ entries:
       url: /learning_api_intro.html
       output: web
 
-    - title: Swagger
+    - title: Swagger UI
       url: /learning_api_reference.html
       output: web
 
@@ -71,7 +71,7 @@ entries:
       url: /wfm_api_intro.html
       output: web
 
-    - title: Swagger
+    - title: Swagger UI
       url: /wfm_api_reference.html
       output: web
 
