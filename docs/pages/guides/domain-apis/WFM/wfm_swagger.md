@@ -18,7 +18,7 @@ layout: page
 <script>
 window.onload = function() {
   const ui = SwaggerUIBundle({
-    url: "\pages\guides\domain-apis\WFM\WFMSwagger.json",
+    url: "{{ '/assets/WFMSwagger.json' | relative_url }}",
     dom_id: '#swagger-ui',
     presets: [
       SwaggerUIBundle.presets.apis,
