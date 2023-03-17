@@ -10,3 +10,5 @@ topnav: topnav
 ---
 
 WFM API reference
+Swagger pages
+- [WFM endpoint](https://vr-api-integration.github.io/youforce-api-Swagger-ui/WFM.html){:target="\_blank"}

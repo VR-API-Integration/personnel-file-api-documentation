@@ -56,7 +56,7 @@ entries:
       output: web
 
     - title: API reference
-      external_url: https://vr-api-integration.github.io/youforce-api-Swagger-ui/Learning.html
+      url: /learning_api_reference.html
       output: web
 
     - title: Postman collection
