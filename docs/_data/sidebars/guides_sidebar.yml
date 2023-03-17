@@ -55,7 +55,7 @@ entries:
       url: /learning_api_intro.html
       output: web
 
-    - title: API reference
+    - title: Swagger
       url: /learning_api_reference.html
       output: web
 
