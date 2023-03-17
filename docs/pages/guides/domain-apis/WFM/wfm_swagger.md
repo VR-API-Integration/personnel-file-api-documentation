@@ -1,5 +1,5 @@
 ---
-title: WFM API -- test4
+title: WFM API -- test5
 tags: [wfm, api]
 keywords: wfm, api
 last_updated: 03/17/2023
@@ -25,7 +25,7 @@ window.onload = function() {
       SwaggerUIStandalonePreset
     ],
     layout: "BaseLayout"
-    baseUrl: "/docs"
+    baseUrl: "/https://vr-api-integration.github.io/youforce-api-documentation"
   })
 }
 </script>
