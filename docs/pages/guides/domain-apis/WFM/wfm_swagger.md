@@ -18,7 +18,7 @@ layout: page
 <script>
 window.onload = function() {
   const ui = SwaggerUIBundle({
-    url: "https://github.com/VR-API-Integration/youforce-api-Swagger-ui/blob/main/API/WFMSwagger.json",
+    url: "\pages\guides\domain-apis\WFM\WFMSwagger.json",
     dom_id: '#swagger-ui',
     presets: [
       SwaggerUIBundle.presets.apis,
