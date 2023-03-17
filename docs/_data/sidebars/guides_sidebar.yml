@@ -39,7 +39,7 @@ entries:
       url: /iam_api_intro.html
       output: web
 
-    - title: API Reference
+    - title: Swagger
       url: iam_api_reference.html
       output: web
 
@@ -71,7 +71,7 @@ entries:
       url: /wfm_api_intro.html
       output: web
 
-    - title: API reference
+    - title: Swagger
       url: /wfm_api_reference.html
       output: web
 
@@ -87,7 +87,7 @@ entries:
       url: /extensions_api_intro.html
       output: web
 
-    - title: API reference
+    - title: Swagger
       url: /extensions_api_reference.html
       output: web
 
