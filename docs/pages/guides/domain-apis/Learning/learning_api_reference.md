@@ -9,6 +9,6 @@ folder: guides/domain-apis
 topnav: topnav
 ---
 
-WFM API reference
+Learning API reference
 Swagger pages
 - [Learning endpoint](https://vr-api-integration.github.io/youforce-api-Swagger-ui/Learning.html){:target="\_blank"}
