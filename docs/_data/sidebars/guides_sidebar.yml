@@ -75,6 +75,10 @@ entries:
       url: /wfm_api_reference.html
       output: web
 
+    - title: Swagger (new)
+      url: /wfm_swagger.html
+      output: web
+     
     - title: Postman collection
       url: /wfm_api_postman.html
       output: web
