@@ -9,6 +9,6 @@ folder: guides/domain-apis
 topnav: topnav
 ---
 
-WFM API reference
+MLM API reference
 Swagger pages
 - [MLM endpoint](https://vr-api-integration.github.io/youforce-api-Swagger-ui/MLM.html){:target="\_blank"}
