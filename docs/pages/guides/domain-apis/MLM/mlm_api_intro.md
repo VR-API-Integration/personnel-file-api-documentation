@@ -8,7 +8,7 @@ permalink: mlm_api_intro.html
 folder: guides/domain-apis
 topnav: topnav
 ---
-<span class="label label-danger">CONTROLLED AVAILABLE</span>
+<span class="label label-warning">CONTROLLED AVAILABLE</span>
 
 
 
