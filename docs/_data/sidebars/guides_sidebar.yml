@@ -80,6 +80,24 @@ entries:
       url: /wfm_api_postman.html
       output: web
 
+
+title: Medical Leave Management
+    output: web
+    folderitems:
+
+    - title: Introduction
+      url: /mlm_api_intro.html
+      output: web
+
+    - title: Swagger UI
+      url: /mlm_api_reference.html
+      output: web
+
+   
+    - title: Postman collection
+      url: /mlm_api_postman.html
+      output: web
+
   - title: Extensions
     output: web
     folderitems:
