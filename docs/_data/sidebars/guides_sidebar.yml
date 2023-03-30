@@ -81,7 +81,7 @@ entries:
       output: web
 
 
-title: Medical Leave Management
+  - title: Medical Leave Management
     output: web
     folderitems:
 
