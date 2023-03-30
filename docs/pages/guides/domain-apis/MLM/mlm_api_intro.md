@@ -25,4 +25,4 @@ The following processes can be supported with the domain API:
 ## Domain model
 With different endpoint, the MLM api will support the following domain model
 
-{% include image.html "/youforce-api-documentation/pages/guides/domain-apis/MLM/mlm domainmodel.png" alt="MLM Domain model " %}
+{% include image.html file="mlm domainmodel.png" alt="MLM Domain model " %}
