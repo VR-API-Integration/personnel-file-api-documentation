@@ -1,0 +1,1553 @@
+{
+	"info": {
+		"_postman_id": "2663eff1-5eb4-49e7-9ac9-fca4d8f47a9f",
+		"name": "MLM API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11271437"
+	},
+	"item": [
+		{
+			"name": "Get Token",
+			"item": [
+				{
+					"name": "Get Authentication Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody)\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"AccessToken\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "tenant_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://connect.visma.com/connect/token",
+							"protocol": "https",
+							"host": [
+								"connect",
+								"visma",
+								"com"
+							],
+							"path": [
+								"connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get basic",
+			"item": [
+				{
+					"name": "Persons",
+					"item": [
+						{
+							"name": "Get all Persons",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/persons",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"persons"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Persons (Incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"      flag = 1;\r",
+											"   }\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/persons?{{nextRequestUrl}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"persons"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Person by ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/persons/100001",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"persons",
+										"100001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Person by PersonCode",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/persons?personCode=100001",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"persons"
+									],
+									"query": [
+										{
+											"key": "personCode",
+											"value": "100001"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Employments",
+					"item": [
+						{
+							"name": "basic",
+							"item": [
+								{
+									"name": "Get all Employments",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.youforce.com/mlm/v1.0/Employments",
+											"protocol": "https",
+											"host": [
+												"api",
+												"youforce",
+												"com"
+											],
+											"path": [
+												"mlm",
+												"v1.0",
+												"Employments"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get all Employments (incl paging)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonData = pm.response.json();\r",
+													"var flag = 0;\r",
+													"\r",
+													"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+													"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+													"\r",
+													"   } else {\r",
+													"      pm.environment.set('nextRequestUrl', \"\")\r",
+													"      flag = 1;\r",
+													"   }\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.youforce.com/mlm/v1.0/Employments?{{nextRequestUrl}}",
+											"protocol": "https",
+											"host": [
+												"api",
+												"youforce",
+												"com"
+											],
+											"path": [
+												"mlm",
+												"v1.0",
+												"Employments"
+											],
+											"query": [
+												{
+													"key": "{{nextRequestUrl}}",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get all Employments changed records (from/to)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.youforce.com/mlm/v1.0/Employments?from=2023-02-01T09:00:00.000Z&to=2023-03-01T14:00:00.000Z",
+											"protocol": "https",
+											"host": [
+												"api",
+												"youforce",
+												"com"
+											],
+											"path": [
+												"mlm",
+												"v1.0",
+												"Employments"
+											],
+											"query": [
+												{
+													"key": "from",
+													"value": "2023-02-01T09:00:00.000Z"
+												},
+												{
+													"key": "to",
+													"value": "2023-03-01T14:00:00.000Z"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Employment by Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.youforce.com/mlm/v1.0/Employments/1005 2",
+											"protocol": "https",
+											"host": [
+												"api",
+												"youforce",
+												"com"
+											],
+											"path": [
+												"mlm",
+												"v1.0",
+												"Employments",
+												"1005 2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Employment by PersonCode",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.youforce.com/mlm/v1.0/Employments?personCode=1005",
+											"protocol": "https",
+											"host": [
+												"api",
+												"youforce",
+												"com"
+											],
+											"path": [
+												"mlm",
+												"v1.0",
+												"Employments"
+											],
+											"query": [
+												{
+													"key": "personCode",
+													"value": "1005"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Employment by OrganizationUnit",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.youforce.com/mlm/v1.0/Employments?organizationUnit=809",
+											"protocol": "https",
+											"host": [
+												"api",
+												"youforce",
+												"com"
+											],
+											"path": [
+												"mlm",
+												"v1.0",
+												"Employments"
+											],
+											"query": [
+												{
+													"key": "organizationUnit",
+													"value": "809"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "with Timeline",
+							"item": [
+								{
+									"name": "Get all EmploymentTimelines",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.youforce.com/mlm/v1.0/EmploymentTimelines",
+											"protocol": "https",
+											"host": [
+												"api",
+												"youforce",
+												"com"
+											],
+											"path": [
+												"mlm",
+												"v1.0",
+												"EmploymentTimelines"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get all EmploymentTimelines (incl paging)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonData = pm.response.json();\r",
+													"var flag = 0;\r",
+													"\r",
+													"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+													"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+													"\r",
+													"   } else {\r",
+													"      pm.environment.set('nextRequestUrl', \"\")\r",
+													"      flag = 1;\r",
+													"   }\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.youforce.com/mlm/v1.0/EmploymentTimelines?{{nextRequestUrl}}",
+											"protocol": "https",
+											"host": [
+												"api",
+												"youforce",
+												"com"
+											],
+											"path": [
+												"mlm",
+												"v1.0",
+												"EmploymentTimelines"
+											],
+											"query": [
+												{
+													"key": "{{nextRequestUrl}}",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get EmploymentTimelines by Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.youforce.com/mlm/v1.0/EmploymentTimelines/1005 2",
+											"protocol": "https",
+											"host": [
+												"api",
+												"youforce",
+												"com"
+											],
+											"path": [
+												"mlm",
+												"v1.0",
+												"EmploymentTimelines",
+												"1005 2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get EmploymentTimelines by personCode",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.youforce.com/mlm/v1.0/EmploymentTimelines?personCode=1005",
+											"protocol": "https",
+											"host": [
+												"api",
+												"youforce",
+												"com"
+											],
+											"path": [
+												"mlm",
+												"v1.0",
+												"EmploymentTimelines"
+											],
+											"query": [
+												{
+													"key": "personCode",
+													"value": "1005"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Organization Units",
+					"item": [
+						{
+							"name": "Get all Organization Units",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/organizationUnits",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"organizationUnits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Organization Units (incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"   }\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/organizationUnits?{{nextRequestUrl}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"organizationUnits"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Organization Units by Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/organizationUnits/73",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"organizationUnits",
+										"73"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Organization Units by shortName (OU code)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/organizationUnits?shortname=1137",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"organizationUnits"
+									],
+									"query": [
+										{
+											"key": "shortname",
+											"value": "1137"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Role Assignments",
+					"item": [
+						{
+							"name": "Get all Role Assignments",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/RoleAssignments",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"RoleAssignments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Role Assignments (incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"   }\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/RoleAssignments?{{nextRequestUrl}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"RoleAssignments"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Role Assignments by Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/RoleAssignments/1005 859 MGR 20220101",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"RoleAssignments",
+										"1005 859 MGR 20220101"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Role Assignments by PersonId (PersonCode)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/RoleAssignments?personid=1005",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"RoleAssignments"
+									],
+									"query": [
+										{
+											"key": "personid",
+											"value": "1005"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Job Profiles",
+					"item": [
+						{
+							"name": "Get all Job Profiles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/JobProfiles",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"JobProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Job Profiles (incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"   }\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/JobProfiles?{{nextRequestUrl}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"JobProfiles"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Job Profiles by Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/JobProfiles/0110",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"JobProfiles",
+										"0110"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Job Profiles by shortName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.youforce.com/mlm/v1.0/JobProfiles?shortName=0120",
+									"protocol": "https",
+									"host": [
+										"api",
+										"youforce",
+										"com"
+									],
+									"path": [
+										"mlm",
+										"v1.0",
+										"JobProfiles"
+									],
+									"query": [
+										{
+											"key": "shortName",
+											"value": "0120"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
