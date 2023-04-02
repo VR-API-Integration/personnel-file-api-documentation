@@ -1,5 +1,5 @@
 ---
-title: Postman collections and other examples
+title: IAM API
 tags: [iam, api]
 keywords: iam, api
 last_updated: 08/12/2022
