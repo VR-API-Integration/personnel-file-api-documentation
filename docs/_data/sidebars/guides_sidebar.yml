@@ -72,7 +72,7 @@ entries:
       output: web
 
     - title: Swagger UI
-      url: /wfm_api_reference.html
+      url: /wfm_swagger.html
       output: web
 
    
