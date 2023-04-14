@@ -4,28 +4,10 @@ tags: [wfm, api]
 keywords: wfm, api
 last_updated: 03/17/2023
 sidebar: guides_sidebar
-permalink: wfm_swagger.html
+permalink: wfm_api_reference.html
 folder: guides/domain-apis
 topnav: topnav
-
-layout: page
 ---
-
-<div id="swagger-ui"></div>
-
-<script src="{{ '/assets/swagger-ui/swagger-ui-bundle.js' | relative_url }}"></script>
-<script src="{{ '/assets/swagger-ui/swagger-ui-standalone-preset.js' | relative_url }}"></script>
-<script>
-window.onload = function() {
-  const ui = SwaggerUIBundle({
-    url: "{{ '/assets/WFMSwagger.json' | relative_url }}",
-    dom_id: '#swagger-ui',
-    presets: [
-      SwaggerUIBundle.presets.apis,
-      SwaggerUIStandalonePreset
-    ],
-    layout: "BaseLayout"
-    baseUrl: "/https://vr-api-integration.github.io/youforce-api-documentation"
-  })
-}
-</script>
+WFM API reference
+Swagger pages
+- [MLM endpoint](https://vr-api-integration.github.io/youforce-api-Swagger-ui/WFM.html){:target="\_blank"}
