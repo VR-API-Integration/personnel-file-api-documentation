@@ -98,6 +98,25 @@ entries:
       url: /mlm_api_postman.html
       output: web
 
+  
+  - title: Recruitment Domain
+    output: web
+    folderitems:
+
+    - title: Introduction
+      url: /recruitment_api_intro.html
+      output: web
+
+    - title: Swagger UI
+      url: /recruitment_api_reference.html
+      output: web
+
+   
+    - title: Postman collection
+      url: /recruitment_api_postman.html
+      output: web
+
+  
   - title: Extensions
     output: web
     folderitems:
