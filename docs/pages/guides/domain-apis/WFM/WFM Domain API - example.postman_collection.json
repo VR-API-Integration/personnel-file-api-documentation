@@ -1,359 +1,3685 @@
 {
 	"info": {
-		"_postman_id": "7e39a542-e5c4-4031-b79b-6c2db8c9f7cb",
-		"name": "WFM Domain API - example",
+		"_postman_id": "000f2be7-6731-4b08-932f-20a7851a5db3",
+		"name": "WFM (Incl. Extensions)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "14296871"
+		"_exporter_id": "11271437"
 	},
 	"item": [
 		{
-			"name": "Get access token",
-			"event": [
+			"name": "Token",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody)\r",
-							"\r",
-							"postman.setGlobalVariable(\"AccessToken\", jsonData.access_token);"
-						],
-						"type": "text/javascript"
-					}
+					"name": "Get Authentication Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody)\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"AccessToken\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "tenant_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://connect.visma.com/connect/token",
+							"protocol": "https",
+							"host": [
+								"connect",
+								"visma",
+								"com"
+							],
+							"path": [
+								"connect",
+								"token"
+							]
+						}
+					},
+					"response": []
 				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
+			]
+		},
+		{
+			"name": "Get basic",
+			"item": [
+				{
+					"name": "Persons",
+					"item": [
 						{
-							"key": "client_id",
-							"value": "{{VCClientId}}",
-							"type": "text"
+							"name": "Get all Persons",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/persons",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"persons"
+									]
+								}
+							},
+							"response": []
 						},
 						{
-							"key": "client_secret",
-							"value": "{{VCClientSecret}}",
-							"type": "text"
+							"name": "Get all Persons (Incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"      flag = 1;\r",
+											"   }\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/persons?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"persons"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
 						},
 						{
-							"key": "grant_type",
-							"value": "client_credentials",
-							"type": "text"
+							"name": "Get Person by ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/persons/100001",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"persons",
+										"100001"
+									]
+								}
+							},
+							"response": []
 						},
 						{
-							"key": "tenant_id",
-							"value": "{{VCTenantId}}",
-							"type": "text"
+							"name": "Get Person by PersonCode",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/persons?personCode=100001",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"persons"
+									],
+									"query": [
+										{
+											"key": "personCode",
+											"value": "100001"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
-				"url": {
-					"raw": "https://connect.visma.com/connect/token",
-					"protocol": "https",
-					"host": [
-						"connect",
-						"visma",
-						"com"
-					],
-					"path": [
-						"connect",
-						"token"
+				{
+					"name": "Employments",
+					"item": [
+						{
+							"name": "basic",
+							"item": [
+								{
+									"name": "Get all Employments",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{api}}/v1.0/Employments",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{api}}",
+												"v1.0",
+												"Employments"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get all Employments (incl paging)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonData = pm.response.json();\r",
+													"var flag = 0;\r",
+													"\r",
+													"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+													"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+													"\r",
+													"   } else {\r",
+													"      pm.environment.set('nextRequestUrl', \"\")\r",
+													"      flag = 1;\r",
+													"   }\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{api}}/v1.0/Employments?{{nextRequestUrl}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{api}}",
+												"v1.0",
+												"Employments"
+											],
+											"query": [
+												{
+													"key": "{{nextRequestUrl}}",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get all Employments changed records (from/to)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{api}}/v1.0/Employments?from=2023-02-01T09:00:00.000Z&to=2023-03-01T14:00:00.000Z",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{api}}",
+												"v1.0",
+												"Employments"
+											],
+											"query": [
+												{
+													"key": "from",
+													"value": "2023-02-01T09:00:00.000Z"
+												},
+												{
+													"key": "to",
+													"value": "2023-03-01T14:00:00.000Z"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Employment by Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{api}}/v1.0/Employments/1005 2",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{api}}",
+												"v1.0",
+												"Employments",
+												"1005 2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Employment by PersonCode",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{api}}/v1.0/Employments?personCode=1005",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{api}}",
+												"v1.0",
+												"Employments"
+											],
+											"query": [
+												{
+													"key": "personCode",
+													"value": "1005"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Employment by OrganizationUnit",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{api}}/v1.0/Employments?organizationUnit=809",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{api}}",
+												"v1.0",
+												"Employments"
+											],
+											"query": [
+												{
+													"key": "organizationUnit",
+													"value": "809"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "with Timeline",
+							"item": [
+								{
+									"name": "Get all EmploymentTimelines",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{api}}/v1.0/EmploymentTimelines",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{api}}",
+												"v1.0",
+												"EmploymentTimelines"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get all EmploymentTimelines (incl paging)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonData = pm.response.json();\r",
+													"var flag = 0;\r",
+													"\r",
+													"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+													"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+													"\r",
+													"   } else {\r",
+													"      pm.environment.set('nextRequestUrl', \"\")\r",
+													"      flag = 1;\r",
+													"   }\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{api}}/v1.0/EmploymentTimelines?{{nextRequestUrl}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{api}}",
+												"v1.0",
+												"EmploymentTimelines"
+											],
+											"query": [
+												{
+													"key": "{{nextRequestUrl}}",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get EmploymentTimelines by Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{api}}/v1.0/EmploymentTimelines/1005 2",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{api}}",
+												"v1.0",
+												"EmploymentTimelines",
+												"1005 2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get EmploymentTimelines by personCode",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{api}}/v1.0/EmploymentTimelines?personCode=1005",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{api}}",
+												"v1.0",
+												"EmploymentTimelines"
+											],
+											"query": [
+												{
+													"key": "personCode",
+													"value": "1005"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Assignments",
+					"item": [
+						{
+							"name": "Get all Assigments",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/Assignments",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"Assignments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Assigments (incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"   }\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/Assignments?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"Assignments"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Assigment by Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/Assignments/1005 2 807 2100 20160101",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"Assignments",
+										"1005 2 807 2100 20160101"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Assigment by PersonId (personCode)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/Assignments?personid=1005",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"Assignments"
+									],
+									"query": [
+										{
+											"key": "personid",
+											"value": "1005"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Organization Units",
+					"item": [
+						{
+							"name": "Get all Organization Units",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/organizationUnits",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"organizationUnits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Organization Units (incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"   }\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/organizationUnits?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"organizationUnits"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Organization Units by Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/organizationUnits/73",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"organizationUnits",
+										"73"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Organization Units by shortName (OU code)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/organizationUnits?shortname=1137",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"organizationUnits"
+									],
+									"query": [
+										{
+											"key": "shortname",
+											"value": "1137"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Role Assignments",
+					"item": [
+						{
+							"name": "Get all Role Assignments",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/RoleAssignments",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"RoleAssignments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Role Assignments (incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"   }\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/RoleAssignments?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"RoleAssignments"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Role Assignments by Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/RoleAssignments/1005 859 MGR 20220101",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"RoleAssignments",
+										"1005 859 MGR 20220101"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Role Assignments by PersonId (PersonCode)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/RoleAssignments?personid=1005",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"RoleAssignments"
+									],
+									"query": [
+										{
+											"key": "personid",
+											"value": "1005"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Job Profiles",
+					"item": [
+						{
+							"name": "Get all Job Profiles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/JobProfiles",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"JobProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Job Profiles (incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"   }\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/JobProfiles?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"JobProfiles"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Job Profiles by Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/JobProfiles/0110",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"JobProfiles",
+										"0110"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Job Profiles by shortName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/JobProfiles?shortName=0120",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"JobProfiles"
+									],
+									"query": [
+										{
+											"key": "shortName",
+											"value": "0120"
+										}
+									]
+								}
+							},
+							"response": []
+						}
 					]
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Get all Persons",
-			"event": [
+			"name": "Get leave",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{AccessToken}}",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "https://api.youforce.com/wfm/v1.0/Persons",
-					"protocol": "https",
-					"host": [
-						"api",
-						"youforce",
-						"com"
-					],
-					"path": [
-						"wfm",
-						"v1.0",
-						"Persons"
+					"name": "leaveEntitlements",
+					"item": [
+						{
+							"name": "Get all leaveEntitlements",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/leaveEntitlements",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"leaveEntitlements"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all leaveEntitlements (Incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"   }\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/leaveEntitlements?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"leaveEntitlements"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get leaveEntitlements by ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/leaveEntitlements/10030 1 WET 2022",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"leaveEntitlements",
+										"10030 1 WET 2022"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get leaveEntitlements by PersonCode",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/leaveEntitlements?personCode=10030",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"leaveEntitlements"
+									],
+									"query": [
+										{
+											"key": "personCode",
+											"value": "10030"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get leaveEntitlements by leaveEntitlementYear",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/leaveEntitlements?leaveEntitlementYear=2022",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"leaveEntitlements"
+									],
+									"query": [
+										{
+											"key": "leaveEntitlementYear",
+											"value": "2022"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get leaveEntitlements by PersonCode & LeaveYear",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/leaveEntitlements?personCode=10030&leaveEntitlementYear=2021",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"leaveEntitlements"
+									],
+									"query": [
+										{
+											"key": "personCode",
+											"value": "10030"
+										},
+										{
+											"key": "leaveEntitlementYear",
+											"value": "2021"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "leaveHours",
+					"item": [
+						{
+							"name": "Get all leaveHours",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/leaveHours",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"leaveHours"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all leaveHours (Incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"   }\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/leaveHours?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"leaveHours"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get leaveHours by ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/leaveHours/10030 1 WET 2022 502 20220317",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"leaveHours",
+										"10030 1 WET 2022 502 20220317"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get leaveHours by PersonCode",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/leaveHours?personCode=10030",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"leaveHours"
+									],
+									"query": [
+										{
+											"key": "personCode",
+											"value": "10030"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get leaveHours by leaveEntitlementYear",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/leaveHours?leaveEntitlementYear=2021",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"leaveHours"
+									],
+									"query": [
+										{
+											"key": "leaveEntitlementYear",
+											"value": "2021"
+										}
+									]
+								}
+							},
+							"response": []
+						}
 					]
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Get all Employments",
-			"event": [
+			"name": "Get maternity leave",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {
-					"accept": true
-				}
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{AccessToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://api.youforce.com/wfm/v1.0/Employments",
-					"protocol": "https",
-					"host": [
-						"api",
-						"youforce",
-						"com"
+					"name": "Get all Maternity Leaves",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
 					],
-					"path": [
-						"wfm",
-						"v1.0",
-						"Employments"
-					]
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/{{api}}/v1.0/maternityleaves",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{api}}",
+								"v1.0",
+								"maternityleaves"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all maternityleaves(Incl paging)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var flag = 0;\r",
+									"\r",
+									"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+									"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+									"\r",
+									"   } else {\r",
+									"      pm.environment.set('nextRequestUrl', \"\")\r",
+									"   }\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/{{api}}/v1.0/maternityleaves?{{nextRequestUrl}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{api}}",
+								"v1.0",
+								"maternityleaves"
+							],
+							"query": [
+								{
+									"key": "{{nextRequestUrl}}",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Maternity Leaves by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/{{api}}/v1.0/maternityleaves/1100 1 4000000062",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{api}}",
+								"v1.0",
+								"maternityleaves",
+								"1100 1 4000000062"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Maternity Leaves by PersonCode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/{{api}}/v1.0/maternityleaves?personcode=5150",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{api}}",
+								"v1.0",
+								"maternityleaves"
+							],
+							"query": [
+								{
+									"key": "personcode",
+									"value": "5150"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Get all Organization Units",
-			"event": [
+			"name": "Get Sickleave",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {
-					"accept": true
-				}
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{AccessToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://api.youforce.com/wfm/v1.0/OrganizationUnits",
-					"protocol": "https",
-					"host": [
-						"api",
-						"youforce",
-						"com"
+					"name": "Get all sickleaves",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
 					],
-					"path": [
-						"wfm",
-						"v1.0",
-						"OrganizationUnits"
-					]
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/{{api}}/v1.0/sickleaves",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{api}}",
+								"v1.0",
+								"sickleaves"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all sickleaves (Incl paging)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var flag = 0;\r",
+									"\r",
+									"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+									"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+									"\r",
+									"   } else {\r",
+									"      pm.environment.set('nextRequestUrl', \"\")\r",
+									"   }\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/{{api}}/v1.0/sickleaves?{{nextRequestUrl}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{api}}",
+								"v1.0",
+								"sickleaves"
+							],
+							"query": [
+								{
+									"key": "{{nextRequestUrl}}",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all sickleaves by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/{{api}}/v1.0/sickleaves/1005 1 533",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{api}}",
+								"v1.0",
+								"sickleaves",
+								"1005 1 533"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all sickleaves  by PersonCode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/{{api}}/v1.0/sickleaves?personcode=1005",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{api}}",
+								"v1.0",
+								"sickleaves"
+							],
+							"query": [
+								{
+									"key": "personcode",
+									"value": "1005"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Get all Role Assignment",
-			"event": [
+			"name": "Get SalaryDetails",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {
-					"accept": true
-				}
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{AccessToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://api.youforce.com/wfm/v1.0/RoleAssignments",
-					"protocol": "https",
-					"host": [
-						"api",
-						"youforce",
-						"com"
-					],
-					"path": [
-						"wfm",
-						"v1.0",
-						"RoleAssignments"
+					"name": "basic",
+					"item": [
+						{
+							"name": "Get all salaryDetails",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/salaryDetails",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"salaryDetails"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all salaryDetails (Incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"   }\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/salaryDetails?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"salaryDetails"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all salaryDetails by PersonCode",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/salaryDetails?personCode=1005",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"salaryDetails"
+									],
+									"query": [
+										{
+											"key": "personCode",
+											"value": "1005"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all salaryDetails by ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/salaryDetails/1005 2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"salaryDetails",
+										"1005 2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "with Timeline",
+					"item": [
+						{
+							"name": "Get all salaryDetailTimelines",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/salaryDetailTimelines",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"salaryDetailTimelines"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all salaryDetailTimelines (incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"   }\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/salaryDetailTimelines?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"salaryDetailTimelines"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get salaryDetailTimelines by Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/SalaryDetailTimelines/1005 2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"SalaryDetailTimelines",
+										"1005 2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get salaryDetailTimelines by personCode",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/salaryDetailTimelines?personCode=1005",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"salaryDetailTimelines"
+									],
+									"query": [
+										{
+											"key": "personCode",
+											"value": "1005"
+										}
+									]
+								}
+							},
+							"response": []
+						}
 					]
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Get all Job Profiles",
-			"event": [
+			"name": "Extension API*",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {
-					"accept": true
-				}
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{AccessToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://api.youforce.com/wfm/v1.0/JobProfiles",
-					"protocol": "https",
-					"host": [
-						"api",
-						"youforce",
-						"com"
+					"name": "Get all Person extensions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
 					],
-					"path": [
-						"wfm",
-						"v1.0",
-						"JobProfiles"
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/extensions/v1.0/{{api}}/persons",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"extensions",
+								"v1.0",
+								"{{api}}",
+								"persons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all Person extensions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/persons",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"persons"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get all Person extensions (first page)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/persons",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"persons"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get all Person extensions (next pages)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/persons?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"persons"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get Person extensions by Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/persons/60 API003",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"persons",
+										"60 API003"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get Person extensions by PersonCode",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/persons?personCode=60",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"persons"
+									],
+									"query": [
+										{
+											"key": "personCode",
+											"value": "60"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get all Employments extensions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/extensions/v1.0/{{api}}/employments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"extensions",
+								"v1.0",
+								"{{api}}",
+								"employments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all Employments extensions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/employments",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"employments"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get all Employments extensions (first page)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/employments",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"employments"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Apr 2023 13:41:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html"
+								},
+								{
+									"key": "Content-Length",
+									"value": "146"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								}
+							],
+							"cookie": [],
+							"body": "<html>\n    <head>\n        <title>404 Not Found</title>\n    </head>\n    <body>\n        <center>\n            <h1>404 Not Found</h1>\n        </center>\n        <hr>\n        <center>nginx</center>\n    </body>\n</html>"
+						},
+						{
+							"name": "Get all Employments extensions (next pages)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/employments?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"employments"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get all Employments extensions by Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/employments/60 1 API002",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"employments",
+										"60 1 API002"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get Employments extensions by PersonCode",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/employments?personCode=2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"employments"
+									],
+									"query": [
+										{
+											"key": "personCode",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
 					]
 				}
-			},
-			"response": []
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		},
 		{
-			"name": "Get all Assignments",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {
-					"accept": true
-				}
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{AccessToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://api.youforce.com/wfm/v1.0/Assignments",
-					"protocol": "https",
-					"host": [
-						"api",
-						"youforce",
-						"com"
-					],
-					"path": [
-						"wfm",
-						"v1.0",
-						"Assignments"
-					]
-				}
-			},
-			"response": []
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var jsonData = pm.response.json();",
+					"var flag = 0;",
+					"",
+					"if (jsonData.hasOwnProperty(\"nextLink\")) {",
+					"      pm.globals.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))",
+					"",
+					"   } else {",
+					"      pm.globals.set('nextRequestUrl', \"\")",
+					"      flag = 1;",
+					"   }",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://api.youforce.com",
+			"type": "string"
+		},
+		{
+			"key": "api",
+			"value": "wfm",
+			"type": "string"
 		}
 	]
 }

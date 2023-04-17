@@ -1,13 +1,13 @@
 {
 	"info": {
-		"_postman_id": "2663eff1-5eb4-49e7-9ac9-fca4d8f47a9f",
-		"name": "MLM API",
+		"_postman_id": "53ebae56-bae4-4854-b484-2821088974e0",
+		"name": "MLM (Incl. Extensions)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "11271437"
 	},
 	"item": [
 		{
-			"name": "Get Token",
+			"name": "Token",
 			"item": [
 				{
 					"name": "Get Authentication Token",
@@ -74,6 +74,74 @@
 			"name": "Get basic",
 			"item": [
 				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Get User id (Youforce Portal)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{AccessToken}}"
+									},
+									{
+										"key": "X-Raet-Tenant-Id",
+										"type": "text",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/users(employeeId=10100)",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"users(employeeId=10100)"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Persons",
 					"item": [
 						{
@@ -109,15 +177,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/persons",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/persons",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"persons"
 									]
@@ -178,15 +243,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/persons?{{nextRequestUrl}}",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/persons?{{nextRequestUrl}}",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"persons"
 									],
@@ -233,15 +295,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/persons/100001",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/persons/100001",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"persons",
 										"100001"
@@ -283,15 +342,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/persons?personCode=100001",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/persons?personCode=100001",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"persons"
 									],
@@ -346,15 +402,12 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.youforce.com/mlm/v1.0/Employments",
-											"protocol": "https",
+											"raw": "{{url}}/{{api}}/v1.0/Employments",
 											"host": [
-												"api",
-												"youforce",
-												"com"
+												"{{url}}"
 											],
 											"path": [
-												"mlm",
+												"{{api}}",
 												"v1.0",
 												"Employments"
 											]
@@ -406,15 +459,12 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.youforce.com/mlm/v1.0/Employments?{{nextRequestUrl}}",
-											"protocol": "https",
+											"raw": "{{url}}/{{api}}/v1.0/Employments?{{nextRequestUrl}}",
 											"host": [
-												"api",
-												"youforce",
-												"com"
+												"{{url}}"
 											],
 											"path": [
-												"mlm",
+												"{{api}}",
 												"v1.0",
 												"Employments"
 											],
@@ -461,15 +511,12 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.youforce.com/mlm/v1.0/Employments?from=2023-02-01T09:00:00.000Z&to=2023-03-01T14:00:00.000Z",
-											"protocol": "https",
+											"raw": "{{url}}/{{api}}/v1.0/Employments?from=2023-02-01T09:00:00.000Z&to=2023-03-01T14:00:00.000Z",
 											"host": [
-												"api",
-												"youforce",
-												"com"
+												"{{url}}"
 											],
 											"path": [
-												"mlm",
+												"{{api}}",
 												"v1.0",
 												"Employments"
 											],
@@ -520,15 +567,12 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.youforce.com/mlm/v1.0/Employments/1005 2",
-											"protocol": "https",
+											"raw": "{{url}}/{{api}}/v1.0/Employments/1005 2",
 											"host": [
-												"api",
-												"youforce",
-												"com"
+												"{{url}}"
 											],
 											"path": [
-												"mlm",
+												"{{api}}",
 												"v1.0",
 												"Employments",
 												"1005 2"
@@ -570,15 +614,12 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.youforce.com/mlm/v1.0/Employments?personCode=1005",
-											"protocol": "https",
+											"raw": "{{url}}/{{api}}/v1.0/Employments?personCode=1005",
 											"host": [
-												"api",
-												"youforce",
-												"com"
+												"{{url}}"
 											],
 											"path": [
-												"mlm",
+												"{{api}}",
 												"v1.0",
 												"Employments"
 											],
@@ -625,15 +666,12 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.youforce.com/mlm/v1.0/Employments?organizationUnit=809",
-											"protocol": "https",
+											"raw": "{{url}}/{{api}}/v1.0/Employments?organizationUnit=809",
 											"host": [
-												"api",
-												"youforce",
-												"com"
+												"{{url}}"
 											],
 											"path": [
-												"mlm",
+												"{{api}}",
 												"v1.0",
 												"Employments"
 											],
@@ -685,15 +723,12 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.youforce.com/mlm/v1.0/EmploymentTimelines",
-											"protocol": "https",
+											"raw": "{{url}}/{{api}}/v1.0/EmploymentTimelines",
 											"host": [
-												"api",
-												"youforce",
-												"com"
+												"{{url}}"
 											],
 											"path": [
-												"mlm",
+												"{{api}}",
 												"v1.0",
 												"EmploymentTimelines"
 											]
@@ -745,15 +780,12 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.youforce.com/mlm/v1.0/EmploymentTimelines?{{nextRequestUrl}}",
-											"protocol": "https",
+											"raw": "{{url}}/{{api}}/v1.0/EmploymentTimelines?{{nextRequestUrl}}",
 											"host": [
-												"api",
-												"youforce",
-												"com"
+												"{{url}}"
 											],
 											"path": [
-												"mlm",
+												"{{api}}",
 												"v1.0",
 												"EmploymentTimelines"
 											],
@@ -800,15 +832,12 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.youforce.com/mlm/v1.0/EmploymentTimelines/1005 2",
-											"protocol": "https",
+											"raw": "{{url}}/{{api}}/v1.0/EmploymentTimelines/1005 2",
 											"host": [
-												"api",
-												"youforce",
-												"com"
+												"{{url}}"
 											],
 											"path": [
-												"mlm",
+												"{{api}}",
 												"v1.0",
 												"EmploymentTimelines",
 												"1005 2"
@@ -850,15 +879,12 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.youforce.com/mlm/v1.0/EmploymentTimelines?personCode=1005",
-											"protocol": "https",
+											"raw": "{{url}}/{{api}}/v1.0/EmploymentTimelines?personCode=1005",
 											"host": [
-												"api",
-												"youforce",
-												"com"
+												"{{url}}"
 											],
 											"path": [
-												"mlm",
+												"{{api}}",
 												"v1.0",
 												"EmploymentTimelines"
 											],
@@ -873,6 +899,218 @@
 									"response": []
 								}
 							]
+						}
+					]
+				},
+				{
+					"name": "Assignments",
+					"item": [
+						{
+							"name": "Get all Assigments",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/Assignments",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"Assignments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Assigments (incl paging)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"var flag = 0;\r",
+											"\r",
+											"if (jsonData.hasOwnProperty(\"nextLink\")) {\r",
+											"      pm.environment.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))\r",
+											"\r",
+											"   } else {\r",
+											"      pm.environment.set('nextRequestUrl', \"\")\r",
+											"   }\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/Assignments?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"Assignments"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Assigment by Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/Assignments/1005 2 807 2100 20160101",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"Assignments",
+										"1005 2 807 2100 20160101"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Assigment by PersonId (personCode)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{api}}/v1.0/Assignments?personid=1005",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{api}}",
+										"v1.0",
+										"Assignments"
+									],
+									"query": [
+										{
+											"key": "personid",
+											"value": "1005"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -912,15 +1150,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/organizationUnits",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/organizationUnits",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"organizationUnits"
 									]
@@ -971,15 +1206,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/organizationUnits?{{nextRequestUrl}}",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/organizationUnits?{{nextRequestUrl}}",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"organizationUnits"
 									],
@@ -1026,15 +1258,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/organizationUnits/73",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/organizationUnits/73",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"organizationUnits",
 										"73"
@@ -1076,15 +1305,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/organizationUnits?shortname=1137",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/organizationUnits?shortname=1137",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"organizationUnits"
 									],
@@ -1136,15 +1362,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/RoleAssignments",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/RoleAssignments",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"RoleAssignments"
 									]
@@ -1195,15 +1418,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/RoleAssignments?{{nextRequestUrl}}",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/RoleAssignments?{{nextRequestUrl}}",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"RoleAssignments"
 									],
@@ -1250,15 +1470,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/RoleAssignments/1005 859 MGR 20220101",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/RoleAssignments/1005 859 MGR 20220101",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"RoleAssignments",
 										"1005 859 MGR 20220101"
@@ -1300,15 +1517,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/RoleAssignments?personid=1005",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/RoleAssignments?personid=1005",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"RoleAssignments"
 									],
@@ -1360,15 +1574,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/JobProfiles",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/JobProfiles",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"JobProfiles"
 									]
@@ -1418,15 +1629,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/JobProfiles?{{nextRequestUrl}}",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/JobProfiles?{{nextRequestUrl}}",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"JobProfiles"
 									],
@@ -1473,15 +1681,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/JobProfiles/0110",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/JobProfiles/0110",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"JobProfiles",
 										"0110"
@@ -1523,15 +1728,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.youforce.com/mlm/v1.0/JobProfiles?shortName=0120",
-									"protocol": "https",
+									"raw": "{{url}}/{{api}}/v1.0/JobProfiles?shortName=0120",
 									"host": [
-										"api",
-										"youforce",
-										"com"
+										"{{url}}"
 									],
 									"path": [
-										"mlm",
+										"{{api}}",
 										"v1.0",
 										"JobProfiles"
 									],
@@ -1548,6 +1750,538 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Extension API*",
+			"item": [
+				{
+					"name": "Get all Person extensions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/extensions/v1.0/{{api}}/persons",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"extensions",
+								"v1.0",
+								"{{api}}",
+								"persons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all Person extensions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/persons",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"persons"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get all Person extensions (first page)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/persons",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"persons"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get all Person extensions (next pages)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/persons?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"persons"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get Person extensions by Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/persons/60 API003",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"persons",
+										"60 API003"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get Person extensions by PersonCode",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/persons?personCode=60",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"persons"
+									],
+									"query": [
+										{
+											"key": "personCode",
+											"value": "60"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get all Employments extensions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/extensions/v1.0/{{api}}/employments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"extensions",
+								"v1.0",
+								"{{api}}",
+								"employments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all Employments extensions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/employments",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"employments"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get all Employments extensions (first page)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/employments",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"employments"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Apr 2023 13:41:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html"
+								},
+								{
+									"key": "Content-Length",
+									"value": "146"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								}
+							],
+							"cookie": [],
+							"body": "<html>\n    <head>\n        <title>404 Not Found</title>\n    </head>\n    <body>\n        <center>\n            <h1>404 Not Found</h1>\n        </center>\n        <hr>\n        <center>nginx</center>\n    </body>\n</html>"
+						},
+						{
+							"name": "Get all Employments extensions (next pages)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/employments?{{nextRequestUrl}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"employments"
+									],
+									"query": [
+										{
+											"key": "{{nextRequestUrl}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get all Employments extensions by Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/employments/60 1 API002",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"employments",
+										"60 1 API002"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get Employments extensions by PersonCode",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/extensions/v1.0/{{api}}/employments?personCode=2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"extensions",
+										"v1.0",
+										"{{api}}",
+										"employments"
+									],
+									"query": [
+										{
+											"key": "personCode",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var jsonData = pm.response.json();",
+					"var flag = 0;",
+					"",
+					"if (jsonData.hasOwnProperty(\"nextLink\")) {",
+					"      pm.globals.set('nextRequestUrl', jsonData.nextLink.substring(jsonData.nextLink.indexOf('?')+1))",
+					"",
+					"   } else {",
+					"      pm.globals.set('nextRequestUrl', \"\")",
+					"      flag = 1;",
+					"   }",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://api.youforce.com",
+			"type": "string"
+		},
+		{
+			"key": "api",
+			"value": "mlm",
+			"type": "string"
 		}
 	]
 }
