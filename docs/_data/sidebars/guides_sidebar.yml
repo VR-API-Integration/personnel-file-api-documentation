@@ -47,23 +47,6 @@ entries:
       url: /iam_api_postman.html
       output: web
 
-  
-  - title: Extensions
-    output: web
-    folderitems:
-
-    - title: Introduction
-      url: /extensions_api_intro.html
-      output: web
-
-    - title: Swagger
-      url: /extensions_api_reference.html
-      output: web
-
-    - title: Postman collection
-      url: /extensions_api_postman.html
-      output: web
-
   - title: Support
     output: web
     folderitems:
