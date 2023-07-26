@@ -24,5 +24,4 @@ The following processes can be supported with the domain API:
 ## Domain model
 The Dossier API will support the following domain model
 
-{% include image.html file="dossier_api_domain_model.png" alt="Dossier API Domain Model " %}
-
+{% include image.html file="dossier_api_domain_model.png" width="100" alt="Dossier API Domain Model " %}
