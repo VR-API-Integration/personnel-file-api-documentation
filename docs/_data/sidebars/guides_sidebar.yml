@@ -2,7 +2,7 @@
 
 entries:
 - title: sidebar
-  product: Youforce API Documentation
+  product: Dossier API Documentation
   version: 1.0
   folders:
 
@@ -31,7 +31,7 @@ entries:
       url: /guides_api_statuses.html
       output: web, pdf
 
-  - title: IAM Domain
+  - title: Dossier API
     output: web
     folderitems:
 
@@ -45,75 +45,6 @@ entries:
 
     - title: Postman collection
       url: /iam_api_postman.html
-      output: web
-
-  - title: Learning Domain
-    output: web
-    folderitems:
-
-    - title: Introduction
-      url: /learning_api_intro.html
-      output: web
-
-    - title: Swagger UI
-      url: /learning_api_reference.html
-      output: web
-
-    - title: Postman collection
-      url: /learning_api_postman.html
-      output: web
-
-  - title: Workforce Management Domain
-    output: web
-    folderitems:
-
-    - title: Introduction
-      url: /wfm_api_intro.html
-      output: web
-
-    - title: Swagger UI
-      url: /wfm_api_reference.html
-      output: web
-
-   
-    - title: Postman collection
-      url: /wfm_api_postman.html
-      output: web
-
-
-  - title: Medical Leave Domain
-    output: web
-    folderitems:
-
-    - title: Introduction
-      url: /mlm_api_intro.html
-      output: web
-
-    - title: Swagger UI
-      url: /mlm_api_reference.html
-      output: web
-
-   
-    - title: Postman collection
-      url: /mlm_api_postman.html
-      output: web
-
-  
-  - title: Recruitment Domain
-    output: web
-    folderitems:
-
-    - title: Introduction
-      url: /recruitment_api_intro.html
-      output: web
-
-    - title: Swagger UI
-      url: /recruitment_api_reference.html
-      output: web
-
-   
-    - title: Postman collection
-      url: /recruitment_api_postman.html
       output: web
 
   
