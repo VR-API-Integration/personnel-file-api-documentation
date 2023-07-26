@@ -14,4 +14,4 @@ Most MFP's use software that receives a scanned document and stores it in a fold
 
 The diagram below shows a high level overview of the end-to-end system.
 
-{% include image.html file="dossier_api_diagram.png" alt="APIs overview" max-width="800" %}
+{% include image.html file="dossier_api_diagram.png" alt="Dossier API overview" max-width="800" %}
