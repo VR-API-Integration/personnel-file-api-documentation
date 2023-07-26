@@ -11,7 +11,7 @@ topnav: topnav
 
 <span class="label label-success">CONCEPT</span>
 
-The purpose of this API is to allow the integration between an external system providing documents for storage in the personnel file of an employee in Personnel File of Youforce or YouServe. The API provides functions to retrieve (filtered) list of employees/employments, a list of available document types stems and to add a document to the personnel file of a specific employee. 
+The purpose of this API is to allow the integration between an external system (providing documents for storage in the personnel file of an employee) and the module Personnel File in Youforce or YouServe. The API provides functions to retrieve (a filtered) list of employees/employments, to retrieve a list of available document types and to add a document to the personnel file of a specific employee. 
 Organisations can use this API to automate the storage of a new document in Personnel File from an external system like a Multi-Functional Printer (MFP), a scanner, workflow systems or other software that produce documents.
 
 ## Processes
