@@ -18,13 +18,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Youforce API Documentation
-email: ismael.onoro.espliego@visma.com
-description: The Youforce API allows for integration over HTTPS between the Beaufort HR core system and external systems in the context of the supported domains.
+title: Dossier API Documentation
+email: peter.van.miltenburg@visma.com
+description: The Dossier API allows for integration over HTTPS between Personnel File and external systems to add documents.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
-github_username:  ismaelonoroVisma
+github_username:  PeterbanMiltenburg
 
 # Build settings
 theme: minima
@@ -51,10 +51,10 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-topnav_title: Youforce API Documentation
+topnav_title: Dossier API Documentation
 # this appears on the top navigation bar next to the home button
 
-site_title: Youforce API documentation
+site_title: Dossier API documentation
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: Visma
@@ -65,9 +65,9 @@ exclude:
   - .gitignore
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_subject_line: Youforce API documentation theme
+feedback_subject_line: Dossier API documentation theme
 
-feedback_email: ismael.onoro.espliego@visma.com
+feedback_email: peter.van.miltenburg@visma.com
 # used as a contact email for the Feedback link in the top navigation bar
 
 feedback_disable: true
@@ -141,5 +141,5 @@ sidebars:
 - product2_sidebar
 - other
 
-description: "Youforce API Documentation Web Site"
+description: "Dossier API Documentation Web Site"
 # the description is used in the feed.xml file
