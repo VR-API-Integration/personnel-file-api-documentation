@@ -1,14 +1,14 @@
 ---
-title: "Youforce API Introduction"
+title: "Dossier API Introduction"
 keywords: index introduction
 tags: [getting_started, file, api, library]
 sidebar: guides_sidebar
 permalink: index.html
-summary: "High level overview of the Youforce API suite"
+summary: "High level overview of the Dossier API"
 ---
 
 
-**Youforce API** is a suite of APIs whose purpose is to serve as an integration layer, which enables for communication over HTTPS between the Beaufort HR core system and external systems.
+**Dossier API** is a suite of APIs whose purpose is to serve as an integration layer, which enables for communication over HTTPS between the Beaufort HR core system and external systems.
 
 Each of the supported domains is covered by an independent API, which  offers a complete set of relevant standard fields. In case extra flexibility is needed to satisfy very specific custom requirements, the integration can also be complemented with the additional Extensions API, which will make available these specific custom fields that were configured as extensions.
 
