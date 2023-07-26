@@ -416,7 +416,7 @@ var data = {
     {
         id: 12,
         href: '#',
-        name: 'Youforce API Documentation',
+        name: 'Dossier API Documentation',
         logoUrl: 'https://ux.visma.com/NC4-Beta/development/documentation/assets/img/apps/InSchool-48.png',
         selected: true
     },
