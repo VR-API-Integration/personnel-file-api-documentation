@@ -3,7 +3,7 @@ title: API Statuses
 tags: [overview, getting_started, api]
 keywords: api, status, library, api policies
 summary: "Definition of our API Statuses"
-last_updated: Jan 5, 2022
+last_updated: 2023-07-26
 sidebar: guides_sidebar
 permalink: guides_api_statuses.html
 folder: guides/policies
