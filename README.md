@@ -1,6 +1,6 @@
-# Welcome to Youforce API documentation GitHub
+# Welcome to Dossier API documentation GitHub
 
-This repository contains the documentation site of Youforce API.
+This repository contains the documentation site of Dossier API.
 
 The documentation of the original Jekyll template is in this [link](https://idratherbewriting.com/documentation-theme-jekyll/index.html).
 
