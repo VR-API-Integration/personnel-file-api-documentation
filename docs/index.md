@@ -8,10 +8,10 @@ summary: "High level overview of the Dossier API"
 ---
 
 
-**Dossier API** is a suite of APIs whose purpose is to serve as an integration layer, which enables for communication over HTTPS between the Beaufort HR core system and external systems.
+The **Dossier API** is an API that can be used to add documents to Personnel File from applications that are not part of Youforce or YouServe. Examples are Multi-Functional Printers (MFP), scanners, workflow systems and other applications that produce documents that need to be added to the Personnel File of employees in Youforce or YouServe.
 
-Each of the supported domains is covered by an independent API, which  offers a complete set of relevant standard fields. In case extra flexibility is needed to satisfy very specific custom requirements, the integration can also be complemented with the additional Extensions API, which will make available these specific custom fields that were configured as extensions.
+Most MFP's use software that receives a scanned document and stores it in a folder on a local server, sends it using email or other means of distributing the scanned document. Many providers of MFP's also offer customized solutions to send documents to other applications using plugins. A provider or a third party can use the Dossier API to create a plugin that sends the document to Personnel File in Youforce or YouServe, including customized screens on the MFP to select an employee and a document type and to enter a document title.
 
 The diagram below shows a high level overview of the end-to-end system.
 
-{% include image.html file="overall_apis_diagram.png" alt="APIs overview" max-width="800" %}
+{% include image.html file="dossier_api_diagram.png" alt="APIs overview" max-width="800" %}
