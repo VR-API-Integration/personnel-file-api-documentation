@@ -40,11 +40,11 @@ entries:
       output: web
 
     - title: Swagger UI
-      url: iam_api_reference.html
+      url: .dossier_api_reference.html
       output: web
 
     - title: Postman collection
-      url: /iam_api_postman.html
+      url: /dossier_api_postman.html
       output: web
 
   - title: Support
