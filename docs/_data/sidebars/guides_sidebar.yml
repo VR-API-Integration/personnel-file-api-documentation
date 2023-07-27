@@ -31,20 +31,20 @@ entries:
       url: /guides_api_statuses.html
       output: web, pdf
 
-  - title: Personnel File API
+  - title: Personnel File Connector
     output: web
     folderitems:
 
     - title: Introduction
-      url: /dossier_api_intro.html
+      url: /personnel_file_connector_intro.html
       output: web
 
     - title: Swagger UI
-      url: /dossier_api_reference.html
+      url: /personnel_file_connector_reference.html
       output: web
 
     - title: Postman collection
-      url: /dossier_api_postman.html
+      url: /personnel_file_connector_postman.html
       output: web
 
   - title: Support
