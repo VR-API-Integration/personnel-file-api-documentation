@@ -8,7 +8,7 @@ permalink: personnel_file_connector_endpoint_documents.html
 folder: guides/api/personnel_file_connector/endpoints
 topnav: topnav
 ---
-
+<h2>GET /v1.0/documents</h2>
 <p>This API endpoint allows you to list all the documents associated with a designated tenant. By default, the endpoint will return a list of all documents in a random order. However, the endpoint also supports advanced functionality, including paging, sorting, and querying.</p>
 <p>With paging, you can retrieve the document list in smaller, more manageable chunks. With sorting, you can arrange the documents list according to different criteria, such as alphabetical order or hire date. With querying, you can filter the document list to show only documents that meet certain criteria, such as those with a specific document description or in a certain location.</p>
 <table class="relative-table wrapped" style="width: 75.0811%;">
