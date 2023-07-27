@@ -52,11 +52,11 @@ entries:
         output: web      
         subfolderitems:
 
-          - title: Employees
+          - title:  Employees
             url: /personnel_file_connector_endpoint_employees.html
             output: web
 
-          - title: Documents
+          - title:  Documents
             url: /personnel_file_connector_endpoint_documents.html
             output: web
 
