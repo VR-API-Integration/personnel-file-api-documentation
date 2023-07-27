@@ -2,7 +2,7 @@
 title: Usage Limits
 tags: [getting_started, troubleshooting]
 keywords: api, library, api policies
-last_updated: Jan 5, 2022
+last_updated: 2026-07-27
 summary: "We apply usage limits to ensure the availability of our services to all parties interacting with Youforce. These usage limits depend on your subscription."
 sidebar: guides_sidebar
 permalink: guides_usage_limits.html
