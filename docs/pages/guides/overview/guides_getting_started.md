@@ -3,10 +3,10 @@ title: Getting Started
 sidebar: guides_sidebar
 permalink: guides_getting_started.html
 folder: guides/overview
-summary: Quick guide to start consuming Dossier API.
+summary: Quick guide to start consuming Personnel File Connector API.
 ---
 
-This section has been prepared to give the developer a quick guide to start consuming the Dossier API. 
+This section has been prepared to give the developer a quick guide to start consuming the Personnel File Connector API. 
 
 This guide is written under the assumption that the developer has a proper application created and available, which should be linked to the specific API to be consumed, and that the following information is known:
 
