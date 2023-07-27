@@ -1,11 +1,11 @@
 ---
-title: Dossier API
-tags: [dossier, api]
-keywords: dossier, api
+title: Personnel File Connector API
+tags: [dossier, personnel file, connector, api]
+keywords: dossier, personnel file, connector, api
 last_updated: 2023-07-26
 sidebar: guides_sidebar
-permalink: dossier_api_postman.html
-folder: guides/api
+permalink: personnel_file_connector_postman.html
+folder: guides/api/personnel_file_connector
 topnav: topnav
 ---
 
