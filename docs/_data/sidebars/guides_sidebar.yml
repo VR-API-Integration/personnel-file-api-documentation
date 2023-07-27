@@ -49,8 +49,7 @@ entries:
 
       subfolders:
       - title: Endpoints
-        output: web
-      
+        output: web      
         subfolderitems:
 
           - title: Employees
