@@ -13,4 +13,4 @@ The Postman collection you can download here includes example calls to all the a
 
 In order to make any of the calls, an access token must be requested first. Please make sure you have available the necessary values for client_id, client_secret and tenant_id parameters.  
 
-[Download Postman collection file...](pages/guides/postman/download/dossier-api.postman_collection.json)
+[Download Postman collection file...](pages/guides/postman/download/personnel_file_connector.postman_collection.json)
