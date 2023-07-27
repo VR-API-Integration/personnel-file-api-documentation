@@ -1,5 +1,5 @@
 ---
-title: Introduction Personnel File Connector
+title: Personnel File Connector - Introduction
 tags: [dossier, personnel file, api, connector]
 keywords: dossier, personnel file, api, connector
 last_updated: 2023-07-26
