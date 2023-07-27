@@ -46,10 +46,10 @@ entries:
     - title: Postman collection
       url: /personnel_file_connector_postman.html
       output: web
-            subfolders:
+
+      subfolders:
     - title: Endpoints
-      output: web
-      
+      output: web      
       subfolderitems:
 
           - title: Employees
