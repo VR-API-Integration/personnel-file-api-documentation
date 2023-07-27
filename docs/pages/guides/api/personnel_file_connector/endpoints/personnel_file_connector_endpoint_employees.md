@@ -81,6 +81,7 @@ topnav: topnav
     </tr>
   </tbody>
 </table>
+
 <h2>GET /v1.0/employees/{nr}</h2>
 <p>By using this API endpoint, you can retrieve detailed information about a specific employee, using their technical employee number. To use this endpoint, you will need to provide the employee number in the URL path.</p>
 <p>Additionally, you can include query parameters to retrieve additional information about the employee. If you include the query parameter "include=contracts", the endpoint will return a list of all the employment contracts associated with the employee. If you include the query parameter "include=documents", the endpoint will return a list of all the documents that are linked to the employee's personnel file.</p>
@@ -104,11 +105,7 @@ topnav: topnav
     </tr>
   </tbody>
 </table>
-<h2>GET /v1.0/employees/{nr}/documents</h2>
-<p>This API endpoint allows you to retrieve all the documents that are linked to a designated employee's personnel file, but not those associated with their employment contracts. To use this endpoint, you will need to provide the employee number in the URL path.</p>
-<p>Once the request has been processed, the endpoint will return a list of all the documents that are associated with the employee's personnel file.</p>
-<h2>POST /v1.0/employees/{nr}/documents</h2>
-<p>By using this API endpoint, you can add a new document to the personnel file of a designated employee, without associating it with a specific employment contract. To use this endpoint, you will need to provide the employee number in the URL path.</p>
+
 <h2>GET /v1.0/employees/{nr}/contracts</h2>
 <p>This API endpoint allows you to retrieve all the employment contracts associated with a designated employee, using their technical employee number. To use this endpoint, you will need to provide the employee number in the URL path.</p>
 <table class="wrapped">
@@ -153,8 +150,5 @@ topnav: topnav
     </tr>
   </tbody>
 </table>
-<h2>GET /v1.0/employees/{nr}/contracts/{nr}/documents</h2>
-<p>By using this API endpoint, you can retrieve the documents that are linked to a specific employment contract for a designated employee. To access this endpoint, you will need to provide the employee number and the contract number in the URL path. Once the request has been processed, the endpoint will return a list of documents that are associated with the specified employment contract.</p>
-<h2>POST /v1.0/employees/{nr}/contracts/{nr}/documents</h2>
-<p>This API endpoint allows you to add a new document to the personnel file of a specified employee, which will be linked to a particular employment contract. To use this endpoint, you will need to specify the employee number and the contract number in the URL path. Once the document has been added, it will be included in the employee's personnel file, along with any other documents associated with the same employment contract.</p>
+
 
