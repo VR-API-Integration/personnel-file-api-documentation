@@ -15,10 +15,17 @@ The purpose of the Personnel File Connector API is to connect an external system
 
 ## Processes
 The following processes can be supported with the Personnel File Connector:
-- Get all the relevant employee data for selecting an employee/employments from a list
-- Get the available document types for selecting a document type from a list
-- Get all the relevant employee data and document type for adding a new  document
 
+- Get a list of document types with document type codes and document type titles
+- Get the title of a document type
+- Get a list of folders with the document types per folder
+- Get a list of available properties of employees and employments
+- Get a list of available properties of documents
+- Get a filtered list maximized to 1.000 hits of employees and employments with all relevant properties using filter expressions
+- Get the properties of a specific employee using the employeenumber
+- Add a document with required and optional properties using multipart/form-data
+- Add a document with required and optional properties using multipart/mixed
+- Add a document with required and optional properties using application/json
 
 ## Domain model
 The Personnel File Connector will support the following domain model
