@@ -31,7 +31,7 @@ entries:
       url: /guides_api_statuses.html
       output: web, pdf
 
-  - title: Dossier API
+  - title: Personnel File API
     output: web
     folderitems:
 
