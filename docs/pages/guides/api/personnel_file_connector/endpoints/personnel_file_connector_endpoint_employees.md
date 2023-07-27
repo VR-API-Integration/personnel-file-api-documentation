@@ -10,7 +10,7 @@ topnav: topnav
 ---
 
 <h2>GET /v1.0/employees</h2>
-<p>This API endpoint allows you to list all the employees associated with a designated tenant. By default, the endpoint will return a list of all employees in a random order. However, the endpoint also supports advanced functionality, including paging, sorting, and querying.</p>
+<p>This endpoint provides a list of all the employees and employments associated with a designated tenant. By default, the endpoint will return a list of all employees in a random order. However, the endpoint also supports advanced functionality, including paging, sorting, and querying.</p>
 <p>With paging, you can retrieve the employee list in smaller, more manageable chunks. With sorting, you can arrange the employee list according to different criteria, such as alphabetical order or hire date. With querying, you can filter the employee list to show only employees that meet certain criteria, such as those with a specific job title or in a certain location.</p>
 <table class="wrapped relative-table" style="width: 75.0811%;">
   <colgroup>
