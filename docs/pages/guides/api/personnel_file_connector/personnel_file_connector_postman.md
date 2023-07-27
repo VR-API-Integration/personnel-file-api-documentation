@@ -1,5 +1,5 @@
 ---
-title: Personnel File Connector API Postman Collection
+title: Personnel File Connector - Postman Collection
 tags: [dossier, personnel file, connector, api]
 keywords: dossier, personnel file, connector, api
 last_updated: 2023-07-26
