@@ -14,4 +14,4 @@ Many MFP's use software that receive the scanned document and stores it in a fol
 
 The diagram below shows a high level overview of the end-to-end system.
 
-{% include image.html file="dossier_api_diagram.png" alt="Personnel File Connector API overview" max-width="800" %}
+{% include image.html file="personnel_file_connector_diagram.png" alt="Personnel File Connector API overview" max-width="800" %}
