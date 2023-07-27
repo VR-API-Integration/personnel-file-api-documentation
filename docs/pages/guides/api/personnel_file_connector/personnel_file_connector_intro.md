@@ -23,4 +23,4 @@ The following processes can be supported with the Personnel File Connector:
 ## Domain model
 The Personnel File Connector will support the following domain model
 
-{% include image.html file="personnel_file_connector_api_domain_model.png" width="50%" height="50%" alt="Personnel File Connector Domain Model" %}
+{% include image.html file="personnel_file_connector_domain_model.png" width="50%" height="50%" alt="Personnel File Connector Domain Model" %}
