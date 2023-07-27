@@ -1,5 +1,5 @@
 ---
-title: Endpoint - Employees
+title: Personnel File Connector Endpoint - Employees
 tags: [dossier, personnel file, api, connector]
 keywords: dossier, personnel file, api, connector
 last_updated: 2023-07-26
