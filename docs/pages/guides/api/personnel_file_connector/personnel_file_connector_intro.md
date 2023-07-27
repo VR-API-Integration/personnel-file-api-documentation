@@ -11,7 +11,7 @@ topnav: topnav
 
 <span class="label label-success">CONCEPT</span>
 
-The purpose of the Personnel File Connector is to connect an external system, which generates documents for employees, with the Youforce or YouServe Personnel File. It provides functions to retrieve filtered lists of employees, retrieve available document types, and adding documents to a specific employee's personnel file. Organizations can use this API to automate the storage of new documents from external sources like MFPs, scanners, or workflow systems directly into the employees' Personnel Files.
+The purpose of the Personnel File Connector API is to connect an external system, which generates documents for employees, with the Youforce or YouServe Personnel File. It provides functions to retrieve filtered lists of employees, retrieve available document types, and adding documents to a specific employee's personnel file. Organizations can use this API to automate the storage of new documents from external sources like MFPs, scanners, or workflow systems directly into the employees' Personnel Files.
 
 ## Processes
 The following processes can be supported with the Personnel File Connector:
