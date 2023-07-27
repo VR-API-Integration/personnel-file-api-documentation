@@ -52,15 +52,15 @@ entries:
         output: web      
         subfolderitems:
 
-        - title: \ Schema
+        - title: </br>Schema
           url: /personnel_file_connector_endpoint_schema.html
           output: web
           
-        - title: \ Employees
+        - title: </br>Employees
           url: /personnel_file_connector_endpoint_employees.html
           output: web
 
-        - title: \ Documents
+        - title: </br>Documents
           url: /personnel_file_connector_endpoint_documents.html
           output: web
 
