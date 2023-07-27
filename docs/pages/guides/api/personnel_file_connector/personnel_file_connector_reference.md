@@ -9,6 +9,6 @@ folder: guides/personnel_file_connector
 topnav: topnav
 ---
 
-Dossier API reference
+Personnel File Connector  API reference
 Swagger pages
 - [IAM endpoint](https://vr-api-integration.github.io/youforce-api-Swagger-ui/IAM.html){:target="\_blank"}
