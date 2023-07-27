@@ -2,7 +2,7 @@
 title: Request headers and responses
 sidebar: guides_sidebar
 permalink: guides_request_headers_and_responses.html
-summary: See below the request headers and response codes of Youforce API.
+summary: See below the request headers and response codes of Dossier API.
 folder: guides/overview
 ---
 
