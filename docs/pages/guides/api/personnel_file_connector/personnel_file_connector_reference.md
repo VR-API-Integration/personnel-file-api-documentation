@@ -1,5 +1,5 @@
 ---
-title: Personnel File Connector API reference
+title: Personnel File Connector - API reference
 tags: [dossier, api]
 keywords: dossier, api
 last_updated: 2023-07-26
