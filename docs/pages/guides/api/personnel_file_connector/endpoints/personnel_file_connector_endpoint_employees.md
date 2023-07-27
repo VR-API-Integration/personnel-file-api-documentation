@@ -106,49 +106,5 @@ topnav: topnav
   </tbody>
 </table>
 
-<h2>GET /v1.0/employees/{nr}/contracts</h2>
-<p>This API endpoint allows you to retrieve all the employment contracts associated with a designated employee, using their technical employee number. To use this endpoint, you will need to provide the employee number in the URL path.</p>
-<table class="wrapped">
-  <colgroup>
-    <col/>
-    <col/>
-  </colgroup>
-  <tbody>
-    <tr>
-      <th>query parameter</th>
-      <th>
-        <br/>
-      </th>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <strong>include=documents</strong>
-      </td>
-      <td colspan="1">Include this query parameter to also retrieve the documents that are linked to the employment contracts</td>
-    </tr>
-  </tbody>
-</table>
-<h2>GET /v1.0/employees/{nr}/contracts/{nr}</h2>
-<p>This API endpoint allows you to retrieve a specific employment contract for a designated employee, using their technical employee number and contract number. To use this endpoint, you will need to provide the employee number and the contract number in the URL path.</p>
-<table class="wrapped">
-  <colgroup>
-    <col/>
-    <col/>
-  </colgroup>
-  <tbody>
-    <tr>
-      <th>query parameter</th>
-      <th>
-        <br/>
-      </th>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <strong>include=documents</strong>
-      </td>
-      <td colspan="1">Include this query parameter to also retrieve the documents that are linked to the employment contract</td>
-    </tr>
-  </tbody>
-</table>
 
 
