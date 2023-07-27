@@ -37,11 +37,19 @@ entries:
 
     - title: Introduction
       url: /personnel_file_connector_intro.html
+      output: web      
+
+    - title: Swagger UI
+      url: /personnel_file_connector_reference.html
       output: web
 
-      subfolders:
+    - title: Postman collection
+      url: /personnel_file_connector_postman.html
+      output: web
+            subfolders:
     - title: Endpoints
       output: web
+      
       subfolderitems:
 
           - title: Employees
@@ -51,15 +59,6 @@ entries:
           - title: Documents
             url: /personnel_file_connector_endpoint_documents.html
             output: web
-      
-
-    - title: Swagger UI
-      url: /personnel_file_connector_reference.html
-      output: web
-
-    - title: Postman collection
-      url: /personnel_file_connector_postman.html
-      output: web
 
   - title: Support
     output: web
