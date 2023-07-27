@@ -9,48 +9,152 @@ folder: guides/api/personnel_file_connector/endpoints
 topnav: topnav
 ---
 
-GET /v1.0/employees
-This API endpoint allows you to list all the employees associated with a designated tenant. By default, the endpoint will return a list of all employees in a random order. However, the endpoint also supports advanced functionality, including paging, sorting, and querying.
+<h2>GET /v1.0/employees</h2>
+<p>This API endpoint allows you to list all the employees associated with a designated tenant. By default, the endpoint will return a list of all employees in a random order. However, the endpoint also supports advanced functionality, including paging, sorting, and querying.</p>
+<p>With paging, you can retrieve the employee list in smaller, more manageable chunks. With sorting, you can arrange the employee list according to different criteria, such as alphabetical order or hire date. With querying, you can filter the employee list to show only employees that meet certain criteria, such as those with a specific job title or in a certain location.</p>
+<table class="wrapped relative-table" style="width: 75.0811%;">
+  <colgroup>
+    <col style="width: 12.9282%;"/>
+    <col style="width: 87.0718%;"/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>query parameter</th>
+      <th>
+        <br/>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <strong>active</strong>
+      </td>
+      <td colspan="1">By including the "active" query parameter in your API request, you can exclude any employees from the results that are no longer employed by the company. This parameter can be useful if you only want to see a list of current employees, without including former employees who are no longer part of the workforce.</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>skip=<em>n</em>
+        </strong>
+      </td>
+      <td>By including the "skip" query parameter in your API request, you can skip the first n employees in the results list. This parameter can be useful if you only want to see employees beyond the first few entries, allowing you to focus on a particular subset of the employee list.</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>top=<em>n</em>
+        </strong>
+      </td>
+      <td>By including the "top" query parameter in your API request, you can limit the results to the top n employees in the list. This parameter can be useful if you only want to see the most important or relevant employees, without having to sift through a large number of entries.</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>search=<em>value</em>
+        </strong>
+      </td>
+      <td>By including the "search" query parameter in your API request, you can filter the employee list by searching for a given value in any of the applicable attributes, such as employee number, name, department, or function. This parameter can be useful if you need to quickly find employees who meet certain criteria, without having to manually search through the entire list.</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <strong>filter=<em>expression</em>
+        </strong>
+      </td>
+      <td colspan="1">
+        <p>By including the "filter" query parameter in your API request, you can filter the results of the request based on a specified condition or set of conditions. The "filter" parameter accepts an expression in the <ac:link>
+            <ri:page ri:content-title="OData Filter language"/>
+            <ac:plain-text-link-body><![CDATA[OData Filter Language]]></ac:plain-text-link-body>
+          </ac:link>, which provides a flexible and powerful way to construct filter conditions.</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <strong>sort=<em>attributes</em>
+        </strong>
+      </td>
+      <td colspan="1">
+        <p>By including the "sort" query parameter in your API request, you can sort the employee list based on one or more specified attributes. To use this parameter, you will need to provide a comma-separated list of attribute names that you wish to sort on.</p>
+        <p>You can also specify a minus prefix to sort the attribute in descending order. For example, if you wanted to sort the employee list by last name in descending order, you would include the parameter "sort=-lastName".</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <strong>include=contracts</strong>
+      </td>
+      <td colspan="1">By including the "include" query parameter in your API request, you can choose to include additional information in the search results. Specifically, including the "contracts" value for the "include" parameter will cause the endpoint to also return a list of all the employment contracts associated with the employee(s) in the search results.</td>
+    </tr>
+  </tbody>
+</table>
+<h2>GET /v1.0/employees/{nr}</h2>
+<p>By using this API endpoint, you can retrieve detailed information about a specific employee, using their technical employee number. To use this endpoint, you will need to provide the employee number in the URL path.</p>
+<p>Additionally, you can include query parameters to retrieve additional information about the employee. If you include the query parameter "include=contracts", the endpoint will return a list of all the employment contracts associated with the employee. If you include the query parameter "include=documents", the endpoint will return a list of all the documents that are linked to the employee's personnel file.</p>
+<table class="wrapped">
+  <colgroup>
+    <col/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>query parameter</th>
+      <th>
+        <br/>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <strong>include=contracts,documents</strong>
+      </td>
+      <td colspan="1">Include this query parameter to include contracts, documents or both in the search results</td>
+    </tr>
+  </tbody>
+</table>
+<h2>GET /v1.0/employees/{nr}/documents</h2>
+<p>This API endpoint allows you to retrieve all the documents that are linked to a designated employee's personnel file, but not those associated with their employment contracts. To use this endpoint, you will need to provide the employee number in the URL path.</p>
+<p>Once the request has been processed, the endpoint will return a list of all the documents that are associated with the employee's personnel file.</p>
+<h2>POST /v1.0/employees/{nr}/documents</h2>
+<p>By using this API endpoint, you can add a new document to the personnel file of a designated employee, without associating it with a specific employment contract. To use this endpoint, you will need to provide the employee number in the URL path.</p>
+<h2>GET /v1.0/employees/{nr}/contracts</h2>
+<p>This API endpoint allows you to retrieve all the employment contracts associated with a designated employee, using their technical employee number. To use this endpoint, you will need to provide the employee number in the URL path.</p>
+<table class="wrapped">
+  <colgroup>
+    <col/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>query parameter</th>
+      <th>
+        <br/>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <strong>include=documents</strong>
+      </td>
+      <td colspan="1">Include this query parameter to also retrieve the documents that are linked to the employment contracts</td>
+    </tr>
+  </tbody>
+</table>
+<h2>GET /v1.0/employees/{nr}/contracts/{nr}</h2>
+<p>This API endpoint allows you to retrieve a specific employment contract for a designated employee, using their technical employee number and contract number. To use this endpoint, you will need to provide the employee number and the contract number in the URL path.</p>
+<table class="wrapped">
+  <colgroup>
+    <col/>
+    <col/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>query parameter</th>
+      <th>
+        <br/>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <strong>include=documents</strong>
+      </td>
+      <td colspan="1">Include this query parameter to also retrieve the documents that are linked to the employment contract</td>
+    </tr>
+  </tbody>
+</table>
+<h2>GET /v1.0/employees/{nr}/contracts/{nr}/documents</h2>
+<p>By using this API endpoint, you can retrieve the documents that are linked to a specific employment contract for a designated employee. To access this endpoint, you will need to provide the employee number and the contract number in the URL path. Once the request has been processed, the endpoint will return a list of documents that are associated with the specified employment contract.</p>
+<h2>POST /v1.0/employees/{nr}/contracts/{nr}/documents</h2>
+<p>This API endpoint allows you to add a new document to the personnel file of a specified employee, which will be linked to a particular employment contract. To use this endpoint, you will need to specify the employee number and the contract number in the URL path. Once the document has been added, it will be included in the employee's personnel file, along with any other documents associated with the same employment contract.</p>
 
-With paging, you can retrieve the employee list in smaller, more manageable chunks. With sorting, you can arrange the employee list according to different criteria, such as alphabetical order or hire date. With querying, you can filter the employee list to show only employees that meet certain criteria, such as those with a specific job title or in a certain location.
-
-active	By including the "active" query parameter in your API request, you can exclude any employees from the results that are no longer employed by the company. This parameter can be useful if you only want to see a list of current employees, without including former employees who are no longer part of the workforce.
-skip=n	By including the "skip" query parameter in your API request, you can skip the first n employees in the results list. This parameter can be useful if you only want to see employees beyond the first few entries, allowing you to focus on a particular subset of the employee list.
-top=n	By including the "top" query parameter in your API request, you can limit the results to the top n employees in the list. This parameter can be useful if you only want to see the most important or relevant employees, without having to sift through a large number of entries.
-search=value	By including the "search" query parameter in your API request, you can filter the employee list by searching for a given value in any of the applicable attributes, such as employee number, name, department, or function. This parameter can be useful if you need to quickly find employees who meet certain criteria, without having to manually search through the entire list.
-filter=expression	
-By including the "filter" query parameter in your API request, you can filter the results of the request based on a specified condition or set of conditions. The "filter" parameter accepts an expression in the OData Filter Language, which provides a flexible and powerful way to construct filter conditions.
-
-sort=attributes	
-By including the "sort" query parameter in your API request, you can sort the employee list based on one or more specified attributes. To use this parameter, you will need to provide a comma-separated list of attribute names that you wish to sort on.
-
-You can also specify a minus prefix to sort the attribute in descending order. For example, if you wanted to sort the employee list by last name in descending order, you would include the parameter "sort=-lastName".
-
-include=contracts	By including the "include" query parameter in your API request, you can choose to include additional information in the search results. Specifically, including the "contracts" value for the "include" parameter will cause the endpoint to also return a list of all the employment contracts associated with the employee(s) in the search results.
-GET /v1.0/employees/{nr}
-By using this API endpoint, you can retrieve detailed information about a specific employee, using their technical employee number. To use this endpoint, you will need to provide the employee number in the URL path.
-
-Additionally, you can include query parameters to retrieve additional information about the employee. If you include the query parameter "include=contracts", the endpoint will return a list of all the employment contracts associated with the employee. If you include the query parameter "include=documents", the endpoint will return a list of all the documents that are linked to the employee's personnel file.
-
-include=contracts,documents	Include this query parameter to include contracts, documents or both in the search results
-GET /v1.0/employees/{nr}/documents
-This API endpoint allows you to retrieve all the documents that are linked to a designated employee's personnel file, but not those associated with their employment contracts. To use this endpoint, you will need to provide the employee number in the URL path.
-
-Once the request has been processed, the endpoint will return a list of all the documents that are associated with the employee's personnel file.
-
-POST /v1.0/employees/{nr}/documents
-By using this API endpoint, you can add a new document to the personnel file of a designated employee, without associating it with a specific employment contract. To use this endpoint, you will need to provide the employee number in the URL path.
-
-GET /v1.0/employees/{nr}/contracts
-This API endpoint allows you to retrieve all the employment contracts associated with a designated employee, using their technical employee number. To use this endpoint, you will need to provide the employee number in the URL path.
-
-include=documents	Include this query parameter to also retrieve the documents that are linked to the employment contracts
-GET /v1.0/employees/{nr}/contracts/{nr}
-This API endpoint allows you to retrieve a specific employment contract for a designated employee, using their technical employee number and contract number. To use this endpoint, you will need to provide the employee number and the contract number in the URL path.
-
-include=documents	Include this query parameter to also retrieve the documents that are linked to the employment contract
-GET /v1.0/employees/{nr}/contracts/{nr}/documents
-By using this API endpoint, you can retrieve the documents that are linked to a specific employment contract for a designated employee. To access this endpoint, you will need to provide the employee number and the contract number in the URL path. Once the request has been processed, the endpoint will return a list of documents that are associated with the specified employment contract.
-
-POST /v1.0/employees/{nr}/contracts/{nr}/documents
-This API endpoint allows you to add a new document to the personnel file of a specified employee, which will be linked to a particular employment contract. To use this endpoint, you will need to specify the employee number and the contract number in the URL path. Once the document has been added, it will be included in the employee's personnel file, along with any other documents associated with the same employment contract.
