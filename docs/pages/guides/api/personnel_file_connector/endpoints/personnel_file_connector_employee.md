@@ -1,3 +1,14 @@
+---
+title: Endpoint - Employees
+tags: [dossier, personnel file, api, connector]
+keywords: dossier, personnel file, api, connector
+last_updated: 2023-07-26
+sidebar: guides_sidebar
+permalink: personnel_file_connector_endpoint_employee.html
+folder: guides/api/personnel_file_connector/endpoints
+topnav: topnav
+---
+
 GET /v1.0/employees
 This API endpoint allows you to list all the employees associated with a designated tenant. By default, the endpoint will return a list of all employees in a random order. However, the endpoint also supports advanced functionality, including paging, sorting, and querying.
 
