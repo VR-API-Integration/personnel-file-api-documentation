@@ -38,10 +38,11 @@ entries:
     - title: Introduction
       url: /personnel_file_connector_intro.html
       output: web
-      
+
+      subfolders:
     - title: Endpoints
       output: web
-      folderitems:
+      subfolderitems:
 
           - title: Employees
             url: /personnel_file_connector_endpoint_employees.html
