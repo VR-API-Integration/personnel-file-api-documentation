@@ -2,7 +2,7 @@
 
 entries:
 - title: sidebar
-  product: Personnel File Connector API Documentation
+  product: Personnel File API Documentation
   version: 1.0
   folders:
 
@@ -36,15 +36,15 @@ entries:
     folderitems:
 
     - title: Introduction
-      url: /personnel_file_connector_intro.html
+      url: /personnel_file_api_intro.html
       output: web      
 
     - title: Swagger UI
-      url: /personnel_file_connector_reference.html
+      url: /personnel_file_api_reference.html
       output: web
 
     - title: Postman collection
-      url: /personnel_file_connector_postman.html
+      url: /personnel_file_api_postman.html
       output: web
 
       subfolders:
@@ -53,15 +53,15 @@ entries:
         subfolderitems:
 
         - title:  Schema
-          url: /personnel_file_connector_endpoint_schema.html
+          url: /personnel_file_api_endpoint_schema.html
           output: web
           
         - title:  Employees
-          url: /personnel_file_connector_endpoint_employees.html
+          url: /personnel_file_api_endpoint_employees.html
           output: web
 
         - title:  Documents
-          url: /personnel_file_connector_endpoint_documents.html
+          url: /personnel_file_api_endpoint_documents.html
           output: web
 
   - title: Support
