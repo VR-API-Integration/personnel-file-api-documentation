@@ -4,7 +4,7 @@ tags: [dossier, personnel file, api, connector]
 keywords: dossier, personnel file, api, connector
 last_updated: 2023-07-26
 sidebar: guides_sidebar
-permalink: personnel_file_apiconnector_endpoint_documents.html
+permalink: personnel_file_api_endpoint_documents.html
 folder: guides/api/personnel_file_api/endpoints
 topnav: topnav
 ---
