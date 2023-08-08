@@ -4,7 +4,7 @@ tags: [dossier, api]
 keywords: dossier, api
 last_updated: 2023-07-26
 sidebar: guides_sidebar
-permalink: personnel_file_reference.html
+permalink: personnel_file_api_reference.html
 folder: guides/personnel_file_api
 topnav: topnav
 ---
