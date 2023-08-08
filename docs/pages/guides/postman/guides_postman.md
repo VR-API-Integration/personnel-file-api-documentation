@@ -15,4 +15,4 @@ The ZIP-file you can download here includes the following information:
 - Postman environment
 - Sample set of files
 
-[Download ZIP File...](/dossier-api-documentation/pages/guides/postman/download/personnel_file_connector.postman_collection.json)
+[Download ZIP File...](/dossier-api-documentation/pages/guides/postman/download/personnel_file_api.postman_collection.json)
