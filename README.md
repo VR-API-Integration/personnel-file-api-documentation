@@ -1,6 +1,6 @@
-# Welcome to Personnel File Connector API documentation GitHub
+# Welcome to Personnel File API documentation GitHub
 
-This repository contains the documentation site of Personnel File Connector API.
+This repository contains the documentation site of Personnel File  API.
 
 The documentation of the original Jekyll template is in this [link](https://idratherbewriting.com/documentation-theme-jekyll/index.html).
 
