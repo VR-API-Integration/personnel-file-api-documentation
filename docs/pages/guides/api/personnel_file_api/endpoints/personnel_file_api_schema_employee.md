@@ -29,7 +29,7 @@ None
 ##### Responses
 ###### 200 OK - Successful Response
 The request was successful, and the schema information is provided in the response.
-```json
+```
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
