@@ -63,6 +63,10 @@ entries:
         - title:  Documents
           url: /personnel_file_api_endpoint_documents.html
           output: web
+      
+      - title: Filtering
+      url: /personnel_file_api_filtering.html
+      output: web
 
   - title: Support
     output: web
