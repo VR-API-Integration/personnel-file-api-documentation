@@ -23,7 +23,7 @@ None
 None
 ##### Headers
 | header | description |
-| --- | --- |
+|-------|--------|
 | Accept&#8209;Language | Specify the desired language for property titles. Multiple languages are supported. Default: Dutch (nl-NL) |
 | Authorization | Include a valid bearer token for authorization |
 ##### Responses
