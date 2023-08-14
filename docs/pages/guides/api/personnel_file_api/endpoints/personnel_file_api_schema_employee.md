@@ -11,20 +11,20 @@ topnav: topnav
 
 ### Employee Schema Endpoint
 #### Overview
-The '**/v10/schema/employees**' endpoint provides comprehensive schema information regarding the 'employees' within a structured format 
+The '**/v10/schema/employee**' endpoint provides comprehensive schema information regarding the 'employees' within a structured format 
 defined by [JSON Schema](https://json-schema.org/specification.html). JSON Schema offers a way to describe the structure of JSON data, making 
 it easier for developers to validate and manipulate JSON data structures. In this endpoint, details about each property's attributes — including 
 its data type, size, format, and the title that should be utilized when displaying the property — are described in accordance with the 
 JSON Schema specification. This approach ensures consistency, clarity, and ease of integration across various systems and applications.
 
-#### GET /v10/schema/employees
+#### GET /v10/schema/employee
 ##### Required scopes
 None
 ##### Parameters
 None
 ##### Headers
-| header | description |
-|-------|--------|
+| header                | description                                                                 |
+|:----------------------|:----------------------------------------------------------------------------|
 | Accept&#8209;Language | Specify the desired language for property titles. Multiple languages are supported. Default: Dutch (nl-NL) |
 | Authorization | Include a valid bearer token for authorization |
 ##### Responses
