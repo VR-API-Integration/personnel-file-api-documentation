@@ -32,4 +32,4 @@ The filter language also supports several wildcard operators that can be used fo
 | nr eq '12345' or nr eq '67890'                    | Filters employees with employee number equal to either "12345" or "67890"              |
 
 
-Overall, by using the filter language to filter your API results, you can quickly and easily retrieve the employees and documents you need based on specific conditions. Whether you need to filter on a single attribute or multiple attributes simultaneously, the Youforce Dossier API makes it easy to filter and retrieve the exact employees and documents you need in your application.
+Overall, by using the filter language to filter your API results, you can quickly and easily retrieve the employees and documents you need based on specific conditions. Whether you need to filter on a single attribute or multiple attributes simultaneously, the Personnel File API makes it easy to filter and retrieve the exact employees and documents you need in your application.
