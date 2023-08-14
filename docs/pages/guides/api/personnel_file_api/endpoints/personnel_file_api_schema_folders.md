@@ -1,9 +1,13 @@
 ### Overview
-Within the Personnel File, documents are organized into pre-defined categories. These categories are displayed to the user as a hierarchy of folders. 
-The '**/v10/schema/folders**' endpoint returns this hierarchy listing the titles of each folder and the categories it contains.
+Within the Personnel File system, documents are first organized into predefined categories based on their content and purpose. These categories 
+are further structured into a user-friendly hierarchy that mimics a folder structure, enhancing navigation and accessibility. 
+The '**/v10/schema/folders**' endpoint serves to provide this hierarchical view, detailing each folder along with its corresponding titles 
+and the categories it encompasses. This two-tiered approach ensures a logical organization of documents while also offering an intuitive 
+presentation to the end user.
 
-> The Personnel File gives tenants full control over the hierarchy of folders. The hierarchy can also be modified at any time as it only controls
-> the presentation to the end user.
+> Note: The Personnel File system empowers tenants with complete control over the folder hierarchy, allowing for customization and adjustments in
+> alignment with organizational preferences. Since this hierarchy is designed exclusively for end-user presentation, alterations can be made at
+> any time without impacting underlying data structures or functionalities.
  
 ### GET /v10/schema/folders
 #### Required scopes
