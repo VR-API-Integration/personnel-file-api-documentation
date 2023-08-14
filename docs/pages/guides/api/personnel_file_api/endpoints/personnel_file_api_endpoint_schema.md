@@ -24,6 +24,6 @@ The Schema endpoints provide metadata of the relevant entities used in the API.
 
 <a href="/personnel_file_api_schema_employee.html">Endpoint details</a>
 
-<h2>GET /v.0/schema/document</h2>
+<h2>GET /v10/schema/document</h2>
 <p>This API endpoint provides a list of all document properties inclusing the title, possible values, data type and maximum length. All properties are currently fixed except for custom1, custom2 and custom3, which have tenant specific titles and meaning.</p>
  
