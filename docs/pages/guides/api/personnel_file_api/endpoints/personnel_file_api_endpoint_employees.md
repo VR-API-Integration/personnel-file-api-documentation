@@ -19,8 +19,8 @@ topnav: topnav
   </colgroup>
   <tbody>
     <tr>
-      <th align="left">Query Parameter</th>
-      <th align="left">Description</th>
+      <th align="left"><b>Query Parameter</b></th>
+      <th align="left"><b>Description</b></th>
     </tr>
     <tr>
       <td colspan="1">
@@ -87,8 +87,8 @@ topnav: topnav
   </colgroup>
   <tbody>
     <tr>
-      <th align="left">Query Parameter</th>
-      <th align="left">Description</th>
+      <th align="left"><b>Query Parameter</b></th>
+      <th align="left"><b>Description</b></th>
     </tr>
     <tr>
       <td colspan="1">
