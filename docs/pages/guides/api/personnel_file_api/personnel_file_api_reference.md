@@ -11,4 +11,4 @@ topnav: topnav
 
 Personnel File API reference
 Swagger pages
-- [Personnel File API endpoint](https://personnelfileapi.youforce.com/swagger/ui/index.html){:target="\_blank"}
+- [Personnel File API endpoint](https://personnelfileapi.youforce.com/swagger/index.html){:target="\_blank"}
