@@ -1,3 +1,16 @@
+---
+title: Personnel File API - Filtering
+tags: [dossier, personnel file, api, connector]
+keywords: dossier, personnel file, api, connector
+last_updated: 2023-07-26
+sidebar: guides_sidebar
+permalink: personnel_file_api_filtering.html
+folder: guides/api/personnel_file_api/filtering
+topnav: topnav
+---
+
+<span class="label label-success">FilteringT</span>
+
 The Personnel File API allows you to filter the results of endpoints returning employees and documents using a filter language. The API supports the following features:
 
 **Comparisons**
