@@ -22,6 +22,15 @@ In addition to comparisons, you can use logical operators such as "and", "or", a
 **Pattern matching**
 The filter language also supports several wildcard operators that can be used for string comparisons. These include "contains", "startswith", and "endswith". For example, to filter on employees with the initials "JL", you could use the expression $filter=startswith(initials,'J') and endswith(initials,'L'). By using these operators, you can filter on attribute values that match a specific pattern or substring, making it easy to search for specific data within your API.
 
+| Filter                                            | Selection                                                                              |
+|---------------------------------------------------|:---------------------------------------------------------------------------------------|
+| lastName eq 'Smith'                               | Filters employees with the last name "Smith"                                           |
+| dateOfBirth gt 1990-01-01                         | Filters employees with a date of birth after January 1, 1990                           |
+| lastName eq 'Smith' and dateOfBirth gt 1990-01-01	| Filters employees with the last name "Smith" and a date of birth after January 1, 1990 |
+| contains(initials, 'JL')                          | Filters employees whose initials contain the substring "JL"                            |
+| endswith(lastName, 'son')                         | Filters employees whose last name ends with the string "son"                           |
+| nr eq '12345' or nr eq '67890'                    | Filters employees with employee number equal to either "12345" or "67890"              |
+
 lastName eq 'Smith'	Filters employees with the last name "Smith".
 dateOfBirth gt 1990-01-01	Filters employees with a date of birth after January 1, 1990.
 lastName eq 'Smith' and dateOfBirth gt 1990-01-01	Filters employees with the last name "Smith" and a date of birth after January 1, 1990.
