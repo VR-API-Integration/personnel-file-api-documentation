@@ -23,7 +23,7 @@ To filter on a specific attribute, you can use the name of the attribute followe
 - "ge" (greater than or equal to)
 - "le" (less than or equal to) 
 
-By using these operators in combination with attribute values, you can quickly and easily filter the data you need from your API.
+By using these operators in combination with attribute values, you can quickly and easily filter the data you need from the API.
 
 **Logical operators** 
 In addition to comparisons, you can use logical operators such as 
