@@ -1,3 +1,14 @@
+---
+title: Personnel File API Endpoint - Schema Employee
+tags: [dossier, personnel file, api, connector]
+keywords: dossier, personnel file, api, connector
+last_updated: 2023-07-26
+sidebar: guides_sidebar
+permalink: personnel_file_api_schema_employee.html
+folder: guides/api/personnel_file_api/endpoints
+topnav: topnav
+---
+
 ### Employee Schema Endpoint
 #### Overview
 The '**/v10/schema/employees**' endpoint provides comprehensive schema information regarding the 'employees' within a structured format 
