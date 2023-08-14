@@ -9,10 +9,7 @@ folder: guides/api/personnel_file_api/filtering
 topnav: topnav
 ---
 
-<h2>POST /v1.0/documents</h2>
-<p>With this API endpoint, you can add a new document to the personnel file of the specified employee. The attributes 'employeeNumber' and (optionally) 'contractNumber' need to be used to link the new document to an employee and (optionally) a specific employment contract of the specified employee.</p>
-
-<span class="label label-success">FilteringT</span>
+<h2>Filtering</h2>
 
 The Personnel File API allows you to filter the results of endpoints returning employees and documents using a filter language. The API supports the following features:
 
