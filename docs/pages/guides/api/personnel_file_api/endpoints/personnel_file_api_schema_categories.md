@@ -17,6 +17,14 @@ None
 | Accept&#8209;Language | Specify the desired language for property titles. Multiple languages are supported. Default: Dutch (nl-NL) |
 | Authorization | Include a valid bearer token for authorization |
 
+#### Example Request
+```
+GET /v10/schema/categories HTTP/1.1
+Host: personnelfileapi.youforce.com
+Accept-Language: en-GB
+Authorization: Bearer YOUR_ACCESS_TOKEN
+```
+
 #### Responses
 ##### 200 OK - Successful Response
 The request was successful, and the schema information is provided in the response.
@@ -72,8 +80,7 @@ None
 |:----------|:-----|:------------|
 | categoryCode | path | code of the category to be returned |
 
-Example request:
-
+#### Example request
 ```
 GET /v10/schema/categories/4024898-sollicitatie
 Host: personnelfileapi.youforce.com
