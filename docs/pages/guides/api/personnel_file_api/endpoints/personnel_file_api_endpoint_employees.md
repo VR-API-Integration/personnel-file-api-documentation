@@ -57,10 +57,7 @@ topnav: topnav
         </strong>
       </td>
       <td colspan="1">
-        <p>By including the "filter" query parameter in your API request, you can filter the results of the request based on a specified condition or set of conditions. The "filter" parameter accepts an expression in the <ac:link>
-            <ri:page ri:content-title="OData Filter language"/>
-            <ac:plain-text-link-body><![CDATA[OData Filter Language]]></ac:plain-text-link-body>
-          </ac:link>, which provides a flexible and powerful way to construct filter conditions.</p>
+        <p>By including the "filter" query parameter in your API request, you can filter the results of the request based on a specified condition or set of conditions. The "filter" parameter accepts an expression in the <a href="./personnel_file_api_filtering.html">Filter Language<a>, which provides a flexible and powerful way to construct filter conditions.</p>
       </td>
     </tr>
     <tr>
