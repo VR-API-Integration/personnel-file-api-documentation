@@ -1,6 +1,6 @@
 ---
 title: Personnel File API Endpoint - Schema Employee
-tags: [dossier, personnel file, api, connector]
+tags: [dossier, personnel file, api, connector, endpoint, schema, employee]
 keywords: dossier, personnel file, api, connector
 last_updated: 2023-07-26
 sidebar: guides_sidebar
@@ -16,6 +16,7 @@ defined by [JSON Schema](https://json-schema.org/specification.html). JSON Schem
 it easier for developers to validate and manipulate JSON data structures. In this endpoint, details about each property's attributes — including 
 its data type, size, format, and the title that should be utilized when displaying the property — are described in accordance with the 
 JSON Schema specification. This approach ensures consistency, clarity, and ease of integration across various systems and applications.
+
 #### GET /v10/schema/employees
 ##### Required scopes
 None
