@@ -47,6 +47,10 @@ entries:
       url: /personnel_file_api_postman.html
       output: web
 
+    - title: Filtering
+      url: /personnel_file_api_filtering.html
+      output: web
+
       subfolders:
       - title: Endpoints
         output: web      
@@ -60,14 +64,10 @@ entries:
           url: /personnel_file_api_endpoint_employees.html
           output: web
 
-        - title:  Documents
+        - title:  Documents 
           url: /personnel_file_api_endpoint_documents.html
           output: web
-      
-      - title: Filtering
-      url: /personnel_file_api_filtering.html
-      output: web
-
+    
   - title: Support
     output: web
     folderitems:
