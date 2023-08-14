@@ -96,7 +96,7 @@ The request was successful, and the schema information is provided in the respon
     "code": "4024898-sollicitatie",
     "title": "Job Application"
 }
-}```
+```
 ##### 401 Unauthorized - Authorization Failure
 The request lacks an authorization header, the bearer token has expired, or the provided token is invalid.
 ```json

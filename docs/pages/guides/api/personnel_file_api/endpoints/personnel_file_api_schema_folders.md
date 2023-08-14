@@ -1,5 +1,5 @@
 ### Overview
-Within the Personnel File system, documents are first organized into predefined categories based on their content and purpose. These categories 
+Within the Personnel File, documents are first organized into predefined categories based on their content and purpose. These categories 
 are further structured into a user-friendly hierarchy that mimics a folder structure, enhancing navigation and accessibility. 
 The '**/v10/schema/folders**' endpoint serves to provide this hierarchical view, detailing each folder along with its corresponding titles 
 and the categories it encompasses. This two-tiered approach ensures a logical organization of documents while also offering an intuitive 
