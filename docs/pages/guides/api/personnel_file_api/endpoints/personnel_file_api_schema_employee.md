@@ -23,10 +23,12 @@ None
 ##### Parameters
 None
 ##### Headers
+
 | header                | description                                                                 |
 |:----------------------|:----------------------------------------------------------------------------|
 | Accept&#8209;Language | Specify the desired language for property titles. Multiple languages are supported. Default: Dutch (nl-NL) |
 | Authorization | Include a valid bearer token for authorization |
+
 ##### Responses
 ###### 200 OK - Successful Response
 The request was successful, and the schema information is provided in the response.
