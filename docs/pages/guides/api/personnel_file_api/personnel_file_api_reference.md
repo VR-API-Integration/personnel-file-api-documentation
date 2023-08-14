@@ -11,4 +11,4 @@ topnav: topnav
 
 Personnel File API reference
 Swagger pages
-- [IAM endpoint](https://vr-api-integration.github.io/youforce-api-Swagger-ui/IAM.html){:target="\_blank"}
+- [Personnel File API endpoint](https://personnelfileapi.youforce.com/swagger/ui/index.html){:target="\_blank"}
