@@ -3,6 +3,7 @@ title: Personnel File API Endpoint - Schema Employee
 tags: [dossier, personnel file, api, connector, endpoint, schema, employee]
 keywords: dossier, personnel file, api, connector
 last_updated: 2023-08-14
+sidebar: guides_sidebar
 permalink: personnel_file_api_schema_employee.html
 folder: guides/api/personnel_file_api/endpoints
 topnav: topnav
