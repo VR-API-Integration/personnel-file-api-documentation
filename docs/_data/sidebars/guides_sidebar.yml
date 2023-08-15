@@ -68,7 +68,6 @@ entries:
           url: /personnel_file_api_endpoint_documents.html
           output: web
 
-      subfolders:
       - title: Endpoints2
         output: web      
         subfolderitems:
