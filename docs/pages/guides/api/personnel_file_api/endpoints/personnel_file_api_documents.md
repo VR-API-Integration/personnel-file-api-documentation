@@ -101,7 +101,7 @@ The parameters are either form-data fields or part of the JSON file. Some of the
 |              1|sourceSystem|String|12|Yes| 
 |              1|sourceModule|String|50|Yes| 
 |              1|sourceIdentifier|String|50|Yes| 
-|              1|contentType|String|Yes|
+|              1|contentType|String|100|Yes|
 |              1|special|Boolean|1|No| 
 |              1|confidential|Boolean|1|No| 
 |              1|expired|Boolean|1|No| 
