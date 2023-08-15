@@ -68,22 +68,39 @@ entries:
           url: /personnel_file_api_endpoint_documents.html
           output: web
 
-      subsubfolders:
-      - title: Details
+      subfolders:
+      - title: Endpoints2
         output: web      
-        subsubfolderitems:
-        
-        - title:  Schema-details
+        subfolderitems:
+
+        - title:  Schema2
           url: /personnel_file_api_endpoint_schema.html
           output: web
           
-        - title:  Employee-details
+        - title:  Employees2
           url: /personnel_file_api_endpoint_employees.html
           output: web
 
-        - title:  Documentdetails
+        - title:  Documents2 
           url: /personnel_file_api_endpoint_documents.html
-          output: web
+          output: web    
+
+          subsubfolders:
+          - title: Details2
+            output: web      
+            subsubfolderitems:
+        
+          - title:  Schema-details
+            url: /personnel_file_api_endpoint_schema.html
+            output: web
+          
+          - title:  Employee-details
+            url: /personnel_file_api_endpoint_employees.html
+            output: web
+
+          - title:  Documentdetails
+            url: /personnel_file_api_endpoint_documents.html
+            output: web
     
   - title: Support
     output: web
