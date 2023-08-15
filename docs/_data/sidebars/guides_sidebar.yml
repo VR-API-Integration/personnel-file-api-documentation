@@ -102,7 +102,7 @@ entries:
       output: web
 
     - title: Swagger
-      url: /personnel_file_api_reference.html
+      url: /personnel_file_api_swagger.html
       output: web
 
     - title: Postman
