@@ -101,7 +101,6 @@ entries:
               url: /personnel_file_api_endpoint_documents.html
               output: web
     
-           subsubfolders:
           - title: Details3
             output: web      
             subsubfolderitems:
