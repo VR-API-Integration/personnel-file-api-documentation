@@ -79,11 +79,11 @@ To upload a new document both its properties and its content needs to be include
 
         --BOUNDARY_STRING--
         ```
-
+&nbsp;
 ## POST /v10/documents
 ### Required scopes
 This endpoint requires the '**youforce-personnel-file-api:documents:add**' scope.
-
+&nbsp;
 ### Parameters
 
 The parameters are either form-data fields or part of the JSON file. Some of the parameters are required, all others are optional.
