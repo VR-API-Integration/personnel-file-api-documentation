@@ -39,14 +39,6 @@ entries:
       url: /personnel_file_api_intro.html
       output: web      
 
-    - title: Swagger UI
-      url: /personnel_file_api_reference.html
-      output: web
-
-    - title: Postman collection
-      url: /personnel_file_api_postman.html
-      output: web
-
     - title: Filtering
       url: /personnel_file_api_filtering.html
       output: web
@@ -108,6 +100,15 @@ entries:
             - title:  Document-details
               url: /personnel_file_api_endpoint_documents.html
               output: web
+
+
+    - title: Swagger
+      url: /personnel_file_api_reference.html
+      output: web
+
+    - title: Postman
+      url: /personnel_file_api_postman.html
+      output: web
      
   - title: Support
     output: web
