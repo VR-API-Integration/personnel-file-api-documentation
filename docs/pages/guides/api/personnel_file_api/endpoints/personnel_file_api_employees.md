@@ -1,3 +1,14 @@
+---
+title: Personnel File API Endpoint - Employees
+tags: [dossier, personnel file, api, connector]
+keywords: dossier, personnel file, api, connector
+last_updated: 2023-08-15
+sidebar: guides_sidebar
+permalink: personnel_file_api_employees.html
+folder: guides/api/personnel_file_api/endpoints
+topnav: topnav
+---
+
 ### Overview
 The '**/v10/employees**' endpoint is used within the Personnel File system to query employees and their associated employments. It's a key tool for locating the correct employee when you need to upload a new document, ensuring that the information is tied to the proper individual and employment record.
 
