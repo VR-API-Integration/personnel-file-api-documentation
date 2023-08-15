@@ -10,5 +10,5 @@ topnav: topnav
 ---
 
 Personnel File API - Swagger
-Swagger pages
+
 - [Swagger description Personnel File API](https://personnelfileapi.youforce.com/swagger/index.html){:target="\_blank"}
