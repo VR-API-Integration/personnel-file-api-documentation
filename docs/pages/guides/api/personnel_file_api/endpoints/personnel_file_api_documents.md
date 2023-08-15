@@ -47,7 +47,7 @@ To upload a new document both its properties and its content needs to be include
         [BINARY CONTENT]
 
         --BOUNDARY_STRING--
-        ```  
+        ```
 
 2. **multipart/mixed**:
    - **Usage**: This MIME type is designed for sending mixed data types in a single message and is versatile
