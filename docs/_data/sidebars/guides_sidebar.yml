@@ -60,8 +60,8 @@ entries:
         output: web      
         subfolderitems:
 
-        - title:  Schema2b
-          url: /personnel_file_api_endpoint_schema2.html
+        - title:  Employees
+          url: /personnel_file_api_employees.html
           output: web
 
           subsubfolders:
