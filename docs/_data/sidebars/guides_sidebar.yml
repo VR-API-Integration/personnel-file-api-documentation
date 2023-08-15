@@ -61,7 +61,7 @@ entries:
         subfolderitems:
 
         - title:  Schema2b
-          url: /personnel_file_api_endpoint_schema.html
+          url: /personnel_file_api_endpoint_schema2.html
           output: web
 
           subsubfolders:
@@ -70,15 +70,15 @@ entries:
             subsubfolderitems:
         
             - title:  Schema-overview
-              url: /personnel_file_api_endpoint_schema.html
+              url: /personnel_file_api_endpoint_schema3a.html
               output: web
           
             - title:  Employee-overview
-              url: /personnel_file_api_endpoint_employees.html
+              url: /personnel_file_api_endpoint_employees3a.html
               output: web
 
             - title:  Document-overview
-              url: /personnel_file_api_endpoint_documents.html
+              url: /personnel_file_api_endpoint_documents3a.html
               output: web
     
           - title: Details3
@@ -86,15 +86,15 @@ entries:
             subsubfolderitems:
         
             - title:  Schema-details
-              url: /personnel_file_api_endpoint_schema.html
+              url: /personnel_file_api_endpoint_schema3b.html
               output: web
           
             - title:  Employee-details
-              url: /personnel_file_api_endpoint_employees.html
+              url: /personnel_file_api_endpoint_employees3b.html
               output: web
 
             - title:  Document-details
-              url: /personnel_file_api_endpoint_documents.html
+              url: /personnel_file_api_endpoint_documents3b.html
               output: web
 
     - title: Filtering
