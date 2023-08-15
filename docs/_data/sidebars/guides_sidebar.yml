@@ -80,12 +80,29 @@ entries:
           url: /personnel_file_api_endpoint_employees.html
           output: web
 
-        - title:  Documents2 
+        - title:  Documents3
           url: /personnel_file_api_endpoint_documents.html
           output: web    
 
           subsubfolders:
-          - title: Overview
+          - title: Overview3
+            output: web      
+            subsubfolderitems:
+        
+            - title:  Schema-overview
+              url: /personnel_file_api_endpoint_schema.html
+              output: web
+          
+            - title:  Employee-overview
+              url: /personnel_file_api_endpoint_employees.html
+              output: web
+
+            - title:  Document-overview
+              url: /personnel_file_api_endpoint_documents.html
+              output: web
+    
+           subsubfolders:
+          - title: Details3
             output: web      
             subsubfolderitems:
         
@@ -100,8 +117,7 @@ entries:
             - title:  Documentdetails
               url: /personnel_file_api_endpoint_documents.html
               output: web
-    
-    
+     
   - title: Support
     output: web
     folderitems:
