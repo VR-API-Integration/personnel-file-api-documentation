@@ -90,9 +90,10 @@ The parameters are either form-data fields or part of the JSON file. Some of the
 
 | JSON Property | form-data field | Type | Max Length | Required |
 |:--------------|:----------------|:-----|-----------:|:---------|
+| | | | | |
 
 ### Responses
-##### 201 Created - Document Created
+#### 201 Created - Document Created
 The request was successful and the document has been added to the Personnel File. The response returns all properties
 of the newly created document.
 ```
@@ -103,7 +104,7 @@ of the newly created document.
     ...
 }
 ```
-##### 400 Bad Request - Request Validation Failed
+#### 400 Bad Request - Request Validation Failed
 A '**400 Bad Request**' status code indicates that the server was unable to understand or process the request due
 to a client error. The response points to the specific problem.
 
@@ -124,7 +125,7 @@ Note that the language of the errors can be changed by including the '**accept-l
     }
 }
 ```
-##### 401 Unauthorized - Authorization Failure
+#### 401 Unauthorized - Authorization Failure
 The request lacks an authorization header, the bearer token has expired, or the provided token is invalid.
 ```json
 {
@@ -133,7 +134,7 @@ The request lacks an authorization header, the bearer token has expired, or the 
     "status": 401
 }
 ```
-##### 403 Forbidden - Authorization Denied
+#### 403 Forbidden - Authorization Denied
 The bearer token does not specify the required scope.
 ```json
 {
