@@ -49,7 +49,7 @@ entries:
           output: web
           
         - title:  Employee
-          url: /personnel_file_api_endpoint_employee.html
+          url: /personnel_file_api_endpoint_employees.html
           output: web
 
         - title:  Documents 
