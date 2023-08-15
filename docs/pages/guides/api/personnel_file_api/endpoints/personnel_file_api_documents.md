@@ -1,3 +1,14 @@
+---
+title: Personnel File API Endpoint - Documents
+tags: [dossier, personnel file, api, connector]
+keywords: dossier, personnel file, api, connector
+last_updated: 2023-08-15
+sidebar: guides_sidebar
+permalink: personnel_file_api_documents.html
+folder: guides/api/personnel_file_api/endpoints
+topnav: topnav
+---
+
 ### Overview
 The '**/v10/documents**' endpoint allows for the uploading of new documents to the Personnel File system. When uploading, it's essential to integrate both the document's content and its associated properties within a single request. Depending on the method chosen, the format for sending these details varies. 
 
