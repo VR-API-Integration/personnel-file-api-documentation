@@ -31,28 +31,16 @@ entries:
       url: /guides_api_statuses.html
       output: web, pdf
 
-  - title: Personnel File API
+  - title: Reference
     output: web
     folderitems:
 
-    - title: Introduction
+    - title: Usage
       url: /personnel_file_api_intro.html
       output: web      
 
-    - title: Swagger UI
-      url: /personnel_file_api_reference.html
-      output: web
-
-    - title: Postman collection
-      url: /personnel_file_api_postman.html
-      output: web
-
-    - title: Filtering
-      url: /personnel_file_api_filtering.html
-      output: web
-
       subfolders:
-      - title: Endpoints
+      - title: Endpoint Descriptions
         output: web      
         subfolderitems:
 
@@ -67,7 +55,64 @@ entries:
         - title:  Documents 
           url: /personnel_file_api_endpoint_documents.html
           output: web
+
+      - title: Endpoint Specifications
+        output: web      
+        subfolderitems:
+
+        - title:  Employees
+          url: /personnel_file_api_employees.html
+          output: web
+
+          subsubfolders:
+          - title: Schema
+            output: web      
+            subsubfolderitems:
+        
+            - title:  Schema-overview
+              url: /personnel_file_api_schema_employees.html
+              output: web
+          
+            - title:  Employee-overview
+              url: /personnel_file_api_schema_categories.html
+              output: web
+
+            - title:  Document-overview
+              url: /personnel_file_api_schema_folders.html
+              output: web
+
+            - title:  Document-overview
+              url: /personnel_file_api_schema_document.html
+              output: web
     
+          - title: Details3
+            output: web      
+            subsubfolderitems:
+        
+            - title:  Schema-details
+              url: /personnel_file_api_endpoint_schema3b.html
+              output: web
+          
+            - title:  Employee-details
+              url: /personnel_file_api_endpoint_employees3b.html
+              output: web
+
+            - title:  Document-details
+              url: /personnel_file_api_endpoint_documents3b.html
+              output: web
+
+    - title: Filtering
+      url: /personnel_file_api_filtering.html
+      output: web
+
+    - title: Swagger
+      url: /personnel_file_api_swagger.html
+      output: web
+
+    - title: Postman
+      url: /personnel_file_api_postman.html
+      output: web
+     
   - title: Support
     output: web
     folderitems:

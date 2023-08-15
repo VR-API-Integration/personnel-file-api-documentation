@@ -1,3 +1,14 @@
+---
+title: Personnel File API Endpoint - Schema - Categories
+tags: [dossier, personnel file, api, connector]
+keywords: dossier, personnel file, api, connector
+last_updated: 2023-08-15
+sidebar: guides_sidebar
+permalink: personnel_file_api_schema_categories.html
+folder: guides/api/personnel_file_api/endpoints
+topnav: topnav
+---
+
 ### Overview
 Within the Personnel File, documents are organized into pre-defined categories. The '**/v10/schema/categories**' endpoint 
 offers insights into these classifications by furnishing a comprehensive list of categories, each identified by a unique code and title.
