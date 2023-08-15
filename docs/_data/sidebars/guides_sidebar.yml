@@ -80,7 +80,7 @@ entries:
           url: /personnel_file_api_endpoint_employees.html
           output: web
 
-        - title:  Documents3
+        - title:  Documents2a
           url: /personnel_file_api_endpoint_documents.html
           output: web    
 
@@ -114,7 +114,7 @@ entries:
               url: /personnel_file_api_endpoint_employees.html
               output: web
 
-            - title:  Documentdetails
+            - title:  Document-details
               url: /personnel_file_api_endpoint_documents.html
               output: web
      
