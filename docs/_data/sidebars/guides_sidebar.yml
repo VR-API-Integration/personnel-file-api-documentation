@@ -72,17 +72,9 @@ entries:
         output: web      
         subfolderitems:
 
-        - title:  Schema2
+        - title:  Schema2b
           url: /personnel_file_api_endpoint_schema.html
           output: web
-          
-        - title:  Employees2
-          url: /personnel_file_api_endpoint_employees.html
-          output: web
-
-        - title:  Documents2a
-          url: /personnel_file_api_endpoint_documents.html
-          output: web    
 
           subsubfolders:
           - title: Overview3
