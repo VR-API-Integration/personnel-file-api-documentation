@@ -92,8 +92,8 @@ The parameters are either form-data fields or part of the JSON file. Some of the
 |:--------------|:----------------|:-----|-----------:|:---------|
 | | | | | |
 
-### Responses
-#### 201 Created - Document Created
+### Responses  
+#### 201 Created - Document Created  
 The request was successful and the document has been added to the Personnel File. The response returns all properties
 of the newly created document.
 ```
@@ -105,7 +105,7 @@ of the newly created document.
 }
 ```
 &nbsp;
-#### 400 Bad Request - Request Validation Failed
+#### 400 Bad Request - Request Validation Failed  
 This status code indicates that the server was unable to understand or process the request due
 to a client error. The response points to the specific problem.
 
@@ -127,7 +127,7 @@ Note that the language of the errors can be changed by including the '**accept-l
 }
 ```
 &nbsp;
-#### 401 Unauthorized - Authorization Failure
+#### 401 Unauthorized - Authorization Failure  
 The request lacks an authorization header, the bearer token has expired, or the provided token is invalid.
 ```
 {
@@ -137,7 +137,7 @@ The request lacks an authorization header, the bearer token has expired, or the 
 }
 ```
 &nbsp;
-#### 403 Forbidden - Authorization Denied
+#### 403 Forbidden - Authorization Denied  
 The bearer token does not specify the required scope.
 ```
 {
@@ -147,7 +147,7 @@ The bearer token does not specify the required scope.
 }
 ```
 &nbsp;  
-#### 404 Not Found - Employee or Employment Not Found
+#### 404 Not Found - Employee or Employment Not Found  
 The specified employee and/or employment cannot be found.
 ```
 {
