@@ -82,7 +82,7 @@ To upload a new document both its properties and its content needs to be include
 &nbsp;
 ## POST /v10/documents
 ### Required scopes
-This endpoint requires the '**youforce-personnel-file-api:documents:add**' scope.
+This endpoint requires the '**youforce-personnel-file-api:documents:add**' scope.  
 &nbsp;
 ### Parameters
 
@@ -106,7 +106,7 @@ of the newly created document.
 ```
 &nbsp;
 #### 400 Bad Request - Request Validation Failed
-A '**400 Bad Request**' status code indicates that the server was unable to understand or process the request due
+This status code indicates that the server was unable to understand or process the request due
 to a client error. The response points to the specific problem.
 
 Note that the language of the errors can be changed by including the '**accept-language**'header. 
@@ -145,8 +145,8 @@ The bearer token does not specify the required scope.
     "title": "Forbidden",
     "status": 403
 }
-```  
-&nbsp;
+```
+&nbsp;  
 #### 404 Not Found - Employee or Employment Not Found
 The specified employee and/or employment cannot be found.
 ```
