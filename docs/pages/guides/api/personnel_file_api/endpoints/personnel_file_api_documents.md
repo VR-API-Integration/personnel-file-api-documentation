@@ -9,10 +9,10 @@ folder: guides/api/personnel_file_api/endpoints
 topnav: topnav
 ---
 
-## Overview
+# Overview
 The '**/v10/documents**' endpoint allows for the uploading of new documents to the Personnel File system. When uploading, it's essential to integrate both the document's content and its associated properties within a single request. Depending on the method chosen, the format for sending these details varies. 
 
-## Supported Content Types
+# Supported Content Types
 
 To upload a new document both its properties and its content needs to be included within the request. The endpoint accepts either multipart/form-data or multipart/mixed requests.
 
@@ -80,8 +80,8 @@ To upload a new document both its properties and its content needs to be include
         --BOUNDARY_STRING--
         ```
 
-## POST /v10/documents
-### Required scopes
+# POST /v10/documents
+## Required scopes
 This endpoint requires the '**youforce-personnel-file-api:documents:add**' scope.
 
 ## Parameters
