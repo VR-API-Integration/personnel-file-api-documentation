@@ -129,7 +129,7 @@ Note that the language of the errors can be changed by including the '**accept-l
 &nbsp;
 #### 401 Unauthorized - Authorization Failure
 The request lacks an authorization header, the bearer token has expired, or the provided token is invalid.
-```json
+```
 {
     "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
     "title": "Unauthorized",
@@ -139,7 +139,7 @@ The request lacks an authorization header, the bearer token has expired, or the 
 &nbsp;
 #### 403 Forbidden - Authorization Denied
 The bearer token does not specify the required scope.
-```json
+```
 {
     "type": "https://tools.ietf.org/html/rfc7231#section-6.5.3",
     "title": "Forbidden",
