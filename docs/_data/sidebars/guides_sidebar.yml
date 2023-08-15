@@ -56,11 +56,6 @@ entries:
         output: web      
         subfolderitems:
 
-      subsubfolders:
-      - title: Overview
-        output: web      
-        subsubfolderitems:
-
         - title:  Schema
           url: /personnel_file_api_endpoint_schema.html
           output: web
