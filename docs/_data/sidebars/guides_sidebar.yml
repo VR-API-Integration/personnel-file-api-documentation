@@ -31,11 +31,11 @@ entries:
       url: /guides_api_statuses.html
       output: web, pdf
 
-  - title: Personnel File API
+  - title: Reference
     output: web
     folderitems:
 
-    - title: Introduction
+    - title: Usage
       url: /personnel_file_api_intro.html
       output: web      
 
