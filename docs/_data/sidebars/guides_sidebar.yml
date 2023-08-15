@@ -65,20 +65,24 @@ entries:
           output: web
 
           subsubfolders:
-          - title: Overview3
+          - title: Schema
             output: web      
             subsubfolderitems:
         
             - title:  Schema-overview
-              url: /personnel_file_api_endpoint_schema3a.html
+              url: /personnel_file_api_schema_employees.html
               output: web
           
             - title:  Employee-overview
-              url: /personnel_file_api_endpoint_employees3a.html
+              url: /personnel_file_api_schema_categories.html
               output: web
 
             - title:  Document-overview
-              url: /personnel_file_api_endpoint_documents3a.html
+              url: /personnel_file_api_schema_folders.html
+              output: web
+
+            - title:  Document-overview
+              url: /personnel_file_api_schema_document.html
               output: web
     
           - title: Details3
