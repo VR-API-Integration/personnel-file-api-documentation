@@ -145,7 +145,7 @@ The bearer token does not specify the required scope.
     "title": "Forbidden",
     "status": 403
 }
-```
+```  
 &nbsp;
 #### 404 Not Found - Employee or Employment Not Found
 The specified employee and/or employment cannot be found.
