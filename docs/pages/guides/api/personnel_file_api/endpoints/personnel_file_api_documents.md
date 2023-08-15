@@ -9,10 +9,10 @@ folder: guides/api/personnel_file_api/endpoints
 topnav: topnav
 ---
 
-### Overview
+## Overview
 The '**/v10/documents**' endpoint allows for the uploading of new documents to the Personnel File system. When uploading, it's essential to integrate both the document's content and its associated properties within a single request. Depending on the method chosen, the format for sending these details varies. 
 
-### Supported Content Types
+## Supported Content Types
 
 To upload a new document both its properties and its content needs to be included within the request. The endpoint accepts either multipart/form-data or multipart/mixed requests.
 
@@ -80,11 +80,11 @@ To upload a new document both its properties and its content needs to be include
         --BOUNDARY_STRING--
         ```
 
-### POST /v10/documents
-#### Required scopes
+## POST /v10/documents
+### Required scopes
 This endpoint requires the '**youforce-personnel-file-api:documents:add**' scope.
 
-### Parameters
+## Parameters
 
 The parameters are either form-data fields or part of the JSON file. Some of the parameters are required, all others are optional.
 
@@ -92,8 +92,8 @@ The parameters are either form-data fields or part of the JSON file. Some of the
 |:--------------|:----------------|:-----|-----------:|:---------|
 | | | | | |
 
-### Responses
-#### 201 Created - Document Created
+## Responses
+### 201 Created - Document Created
 The request was successful and the document has been added to the Personnel File. The response returns all properties
 of the newly created document.
 ```
@@ -105,7 +105,7 @@ of the newly created document.
 }
 ```
 
-#### 400 Bad Request - Request Validation Failed
+### 400 Bad Request - Request Validation Failed
 A '**400 Bad Request**' status code indicates that the server was unable to understand or process the request due
 to a client error. The response points to the specific problem.
 
@@ -127,7 +127,7 @@ Note that the language of the errors can be changed by including the '**accept-l
 }
 ```
 
-#### 401 Unauthorized - Authorization Failure
+### 401 Unauthorized - Authorization Failure
 The request lacks an authorization header, the bearer token has expired, or the provided token is invalid.
 ```json
 {
@@ -137,7 +137,7 @@ The request lacks an authorization header, the bearer token has expired, or the 
 }
 ```
 
-#### 403 Forbidden - Authorization Denied
+### 403 Forbidden - Authorization Denied
 The bearer token does not specify the required scope.
 ```json
 {
@@ -147,7 +147,7 @@ The bearer token does not specify the required scope.
 }
 ```
 
-#### 404 Not Found - Employee or Employment Not Found
+### 404 Not Found - Employee or Employment Not Found
 The specified employee and/or employment cannot be found.
 ```
 {
