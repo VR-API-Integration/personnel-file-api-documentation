@@ -9,6 +9,4 @@ folder: guides/personnel_file_api
 topnav: topnav
 ---
 
-Personnel File API - Swagger
-
 - [Swagger description Personnel File API](https://personnelfileapi.youforce.com/swagger/index.html){:target="\_blank"}
