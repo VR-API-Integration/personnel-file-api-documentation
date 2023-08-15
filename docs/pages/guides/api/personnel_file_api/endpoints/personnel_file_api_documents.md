@@ -48,6 +48,7 @@ To upload a new document both its properties and its content needs to be include
 
         --BOUNDARY_STRING--
         ```  
+
 2. **multipart/mixed**:
    - **Usage**: This MIME type is designed for sending mixed data types in a single message and is versatile
      for various applications, including file uploads with associated metadata.
@@ -78,7 +79,7 @@ To upload a new document both its properties and its content needs to be include
 
         --BOUNDARY_STRING--
         ```
-&nbsp;
+
 ## POST /v10/documents
 ### Required scopes
 This endpoint requires the '**youforce-personnel-file-api:documents:add**' scope.  
