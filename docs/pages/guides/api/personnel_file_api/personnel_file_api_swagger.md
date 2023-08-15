@@ -1,1 +1,14 @@
+---
+title: Personnel File API - Swagger
+tags: [dossier, personnel file, api, swagger]
+keywords: dossier, personnel file, api, swagger
+last_updated: 2023-07-26
+sidebar: guides_sidebar
+permalink: personnel_file_api_swagger.html
+folder: guides/personnel_file_api
+topnav: topnav
+---
 
+Personnel File API - Swagger
+Swagger pages
+- [Personnel File API endpoint](https://personnelfileapi.youforce.com/swagger/index.html){:target="\_blank"}
