@@ -91,7 +91,7 @@ The parameters are either form-data fields or part of the JSON file. Some of the
 
 | JSON Property | form-data field | Type | Max Length | Required |
 |:--------------|:----------------|:-----|-----------:|:---------|
-| | | | | |
+|              1|                2|     3|           4|        5 | 
 
 &nbsp;
 ### Responses  
