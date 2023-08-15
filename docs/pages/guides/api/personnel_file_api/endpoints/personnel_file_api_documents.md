@@ -104,8 +104,7 @@ of the newly created document.
     ...
 }
 ```
-
-  
+&nbsp;
 #### 400 Bad Request - Request Validation Failed
 A '**400 Bad Request**' status code indicates that the server was unable to understand or process the request due
 to a client error. The response points to the specific problem.
@@ -127,8 +126,7 @@ Note that the language of the errors can be changed by including the '**accept-l
     }
 }
 ```
-  
-  
+&nbsp;
 #### 401 Unauthorized - Authorization Failure
 The request lacks an authorization header, the bearer token has expired, or the provided token is invalid.
 ```json
@@ -138,8 +136,7 @@ The request lacks an authorization header, the bearer token has expired, or the 
     "status": 401
 }
 ```
-  
-  
+&nbsp;
 #### 403 Forbidden - Authorization Denied
 The bearer token does not specify the required scope.
 ```json
@@ -149,8 +146,7 @@ The bearer token does not specify the required scope.
     "status": 403
 }
 ```
-  
-  
+&nbsp;
 #### 404 Not Found - Employee or Employment Not Found
 The specified employee and/or employment cannot be found.
 ```
