@@ -9,7 +9,7 @@ folder: guides/api/personnel_file_api/filtering
 topnav: topnav
 ---
 
-## Filtering
+Filtering
 
 The Personnel File API allows you to filter the results of endpoints returning employees using a filter language. The API supports the following features:
 
