@@ -60,8 +60,8 @@ entries:
         output: web      
         subfolderitems:
 
-        - title:  Schema/Employees
-          url: /personnel_file_api_schema_employees.html
+        - title:  Schema/Employee
+          url: /personnel_file_api_schema_employee.html
           output: web
           
         - title:  Schema/Categories
