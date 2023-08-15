@@ -1,3 +1,14 @@
+---
+title: Personnel File API Endpoint - Schema - Folders
+tags: [dossier, personnel file, api, connector]
+keywords: dossier, personnel file, api, connector
+last_updated: 2023-08-15
+sidebar: guides_sidebar
+permalink: personnel_file_api_schema_folders.html
+folder: guides/api/personnel_file_api/endpoints
+topnav: topnav
+---
+
 ### Overview
 Within the Personnel File, documents are first organized into predefined categories based on their content and purpose. These categories 
 are further structured into a user-friendly hierarchy that mimics a folder structure, enhancing navigation and accessibility. 
