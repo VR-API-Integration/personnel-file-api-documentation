@@ -113,3 +113,8 @@ div.tags a {
 div.tags a:hover {
   text-decoration: underline;
 }
+
+h1 {color: #015CAE !important; font-size:28px !important;}
+h2 {color: #595959 !important; font-size:24px !important;}
+h3 {color: #E50E51 !important; font-size:20px !important;}
+h4 {color: #679DCE !important; font-size:16px; font-style: italic !important;}
