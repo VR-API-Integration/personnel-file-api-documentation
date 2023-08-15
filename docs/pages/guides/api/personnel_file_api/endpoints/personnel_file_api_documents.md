@@ -91,7 +91,20 @@ The parameters are either form-data fields or part of the JSON file. Some of the
 
 | JSON Property | form-data field | Type | Max Length | Required |
 |:--------------|:----------------|:-----|-----------:|:---------|
-|              1|                2|     3|           4|        5 | 
+|              1|CategoryCode|String|50|Yes| 
+|              1|RetentionCode|String|50|Yes| 
+|              1|EmployeeId|String|50|Yes| 
+|              1|EmploymentId|String|50|No| 
+|              1|StartDate|Date||Yes| 
+|              1|Description|String|50|Yes| 
+|              1|SourceSystem|String|12|Yes| 
+|              1|SourceModule|String|50|Yes| 
+|              1|SourceIdentifier|String|50|Yes| 
+|              1|Special|Boolean|1|No| 
+|              1|Confidential|Boolean|1|No| 
+|              1|Invalid|Boolean|1|No| 
+|              1|ExpirationDate|Date||No| 
+|              1|File|Base64 or Binary|50 MB|Yes| 
 
 &nbsp;
 ### Responses  
