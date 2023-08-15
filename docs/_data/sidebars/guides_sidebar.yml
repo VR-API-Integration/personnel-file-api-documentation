@@ -56,50 +56,33 @@ entries:
           url: /personnel_file_api_endpoint_documents.html
           output: web
 
-      - title: Endpoint Specifications
+      - title: Specifications
         output: web      
         subfolderitems:
 
+        - title:  Schema/Employees
+          url: /personnel_file_api_schema_employees.html
+          output: web
+          
+        - title:  Schema/Categories
+          url: /personnel_file_api_schema_categories.html
+          output: web
+
+        - title:  Schema/Folders
+          url: /personnel_file_api_schema_folders.html
+          output: web
+
+        - title:  Schema/Documents
+          url: /personnel_file_api_schema_document.html
+          output: web
+                
         - title:  Employees
           url: /personnel_file_api_employees.html
           output: web
 
-          subsubfolders:
-          - title: Schema
-            output: web      
-            subsubfolderitems:
-        
-            - title:  Schema-overview
-              url: /personnel_file_api_schema_employees.html
-              output: web
-          
-            - title:  Employee-overview
-              url: /personnel_file_api_schema_categories.html
-              output: web
-
-            - title:  Document-overview
-              url: /personnel_file_api_schema_folders.html
-              output: web
-
-            - title:  Document-overview
-              url: /personnel_file_api_schema_document.html
-              output: web
-    
-          - title: Details3
-            output: web      
-            subsubfolderitems:
-        
-            - title:  Schema-details
-              url: /personnel_file_api_endpoint_schema3b.html
-              output: web
-          
-            - title:  Employee-details
-              url: /personnel_file_api_endpoint_employees3b.html
-              output: web
-
-            - title:  Document-details
-              url: /personnel_file_api_endpoint_documents3b.html
-              output: web
+        - title:  Documents
+          url: /personnel_file_api_documents.html
+          output: web
 
     - title: Filtering
       url: /personnel_file_api_filtering.html
