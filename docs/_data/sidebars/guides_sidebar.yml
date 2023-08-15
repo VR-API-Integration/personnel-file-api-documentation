@@ -48,8 +48,8 @@ entries:
           url: /personnel_file_api_endpoint_schema.html
           output: web
           
-        - title:  Employees
-          url: /personnel_file_api_endpoint_employees.html
+        - title:  Employee
+          url: /personnel_file_api_endpoint_employee.html
           output: web
 
         - title:  Documents 
