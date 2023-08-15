@@ -1,3 +1,14 @@
+---
+title: Personnel File API Endpoint - Schema - Document
+tags: [dossier, personnel file, api, connector]
+keywords: dossier, personnel file, api, connector
+last_updated: 2023-08-15
+sidebar: guides_sidebar
+permalink: personnel_file_api_schema_document.html
+folder: guides/api/personnel_file_api/endpoints
+topnav: topnav
+---
+
 ### Overview
 The '**/v10/schema/document**' endpoint provides comprehensive schema information regarding the 'documents' within a structured format 
 defined by [JSON Schema](https://json-schema.org/specification.html). JSON Schema offers a way to describe the structure of JSON data, making 
