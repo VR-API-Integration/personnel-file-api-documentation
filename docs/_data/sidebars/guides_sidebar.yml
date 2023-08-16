@@ -72,7 +72,6 @@ entries:
           url: /personnel_file_api_documents.html
           output: web
 
-      subfolders:
       - title: Entities
         output: web      
         subfolderitems:
@@ -85,7 +84,6 @@ entries:
           url: /personnel_file_api_entities_documents.html
           output: web
 
-      subfolders:
       - title: Expressions
         output: web      
         subfolderitems:
