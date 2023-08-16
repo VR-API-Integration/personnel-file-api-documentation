@@ -59,6 +59,10 @@ entries:
         - title:  Schema/Documents
           url: /personnel_file_api_schema_document.html
           output: web
+
+        - title:  Schema/Retention
+          url: /personnel_file_api_schema_retention.html
+          output: web
                 
         - title:  Employees
           url: /personnel_file_api_employees.html
