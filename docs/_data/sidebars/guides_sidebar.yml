@@ -44,31 +44,31 @@ entries:
         output: web
         subfolderitems:
 
-        - title: Schema/Employee
+        - title:  Schema/Employee
           url: /personnel_file_api_schema_employee.html
           output: web
           
-        - title: Schema/Categories
+        - title:  Schema/Categories
           url: /personnel_file_api_schema_categories.html
           output: web
 
-        - title: Schema/Folders
+        - title:  Schema/Folders
           url: /personnel_file_api_schema_folders.html
           output: web
 
-        - title: Schema/Documents
+        - title:  Schema/Documents
           url: /personnel_file_api_schema_document.html
           output: web
 
-        - title: Schema/Retention
+        - title:  Schema/Retention
           url: /personnel_file_api_schema_retention.html
           output: web
                 
-        - title: Employees
+        - title:  Employees
           url: /personnel_file_api_employees.html
           output: web
 
-        - title: Documents
+        - title:  Documents
           url: /personnel_file_api_documents.html
           output: web
 
@@ -85,11 +85,11 @@ entries:
         output: web      
         subfolderitems:
 
-        - title: Employees
+        - title:  Employees
           url: /personnel_file_api_entities_employees.html
           output: web
           
-        - title: Documents
+        - title:  Documents
           url: /personnel_file_api_entities_documents.html
           output: web
 
