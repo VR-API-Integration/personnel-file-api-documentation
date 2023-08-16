@@ -87,7 +87,7 @@ This endpoint requires the '**youforce-personnel-file-api:documents:add**' scope
 &nbsp;
 ### Parameters
 
-The parameters are either form-data fields or part of the JSON file. Some of the parameters are required, all others are optional. Parameters are case-insensitive.
+The parameters are either form-data fields or part of the JSON file. Some of the parameters are required, all others are optional. Parameters are case-insensitive. A more detailed explanation of each of these properties is given here: (Entities - Documents)[/pages/guides/api/personnel_file_api/entities/personnel_file_api_entities_documents.md].
 
 | Property | Type | Max Length | Required |
 |:---------|:-----|-----------:|:---------|
