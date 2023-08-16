@@ -16,6 +16,7 @@ offers insights into these classifications by furnishing a comprehensive list of
 > The Personnel File empowers each tenant with full authority over the categories relevant to their organization, allowing for
 > customization of both codes and titles.
  
+&nbsp;
 ## GET /v10/schema/categories
 ### Required scopes
 None
@@ -41,7 +42,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 ### Responses
 #### 200 OK - Successful Response
 The request was successful, and the schema information is provided in the response.
-```
+```json
 [
     {
         "code": "4024898-werkvergunning",
