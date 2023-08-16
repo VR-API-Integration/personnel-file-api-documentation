@@ -37,11 +37,11 @@ entries:
 
     - title: Usage
       url: /personnel_file_api_intro.html
-      output: web      
+      output: web
 
       subfolders:
       - title: Endpoints
-        output: web      
+        output: web
         subfolderitems:
 
         - title:  Schema/Employee
@@ -72,21 +72,28 @@ entries:
           url: /personnel_file_api_documents.html
           output: web
 
-    - title: Filtering
-      url: /personnel_file_api_filtering.html
-      output: web
-
-      subfolders:
       - title: Entities
         output: web      
         subfolderitems:
 
-        - title:  Employee
+        - title:  Employees
           url: /personnel_file_api_entities_employees.html
           output: web
           
         - title:  Documents
           url: /personnel_file_api_entities_documents.html
+          output: web
+
+      - title: Expressions
+        output: web      
+        subfolderitems:
+
+        - title:  Filtering
+          url: /personnel_file_api_filter.html
+          output: web
+          
+        - title:  Searching
+          url: /personnel_file_api_search.html
           output: web
 
     - title: Swagger

@@ -1,11 +1,11 @@
 ---
 title: Personnel File API - Filtering
 tags: [dossier, personnel file, api, connector]
-keywords: dossier, personnel file, api, connector, filter
-last_updated: 2023-07-26
+keywords: dossier, personnel file, api, connector, searhc
+last_updated: 2023-08-16
 sidebar: guides_sidebar
-permalink: personnel_file_api_filtering.html
-folder: guides/api/personnel_file_api/filtering
+permalink: personnel_file_api_filter.html
+folder: guides/api/personnel_file_api
 topnav: topnav
 ---
 

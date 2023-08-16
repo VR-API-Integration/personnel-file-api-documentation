@@ -22,8 +22,9 @@ A typical workflow is as follows:
 
 1. Retrieve a list of employees from the API and show them in a selection list in the client application
 2. Retrieve a list of document types from the API and show them in a selection list in the client application
-3. Let the user enter the values of necessary properties needed to send a document to Personnel File
-4. Send a document to the API using the employee number of the selected employee, the category code of the selected document and the values entered by the user of the client application
+3. Optionally retrieve a list of retention schedules from the API and show then in a selection list in the client application
+4. Let the user enter the values of necessary properties needed to send a document to Personnel File
+5. Send a document to the API using the employee number of the selected employee, the category code of the selected document and the values entered by the user of the client application
 
 Each of these steps can be enhanced further by providing more options in the client application, such as retrieving a filtered list based on selection criteria entered by the user or showing the available documenttypes in a folder structure instead of a plain list. Also a document can be linked to an employee only, or to a specific employment of the employee. When a document is also linked to an employment, only users of Personnel File with authorization for that employment can view the document.
 
@@ -33,7 +34,8 @@ A number of 'schema' endpoints are provided to retrieve metadata about the relev
 ## Processes
 The following processes can be supported with the Personnel File API:
 
-- Get a list of document types with document type codes and document type titles
+- Get a list of document types with document type codes and titles
+- Get a list of retention schedules with retention schedule codes and titles
 - Get the title of a document type
 - Get a list of folders with the document types per folder
 - Get a list of available properties of employees and employments
@@ -42,7 +44,6 @@ The following processes can be supported with the Personnel File API:
 - Get the properties of a specific employee using the employeenumber
 - Add a document with required and optional properties using multipart/form-data
 - Add a document with required and optional properties using multipart/mixed
-- Add a document with required and optional properties using application/json
 
 ## Domain model
 The Personnel File API will support the following domain model
