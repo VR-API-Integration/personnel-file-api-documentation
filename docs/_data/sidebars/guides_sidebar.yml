@@ -44,7 +44,7 @@ entries:
         output: web      
         subfolderitems:
 
-        - title:  Employees
+        - title:  Employee
           url: /personnel_file_api_entities_employees.html
           output: web
           
