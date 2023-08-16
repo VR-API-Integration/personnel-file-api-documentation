@@ -105,6 +105,7 @@ The bearer token does not specify the required scope.
 }
 ```
 
+&nbsp;
 ## GET /v10/employees/{nr}
 ### Required scopes
 This endpoint requires the '**youforce-personnel-file-api:employees:list**' scope.  
@@ -151,20 +152,7 @@ The request was successful and returns the employees that match the query. The l
     }
 ]
 ```
-&nbsp;
-#### 400 Bad Request - Request Validation Failed
-This status code indicates that the server was unable to understand or process the request due to client error. The particular response provided here suggests that a validation error occurred while interpreting the request, and it points to the specific problem within the request's syntax.
 
-In this case, the response detail '**"Syntax error at position 14 in 'dateOfBirth la 1950-01-01'."**' identifies the exact position and content of the error, enabling developers to diagnose and correct the issue. The use of a standard RFC 7231 reference for "Bad Request" also aligns with established HTTP status code definitions, ensuring clarity and adherence to common web protocols.
-
-```json
-{
-    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-    "title": "Bad Request",
-    "status": 400,
-    "detail": "Syntax error at position 14 in 'dateOfBirth la 1950-01-01'."
-}
-```
 &nbsp;
 #### 401 Unauthorized - Authorization Failure
 The request lacks an authorization header, the bearer token has expired, or the provided token is invalid.
@@ -185,3 +173,14 @@ The bearer token does not specify the required scope.
     "status": 403
 }
 ```
+&nbsp;
+#### 404 Not Found - Employee not available
+This status code indicates that the employee number is not available in Personnel File.
+```json
+{
+    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+    "title": "Not Found",
+    "status": 404
+}
+```
+
