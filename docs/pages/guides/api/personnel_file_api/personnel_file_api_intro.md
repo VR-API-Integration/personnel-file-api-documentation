@@ -27,6 +27,9 @@ A typical workflow is as follows:
 
 Each of these steps can be enhanced further by providing more options in the client application, such as retrieving a filtered list based on selection criteria entered by the user or showing the available documenttypes in a folder structure instead of a plain list. Also a document can be linked to an employee only, or to a specific employment of the employee. When a document is also linked to an employment, only users of Personnel File with authorization for that employment can view the document.
 
+## SchemaProcesses
+A number of 'schema' endpoints are provided to retrieve metadata about the relevant entities. The response of these endpoints provide lists of fields with their data type and maximum length. The available document types and folders can be retrieved using a schema endpoint. The schema endpoint 'Employee' provides a list of available fields of the entity Employee, while the normal endpoint 'Employees' provides an actual list of the available employees.
+
 ## Processes
 The following processes can be supported with the Personnel File API:
 
