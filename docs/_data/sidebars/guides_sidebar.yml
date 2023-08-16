@@ -73,7 +73,7 @@ entries:
           output: web
 
     - title: Filtering
-      url: /personnel_file_api_filtering.html
+      url: /personnel_file_api_filter.html
       output: web
 
       subfolders:
