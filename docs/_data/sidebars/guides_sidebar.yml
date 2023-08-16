@@ -76,6 +76,10 @@ entries:
       url: /personnel_file_api_filter.html
       output: web
 
+    - title: Searching
+      url: /personnel_file_api_search.html
+      output: web 
+
       subfolders:
       - title: Entities
         output: web      
