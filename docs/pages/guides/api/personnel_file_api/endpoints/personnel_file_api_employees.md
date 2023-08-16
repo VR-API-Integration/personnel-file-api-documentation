@@ -27,7 +27,7 @@ This endpoint requires the '**youforce-personnel-file-api:employees:list**' scop
 
 > **Note: make sure to URL encode the search and filter parameters**
 
-View [Filtering](/personnel_file_api_filtering.html) for more information about creating expressions.
+View the menu-item [Reference / Filtering](/personnel_file_api_filtering.html) for more information about creating expressions.  
 &nbsp;
 ### Example requests
 ```
