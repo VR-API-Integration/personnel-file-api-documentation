@@ -11,11 +11,11 @@ topnav: topnav
 
 ## Overview
 The '**/v10/employees**' endpoint is used within the Personnel File system to query employees and their associated employments. It's a key tool for locating the correct employee when you need to upload a new document, ensuring that the information is tied to the proper individual and employment record.
-&nbsp;
+
 ## GET /v10/employees
 ### Required scopes
 This endpoint requires the '**youforce-personnel-file-api:employees:list**' scope.
-&nbsp;
+
 ## Parameters
 
 | parameter | type | description |
@@ -25,7 +25,7 @@ This endpoint requires the '**youforce-personnel-file-api:employees:list**' scop
 | filter | query | A filter expression |
 
 > **Note: make sure to URL encode the search and filter parameters**
-&nbsp;
+
 ### Example requests
 ```
 GET /v10/employees?top=10&search=jans%20OR%20vries
