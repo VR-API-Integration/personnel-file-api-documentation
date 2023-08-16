@@ -9,7 +9,7 @@ folder: guides/api/personnel_file_api/endpoints
 topnav: topnav
 ---
 
-### Overview
+## Overview
 Within the Personnel File, documents are first organized into predefined categories based on their content and purpose. These categories 
 are further structured into a user-friendly hierarchy that mimics a folder structure, enhancing navigation and accessibility. 
 The '**/v10/schema/folders**' endpoint serves to provide this hierarchical view, detailing each folder along with its corresponding titles 
@@ -20,29 +20,32 @@ presentation to the end user.
 > alignment with organizational preferences. Since this hierarchy is designed exclusively for end-user presentation, alterations can be made at
 > any time without impacting underlying data structures or functionalities.
  
-### GET /v10/schema/folders
-#### Required scopes
+&nbsp;
+## GET /v10/schema/folders
+### Required scopes
 None
-#### Parameters
+### Parameters
 None
-#### Headers
+### Headers
 
 | header                | description                                                                 |
 |:----------------------|:----------------------------------------------------------------------------|
 | Accept&#8209;Language | Specify the desired language for property titles. Multiple languages are supported. Default: Dutch (nl-NL) |
 | Authorization | Include a valid bearer token for authorization |
 
-#### Example Request
+&nbsp;
+### Example Request
 ```
 GET /v10/schema/folders HTTP/1.1
 Host: personnelfileapi.youforce.com
 Accept-Language: en-GB
 Authorization: Bearer YOUR_ACCESS_TOKEN
 ```
-#### Responses
-##### 200 OK - Successful Response
+&nbsp;
+### Responses
+#### 200 OK - Successful Response
 The request was successful, and the schema information is provided in the response.
-```
+```json
 {
     "title": "File per employee",
     "children": [
@@ -81,7 +84,8 @@ The request was successful, and the schema information is provided in the respon
 }  
 ```
 
-##### 401 Unauthorized - Authorization Failure
+&nbsp;
+#### 401 Unauthorized - Authorization Failure
 The request lacks an authorization header, the bearer token has expired, or the provided token is invalid.
 ```json
 {
