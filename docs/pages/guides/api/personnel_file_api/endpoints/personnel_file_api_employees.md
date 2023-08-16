@@ -21,9 +21,9 @@ This endpoint requires the '**youforce-personnel-file-api:employees:list**' scop
 | parameter | type | description |
 |:----------|:-----|:------------|
 | active=true | query | return all employees (false) or only employees with an active employment (true) |
-| top=n | query | The maximum number of employees to return |
-| search=expression | query | A search expression |
-| filter=expression | query | A filter expression |
+| top=*n* | query | The maximum number of employees to return |
+| search=*expression* | query | A search expression |
+| filter=*expression* | query | A filter expression |
 
 > **Note: make sure to URL encode the search and filter parameters**
 
@@ -60,7 +60,7 @@ The request was successful and returns the employees that match the query. The l
         "employments": [
             {
                 "employmentId": "-",
-                "startDate": "1995-03-01",
+                "startDateEmployment": "1995-03-01",
                 "organizationalUnit": "Metatech Nederland - Metatech Administratie BV",
                 "departmentCode": "10641458",
                 "departmentAbbr": "AFDICT",
