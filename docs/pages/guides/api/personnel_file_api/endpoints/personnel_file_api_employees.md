@@ -14,9 +14,7 @@ The '**/v10/employees**' endpoint is used within the Personnel File system to qu
 
 ## GET /v10/employees
 ### Required scopes
-This endpoint requires the '**youforce-personnel-file-api:employees:list**' scope.
-
-
+This endpoint requires the '**youforce-personnel-file-api:employees:list**' scope.  
 &nbsp;
 ## Parameters
 
@@ -26,8 +24,7 @@ This endpoint requires the '**youforce-personnel-file-api:employees:list**' scop
 | search | query | A search expression |
 | filter | query | A filter expression |
 
-> **Note: make sure to URL encode the search and filter parameters**
-
+> **Note: make sure to URL encode the search and filter parameters**  
 &nbsp;
 ### Example requests
 ```
