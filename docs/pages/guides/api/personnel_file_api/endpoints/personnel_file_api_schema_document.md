@@ -9,7 +9,7 @@ folder: guides/api/personnel_file_api/endpoints
 topnav: topnav
 ---
 
-### Overview
+## Overview
 The '**/v10/schema/document**' endpoint provides comprehensive schema information regarding the 'documents' within a structured format 
 defined by [JSON Schema](https://json-schema.org/specification.html). JSON Schema offers a way to describe the structure of JSON data, making 
 it easier for developers to validate and manipulate JSON data structures. In this endpoint, details about each property's attributes — including 
@@ -19,19 +19,21 @@ JSON Schema specification. This approach ensures consistency, clarity, and ease 
 > The Personnel File allows tenants to enable up to three custom properties named 'custom1', 'custom2', and 'custom3'. The tenant can determine the
 > purpose of these properties and assign arbitrary titles. Clients implementing this feature must consider these aspects.
 
-### GET /v10/schema/document
-#### Required scopes
+&nbsp;
+## GET /v10/schema/document
+### Required scopes
 None
-#### Parameters
+### Parameters
 None
-#### Headers
+### Headers
 
 | header                | description                                                                 |
 |:----------------------|:----------------------------------------------------------------------------|
 | Accept&#8209;Language | Specify the desired language for property titles. Multiple languages are supported. Default: Dutch (nl-NL) |
 | Authorization | Include a valid bearer token for authorization |
 
-#### Example request
+&nbsp;
+### Example request
 ```
 GET /v10/schema/document
 Host: personnelfileapi.youforce.com
@@ -39,10 +41,11 @@ Accept-Language: en-GB
 Authorization: Bearer YOUR_ACCESS_TOKEN
 ```
 
-#### Responses
-##### 200 OK - Successful Response
+&nbsp;
+### Responses
+#### 200 OK - Successful Response
 The request was successful, and the schema information is provided in the response.
-```
+```json
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
@@ -79,7 +82,8 @@ The request was successful, and the schema information is provided in the respon
    ...
 ```
 
-##### 401 Unauthorized - Authorization Failure
+&nbsp;
+#### 401 Unauthorized - Authorization Failure
 The request lacks an authorization header, the bearer token has expired, or the provided token is invalid.
 ```json
 {
