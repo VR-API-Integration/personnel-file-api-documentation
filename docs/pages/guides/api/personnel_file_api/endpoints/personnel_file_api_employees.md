@@ -20,7 +20,7 @@ This endpoint requires the '**youforce-personnel-file-api:employees:list**' scop
 
 | parameter | type | description |
 |:----------|:-----|:------------|
-| active=true / false| query | return all employees or only employees with an active employment |
+| active=true | query | return all employees (false) or only employees with an active employment (true) |
 | top=n | query | The maximum number of employees to return |
 | search=expression | query | A search expression |
 | filter=expression | query | A filter expression |
