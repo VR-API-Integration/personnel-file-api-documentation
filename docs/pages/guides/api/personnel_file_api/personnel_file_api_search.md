@@ -5,7 +5,7 @@ keywords: dossier, personnel file, api, connector, searhc
 last_updated: 2023-08-16
 sidebar: guides_sidebar
 permalink: personnel_file_api_search.html
-folder: guides/api/personnel_file_api/filtering
+folder: guides/api/personnel_file_api
 topnav: topnav
 ---
 
