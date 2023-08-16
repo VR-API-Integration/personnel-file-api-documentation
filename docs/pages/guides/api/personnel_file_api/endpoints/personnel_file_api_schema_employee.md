@@ -80,6 +80,7 @@ The request was successful, and the schema information is provided in the respon
    ...
 }
 ```
+&nbsp;
 #### 401 Unauthorized - Authorization Failure
 The request lacks an authorization header, the bearer token has expired, or the provided token is invalid.
 ```json
