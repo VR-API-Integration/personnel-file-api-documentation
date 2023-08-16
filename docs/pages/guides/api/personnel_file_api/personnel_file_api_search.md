@@ -1,4 +1,4 @@
-# Searching with Expressions in the `GET /v10/employees` Endpoint
+## Overview
 
 The `GET /v10/employees` endpoint supports a versatile and powerful mechanism to search through employee data using search expressions. This document provides a detailed guide to help you construct effective search expressions.
 
