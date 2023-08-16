@@ -43,7 +43,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 ### Responses
 #### 200 OK - Successful Response
 The request was successful and returns the employees that match the query. The list may be empty.
-```
+```json
 [
     {
         "productCode": "HRERPD",
@@ -76,7 +76,7 @@ This status code indicates that the server was unable to understand or process t
 
 In this case, the response detail '**"Syntax error at position 14 in 'dateOfBirth la 1950-01-01'."**' identifies the exact position and content of the error, enabling developers to diagnose and correct the issue. The use of a standard RFC 7231 reference for "Bad Request" also aligns with established HTTP status code definitions, ensuring clarity and adherence to common web protocols.
 
-```
+```json
 {
     "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
     "title": "Bad Request",
@@ -87,7 +87,7 @@ In this case, the response detail '**"Syntax error at position 14 in 'dateOfBirt
 &nbsp;
 #### 401 Unauthorized - Authorization Failure
 The request lacks an authorization header, the bearer token has expired, or the provided token is invalid.
-```
+```json
 {
     "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
     "title": "Unauthorized",
