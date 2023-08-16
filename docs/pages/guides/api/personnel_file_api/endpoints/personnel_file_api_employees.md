@@ -56,11 +56,11 @@ The request was successful and returns the employees that match the query. The l
         "birthnamePrefix": "de",
         "birthname": "Vries",
         "gender": "V",
-        "organizationalUnit": "Metatech Nederland - Metatech Administratie BV",
         "employments": [
             {
                 "employmentId": "-",
                 "startDate": "1995-03-01",
+                "organizationalUnit": "Metatech Nederland - Metatech Administratie BV",
                 "departmentCode": "10641458",
                 "departmentAbbr": "AFDICT",
                 "departmentName": "afdeling ICT",
