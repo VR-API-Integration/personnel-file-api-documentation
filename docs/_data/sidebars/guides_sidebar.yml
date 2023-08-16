@@ -40,23 +40,6 @@ entries:
       output: web      
 
       subfolders:
-      - title: Entities
-        output: web      
-        subfolderitems:
-
-        - title:  Employee
-          url: /personnel_file_api_entities_employees.html
-          output: web
-          
-        - title:  Documents
-          url: /personnel_file_api_entities_documents.html
-          output: web
-
-    - title: Filtering
-      url: /personnel_file_api_filtering.html
-      output: web
-
-      subfolders:
       - title: Endpoints
         output: web      
         subfolderitems:
@@ -83,6 +66,23 @@ entries:
 
         - title:  Documents
           url: /personnel_file_api_documents.html
+          output: web
+
+    - title: Filtering
+      url: /personnel_file_api_filtering.html
+      output: web
+
+      subfolders:
+      - title: Entities
+        output: web      
+        subfolderitems:
+
+        - title:  Employee
+          url: /personnel_file_api_entities_employees.html
+          output: web
+          
+        - title:  Documents
+          url: /personnel_file_api_entities_documents.html
           output: web
 
     - title: Swagger
