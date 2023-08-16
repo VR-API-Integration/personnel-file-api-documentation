@@ -6,7 +6,7 @@ keywords: dossier, personnel file, api, connector, filter
 last_updated: 2023-07-26
 sidebar: guides_sidebar
 permalink: personnel_file_api_filtering.html
-folder: guides/api/personnel_file_api/filter
+folder: guides/api/personnel_file_api
 topnav: topnav
 ---
 
