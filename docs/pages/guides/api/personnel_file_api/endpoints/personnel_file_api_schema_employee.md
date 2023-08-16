@@ -9,26 +9,27 @@ folder: guides/api/personnel_file_api/endpoints
 topnav: topnav
 ---
 
-### Overview
+## Overview
 The '**/v10/schema/employee**' endpoint provides comprehensive schema information regarding the 'employees' within a structured format 
 defined by [JSON Schema](https://json-schema.org/specification.html). JSON Schema offers a way to describe the structure of JSON data, making 
 it easier for developers to validate and manipulate JSON data structures. In this endpoint, details about each property's attributes — including 
 its data type, size, format, and the title that should be utilized when displaying the property — are described in accordance with the 
 JSON Schema specification. This approach ensures consistency, clarity, and ease of integration across various systems and applications.
 
-### GET /v10/schema/employee
-#### Required scopes
+## GET /v10/schema/employee
+### Required scopes
 None
-#### Parameters
+### Parameters
 None
-#### Headers
+### Headers
 
 | header                | description                                                                 |
 |:----------------------|:----------------------------------------------------------------------------|
 | Accept&#8209;Language | Specify the desired language for property titles. Multiple languages are supported. Default: Dutch (nl-NL) |
 | Authorization | Include a valid bearer token for authorization |
 
-#### Example request
+&nbsp;
+### Example request
 ```
 GET /v10/schema/employee
 Host: personnelfileapi.youforce.com
@@ -36,10 +37,11 @@ Accept-Language: en-GB
 Authorization: Bearer YOUR_ACCESS_TOKEN
 ```
 
-#### Responses
-##### 200 OK - Successful Response
+&nbsp;
+### Responses
+#### 200 OK - Successful Response
 The request was successful, and the schema information is provided in the response.
-```
+```json
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
@@ -78,7 +80,7 @@ The request was successful, and the schema information is provided in the respon
    ...
 }
 ```
-##### 401 Unauthorized - Authorization Failure
+#### 401 Unauthorized - Authorization Failure
 The request lacks an authorization header, the bearer token has expired, or the provided token is invalid.
 ```json
 {
