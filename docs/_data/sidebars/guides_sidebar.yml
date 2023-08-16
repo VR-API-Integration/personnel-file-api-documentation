@@ -40,6 +40,19 @@ entries:
       output: web      
 
       subfolders:
+      - title: Entities
+        output: web      
+        subfolderitems:
+
+        - title:  Employees
+          url: /personnel_file_api_entities_employees.html
+          output: web
+          
+        - title:  Documents
+          url: /personnel_file_api_entities_documents.html
+          output: web
+
+      subfolders:
       - title: Endpoints
         output: web      
         subfolderitems:
