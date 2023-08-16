@@ -52,6 +52,9 @@ entries:
           url: /personnel_file_api_entities_documents.html
           output: web
 
+    - title: Filtering
+      url: /personnel_file_api_filtering.html
+      output: web
 
       subfolders:
       - title: Endpoints
@@ -81,10 +84,6 @@ entries:
         - title:  Documents
           url: /personnel_file_api_documents.html
           output: web
-
-    - title: Filtering
-      url: /personnel_file_api_filtering.html
-      output: web
 
     - title: Swagger
       url: /personnel_file_api_swagger.html
