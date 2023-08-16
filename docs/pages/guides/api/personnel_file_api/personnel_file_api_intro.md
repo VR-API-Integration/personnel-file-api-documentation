@@ -18,6 +18,16 @@ To be able to send a document to Personnel File a number of document properties 
 
 Except for the employee and the document type, all properties are determined by the client application that is using the API. To determine the employee, an API function can be used to retrieve the properties of employees. This data can be used to have a user pick an employee from a list in the client application. To determine the document type, an API function can be used to retrieve a list of document types. Additionaly the folder structure that is used in Personnel File can be retrieved to show a similar structure in the cleint application that is using the API.
 
+A typical workflow is as follows:
+
+1. Retrieve a list of employees from the API and show them in a selection list in the client application
+2. Retrieve a list of document types from the API and show then in a selection list in the client application
+3. Let the user enter the values of necessary properties needed to send a document to Personnel File
+4. Send a document to the API using the employee number of the selected employee, the category code of the selected document and the values entered by the user of the client application
+
+Each of these steps can be further enhanced by providing more options in the client application, such as retrieving a filtered list based on selection criteria entered by the user or showing the available documenttypes in a folder structure instead of a plain list.
+
+
 ## Processes
 The following processes can be supported with the Personnel File API:
 
