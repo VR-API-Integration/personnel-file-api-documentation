@@ -72,14 +72,6 @@ entries:
           url: /personnel_file_api_documents.html
           output: web
 
-    - title: Filtering
-      url: /personnel_file_api_filter.html
-      output: web
-
-    - title: Searching
-      url: /personnel_file_api_search.html
-      output: web 
-
       subfolders:
       - title: Entities
         output: web      
@@ -91,6 +83,19 @@ entries:
           
         - title:  Documents
           url: /personnel_file_api_entities_documents.html
+          output: web
+
+      subfolders:
+      - title: Expressions
+        output: web      
+        subfolderitems:
+
+        - title:  Filtering
+          url: /personnel_file_api_filter.html
+          output: web
+          
+        - title:  Searching
+          url: /personnel_file_api_search.html
           output: web
 
     - title: Swagger
