@@ -87,38 +87,36 @@ This endpoint requires the '**youforce-personnel-file-api:documents:add**' scope
 &nbsp;
 ### Parameters
 
-The parameters are either form-data fields or part of the JSON file. Some of the parameters are required, all others are optional.
+The parameters are either form-data fields or part of the JSON file. Some of the parameters are required, all others are optional. Parameters are case-insensitive.
 
-| JSON Property | form-data field | description | Type | Max Length | Required |
-|:--------------|:----------------|:----------  |:-----|-----------:|:---------|
-|              1|categoryCode||String|50|Yes| 
-|              1|retentionCode||String|50|Yes| 
-|              1|employeeId||String|50|Yes| 
-|              1|employmentId||String|50|No| 
-|              1|startDate||Date||Yes| 
-|              1|expirationDate||Date||No| 
-|              1|description||String|50|Yes| 
-|              1|sourceSystem||String|12|Yes| 
-|              1|sourceModule||String|50|Yes| 
-|              1|sourceIdentifier||String|50|Yes| 
-|              1|contentType||String|100|Yes|
-|              1|special||Boolean|1|No| 
-|              1|confidential||Boolean|1|No| 
-|              1|expired||Boolean|1|No| 
-|              1|custom1||String|30|No| 
-|              1|custom2||String|30|No| 
-|              1|custom3||String|30|No| 
-|              1|file||Base64 or Binary|50 MB|Yes|
+| Property | Type | Max Length | Required |
+|:---------|:-----|-----------:|:---------|
+|categoryCode|String|50|Yes| 
+|retentionScheduleCode|String|50|Yes| 
+|employeeId|String|50|Yes| 
+|employmentId|String|50|No| 
+|startDate|Date||Yes| 
+|expirationDate|Date||No| 
+|description|String|50|Yes| 
+|sourceSystem|String|12|Yes| 
+|sourceModule|String|50|Yes| 
+|sourceIdentifier|String|50|Yes| 
+|special|Boolean|1|No| 
+|confidential|Boolean|1|No| 
+|expired|Boolean|1|No| 
+|custom1|String|30|No| 
+|custom2|String|30|No| 
+|custom3|String|30|No| 
 
-&nbsp;
 ### Responses  
 #### 201 Created - Document Created  
 The request was successful and the document has been added to the Personnel File. The response returns all properties
 of the newly created document.
-```json
+```
 {
     "documentId": "974957",
     "categoryCode": "4024898-werkvergunning",
+    "retentionScheduleCode": "DEFAULT",
     "contentType": "application/pdf",
     ...
 }
