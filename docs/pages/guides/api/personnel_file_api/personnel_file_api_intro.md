@@ -44,7 +44,6 @@ The following processes can be supported with the Personnel File API:
 - Get the properties of a specific employee using the employeenumber
 - Add a document with required and optional properties using multipart/form-data
 - Add a document with required and optional properties using multipart/mixed
-- Add a document with required and optional properties using application/json
 
 ## Domain model
 The Personnel File API will support the following domain model
