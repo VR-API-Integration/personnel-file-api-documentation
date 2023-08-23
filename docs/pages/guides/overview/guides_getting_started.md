@@ -21,7 +21,7 @@ Furthermore, it is assumed that Postman is available to get familiar with the AP
 
 A Postman collection that contains all availabel endpoints is made available for importing into Postman. The Client-ID, Client-Secret, Tenant-ID and the URLs are stored as variables on collection-level, which makes them automatically available for all endpoints. 
 
-You can find the Postman collection in the menu [Reference - Postman](/guides_postman.html)
+You can find the Postman collection in the menu [Reference - Postman](/personnel_file_api_postman.html)
 <br />
 
 ### Step 2: Request an access token
