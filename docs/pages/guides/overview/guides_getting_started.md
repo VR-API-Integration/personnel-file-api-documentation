@@ -33,8 +33,6 @@ In the case of using the example Postman collection, it will be enough to update
 
 {% include image.html file="postman_variables.png" alt="Getting started" max-width="800" %}
 <br />
-<br />
-
 The values of these variables will be used to request a new token.
 
 {% include image.html file="postman_token_parameters.png" alt="Getting started" max-width="800" %}
