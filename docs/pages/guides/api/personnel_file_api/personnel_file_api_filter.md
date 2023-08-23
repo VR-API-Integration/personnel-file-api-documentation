@@ -93,7 +93,3 @@ We offer a select set of functions to enhance your filtering:
    GET /v10/employees?filter=contains(organizationUnit, 'ICT')
    ```
    This brings up employees with the organization unit containing 'ICT' in its name.
-
-## Conclusion
-
-The filter functionality in the `GET /v10/employees` endpoint provides a powerful, intuitive, and expressive mechanism for narrowing down your data fetch requirements. By leveraging the operators and supported functions, you can craft queries that are both sophisticated and precise. Happy filtering!
