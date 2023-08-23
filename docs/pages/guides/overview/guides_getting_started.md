@@ -14,13 +14,14 @@ This guide is written under the assumption that the developer has a proper appli
 - Client-secret
 - Tenant-id
 
+Furthermore, it is assumed that Postman is available to get familiar with the API endpoints, the required parameters and the responses. We provide a example Postman collection to give the developer a headstart.
 
 
-### Step 1: Download the example Postman collection [OPTIONAL]
+### Step 1: Download the example Postman collection
 
-Each of the available domains has an available example Postman collection, containing the very basic methods a developer needs to start using our APIs. This step is optional, but it would facilitate the next steps.
+A Postman collection that contains all availabel endpoints is made available for importing into Postman. The Client-ID, Client-Secret, Tenant-ID and the URLs are stored as variables on collection-level, which makes them automatically available for all endpoints. 
 
-You can find the proper Postman collection under the corresponding option in the left menu of this documentation.
+You can find the Postman collection in the menu [Reference - Postman](/pages/guides/postman/download/guides_postman.html)
 <br />
 
 ### Step 2: Request an access token
