@@ -37,7 +37,7 @@ In the case of using the example Postman collection, it will be enough to update
 
 Otherwise, the required information will have to be added in the corresponding parameters.
 
-{% include image.html file="Postman_GetToken_empty.png" alt="Getting started" max-width="800" %}
+{% include image.html file="postman_token_parameters.png" alt="Getting started" max-width="800" %}
 <br />
 <br />
 
