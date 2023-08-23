@@ -95,8 +95,8 @@ The parameters are either form-data fields or part of the JSON file. Some of the
 |retentionScheduleCode|String|50|No (default will be used)| 
 |employeeId|String|50|Yes| 
 |employmentId|String|50|No| 
-|startDate|Date||Yes| 
-|expirationDate|Date||No| 
+|startDate|Date|yyyy-mm-dd|Yes| 
+|expirationDate|Date|yyyy-mm-dd|No| 
 |description|String|50|Yes| 
 |sourceSystem|String|12|Yes| 
 |sourceModule|String|50|Yes| 
