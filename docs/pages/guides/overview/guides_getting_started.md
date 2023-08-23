@@ -52,14 +52,14 @@ Use the button 'Use Token' to apply this token to the collection. This token wil
 
 **Step 3: Make the test call to the desired endpoint**
 
-Now we are in a position to directly call the needed endpoint. This example is requesting a list of employees, but any other get method can be used in a similar way.
+Now we are able to directly call the needed endpoint. This example is requesting a list of available document types (categories), but any other get method can be used in a similar way.
 
 Notice that, as mentioned in previous step, if the example Postman collection is being used, the token information will already be available in the AccessToken variable set in the Authorization header, otherwise, the token information should be manually added in the same header.
 
 This should be enough to successfully run the method in the API.
 
-{% include image.html file="Postman_persons_response.png" alt="Getting started" max-width="800" %}
+{% include image.html file="postman_categories_response.png" alt="Getting started" max-width="800" %}
 <br />
 <br />
 
-We hope this section was useful. Thanks for building an integration using Dossier API.
+We hope this section was useful. Thanks for building an integration using Personnel File API.
