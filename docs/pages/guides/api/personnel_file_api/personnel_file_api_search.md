@@ -74,6 +74,3 @@ This retrieves all employees with the term "product manager".
 GET /v10/employees?search="AND"
 ```
 This searches specifically for the term "AND", and not as a keyword.
-
-## Conclusion
-The `GET /v10/employees` search expressions offer robust and flexible searching capabilities. Make sure to use the right combination of terms and operators to refine and optimize your queries. Happy searching!
