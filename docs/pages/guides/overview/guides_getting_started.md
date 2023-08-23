@@ -31,25 +31,19 @@ This token will provide access to a particular tenant in a specific application.
 
 In the case of using the example Postman collection, it will be enough to update the existing variables with the actual values, as displayed in the image below.
 
-{% include image.html file="postman_variables.png" alt="Getting started"  %} 
+{% include image.html file="postman_variables.png" alt="Getting started"  %}  
 <br />
 The values of these variables will be used to request a new token.
-<br />
-{% include image.html file="postman_token_parameters.png" alt="Getting started"  %}
-<br />
-<br />
 
+{% include image.html file="postman_token_parameters.png" alt="Getting started"  %}  
+<br />
 Once the request for a token is executed using the button 'Get New Access Token', a valid token should be received.
 <br />
-{% include image.html file="postman_received_token.png" alt="Getting started" %}
-
-<br />
+{% include image.html file="postman_received_token.png" alt="Getting started" %}  
 <br />
 Use the button 'Use Token' to apply this token to the collection. This token will be stored in a variable that is used in the headers of all requests. If the token is expired the request will fail and you can request a new token again in the same way.
 <br />
-<br />
-
-{% include image.html file="postman_token_in_header.png" alt="Getting started"  %}
+{% include image.html file="postman_token_in_header.png" alt="Getting started"  %}  
 <br />
 
 ### Step 3: Make the test call to the desired endpoint
