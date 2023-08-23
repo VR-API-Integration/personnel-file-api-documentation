@@ -101,9 +101,9 @@ The parameters are either form-data fields or part of the JSON file. Some of the
 |sourceSystem|String|12|Yes| 
 |sourceModule|String|50|Yes| 
 |sourceIdentifier|String|50|Yes| 
-|special|Boolean|1|No| 
-|confidential|Boolean|1|No| 
-|expired|Boolean|1|No| 
+|special|Boolean|true / false|No| 
+|confidential|Boolean|true / false|No| 
+|expired|Boolean|true / false|No| 
 |custom1|String|30|No| 
 |custom2|String|30|No| 
 |custom3|String|30|No| 
