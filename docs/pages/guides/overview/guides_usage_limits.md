@@ -23,6 +23,6 @@ The following policies are determined per registered application:
 
 The API limit is the way we protect against traffic spikes. Our APIs and backend can handle a certain amount of traffic, and the API rejects requests that do not conform to the limit.
 
-The limit is set to 100 request per limit using a counter. The counter is valid for 1 minute before it is rest, which means that 100 request in 1 second will result in requests being rejected for the next 59 seconds.
+The limit is set to 100 request per minute using a counter. The counter is valid for 1 minute before it is reset, which means that 100 requests in 1 second will result in new requests being rejected for the next 59 seconds.
 
 When you exceed the limit, the API will return response code '429 - Too many requests' and you have to wait for the next time window.
