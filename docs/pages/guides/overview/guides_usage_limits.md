@@ -2,7 +2,7 @@
 title: Usage Limits
 tags: [getting_started, troubleshooting]
 keywords: api, library, api policies
-last_updated: 2026-07-27
+last_updated: 2023-08-23
 summary: "We apply usage limits to ensure the availability of our services to all parties interacting with Personnel File. These usage limits depend on your subscription."
 sidebar: guides_sidebar
 permalink: guides_usage_limits.html
@@ -18,7 +18,6 @@ The following policies are determined per registered application:
 | -------------------------------------------------------- |  --------------------------------------------------------------------- |
 | API calls                                                | 6000 API calls per day, allowing to retrieve changes every 15 seconds |
 | Authentication calls                                     | 400 authentication calls per month                                    |
-| Concurrent rate-limiting (API calls in parallel)         | 3                                                                     |
 | Spike arrest policy (max number of API calls per minute) | 100 calls per minute                                                  |
 
 ## Spike arrest details
