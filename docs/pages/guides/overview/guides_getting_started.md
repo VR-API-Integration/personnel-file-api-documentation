@@ -33,6 +33,8 @@ In the case of using the example Postman collection, it will be enough to update
 
 {% include image.html file="postman_variables.png" alt="Getting started"  %}{: .shadow}
 
+![image alternative text](postman_variables.png){: .shadow}
+
 <br />
 The values of these variables will be used to request a new token.
 
