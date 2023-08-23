@@ -16,7 +16,6 @@ The following policies are determined per registered application:
 
 | Quota                                                    |                                                              |
 | -------------------------------------------------------- |  --------------------------------------------------------------------- |
-| API calls                                                | 6000 API calls per day, allowing to retrieve changes every 15 seconds |
 | Authentication calls                                     | 400 authentication calls per month                                    |
 | Spike arrest policy (max number of API calls per minute) | 100 calls per minute                                                  |
 
