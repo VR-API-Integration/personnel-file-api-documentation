@@ -16,14 +16,14 @@ This guide is written under the assumption that the developer has a proper appli
 
 
 
-**Step 1: Download the example Postman collection [OPTIONAL]**
+## Step 1: Download the example Postman collection [OPTIONAL]
 
 Each of the available domains has an available example Postman collection, containing the very basic methods a developer needs to start using our APIs. This step is optional, but it would facilitate the next steps.
 
 You can find the proper Postman collection under the corresponding option in the left menu of this documentation.
 
 
-**Step 2: Request an access token**
+## Step 2: Request an access token
 
 In order to make the necessary calls to retrieve the expected information from Personnel File, a token needs to be requested.
 
@@ -50,7 +50,7 @@ Use the button 'Use Token' to apply this token to the collection. This token wil
 <br />
 <br />
 
-**Step 3: Make the test call to the desired endpoint**
+## Step 3: Make the test call to the desired endpoint
 
 Now we are able to directly call the needed endpoint. This example is requesting a list of available document types (categories), but any other get method can be used in a similar way.
 
