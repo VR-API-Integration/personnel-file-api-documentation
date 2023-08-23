@@ -39,15 +39,16 @@ The values of these variables will be used to request a new token.
 <br />
 <br />
 
-Once this call is executed, a valid token should be received.
+Once the request for a token is executed using the button 'Get New Access Token', a valid token should be received.
 
-{% include image.html file="Postman_token_response.png" alt="Getting started" max-width="800" %}
+{% include image.html file="Postman_received_token.png" alt="Getting started" max-width="800" %}
 <br />
 <br />
+Use the button 'Use Token' to apply this token to the collection. This token will be used for all requests until it is expired and you need to request a new token.
 
 Another advantage of using the example Postman collection, is that the token will get automatically stored in a variable, so it can be easily used for the next calls to the actual API.
 
-{% include image.html file="Postman_token_in_variable.png" alt="Getting started" max-width="800" %}
+{% include image.html file="postman_token_in_header.png" alt="Getting started" max-width="800" %}
 <br />
 <br />
 
