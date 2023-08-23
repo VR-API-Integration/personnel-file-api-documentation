@@ -35,7 +35,7 @@ In the case of using the example Postman collection, it will be enough to update
 <br />
 <br />
 
-Otherwise, the required information will have to be added in the corresponding parameters.
+The values of these variables will be used to request a new token.
 
 {% include image.html file="postman_token_parameters.png" alt="Getting started" max-width="800" %}
 <br />
