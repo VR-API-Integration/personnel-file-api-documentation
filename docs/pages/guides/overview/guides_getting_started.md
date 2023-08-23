@@ -41,7 +41,7 @@ The values of these variables will be used to request a new token.
 
 Once the request for a token is executed using the button 'Get New Access Token', a valid token should be received.
 
-{% include image.html file="Postman_received_token.png" alt="Getting started" max-width="800" %}
+{% include image.html file="postman_received_token.png" alt="Getting started" max-width="800" %}
 <br />
 <br />
 Use the button 'Use Token' to apply this token to the collection. This token will be used for all requests until it is expired and you need to request a new token.
