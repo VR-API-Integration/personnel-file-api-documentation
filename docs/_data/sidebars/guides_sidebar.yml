@@ -19,10 +19,6 @@ entries:
       url: /guides_getting_started.html
       output: web, pdf
 
-    - title: Request headers and responses
-      url: /guides_request_headers_and_responses.html
-      output: web, pdf
-
     - title: Usage limits
       url: /guides_usage_limits.html
       output: web, pdf
