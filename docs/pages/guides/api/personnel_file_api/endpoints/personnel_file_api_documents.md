@@ -92,7 +92,7 @@ The parameters are either form-data fields or part of the JSON file. Some of the
 | Property | Type | Max Length | Required |
 |:---------|:-----|-----------:|:---------|
 |categoryCode|String|50|Yes| 
-|retentionScheduleCode|String|50|Yes| 
+|retentionScheduleCode|String|50|No (default will be used)| 
 |employeeId|String|50|Yes| 
 |employmentId|String|50|No| 
 |startDate|Date||Yes| 
