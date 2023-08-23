@@ -21,7 +21,7 @@ This guide is written under the assumption that the developer has a proper appli
 Each of the available domains has an available example Postman collection, containing the very basic methods a developer needs to start using our APIs. This step is optional, but it would facilitate the next steps.
 
 You can find the proper Postman collection under the corresponding option in the left menu of this documentation.
-
+<br />
 
 ### Step 2: Request an access token
 
@@ -47,7 +47,6 @@ Once the request for a token is executed using the button 'Get New Access Token'
 Use the button 'Use Token' to apply this token to the collection. This token will be stored in a variable that is used in the headers of all requests. If the token is expired the request will fail and you can request a new token again in the same way.
 
 <kbd>{% include image.html file="postman_token_in_header.png" alt="Getting started"  %}</kbd>
-<br />
 <br />
 
 ### Step 3: Make the test call to the desired endpoint
