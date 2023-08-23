@@ -31,7 +31,7 @@ This token will provide access to a particular tenant in a specific application.
 
 In the case of using the example Postman collection, it will be enough to update the existing variables with the actual values, as displayed in the image below.
 
-{% include image.html file="Postman_variables.png" alt="Getting started" max-width="800" %}
+{% include image.html file="postman_variables.png" alt="Getting started" max-width="800" %}
 <br />
 <br />
 
