@@ -21,7 +21,7 @@
 title: Dossier API Documentation
 email: peter.van.miltenburg@visma.com
 description: The Dossier API allows for integration over HTTPS between Personnel File and external systems to add documents.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/personnel-file-api-documentation" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
 github_username:  PetervanMiltenburg
