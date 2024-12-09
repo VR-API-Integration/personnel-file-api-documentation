@@ -20,7 +20,12 @@ At its simplest, a search expression can be a single word you're looking for.
 ```
 GET /v10/employees?search=john
 ```
-This searches for all employees with the term "john".
+This searches for all employees with the term "john". If the word you're looking for starts with a digit then enclose it between double quotes:
+
+**Example**: 
+```
+GET /v10/employees?search="123"
+```
 
 ## Operators
 
